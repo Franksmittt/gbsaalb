@@ -1,0 +1,1262 @@
+[
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2011",
+        "variant":"500 1.4 Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2011",
+        "variant":"500 1.4 Tin Top 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2011",
+        "variant":"695 1.4 Tributo Ferrari 3-dr AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2012",
+        "variant":"500 1.4 Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2012",
+        "variant":"500 1.4 Cabriolet MTA AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2012",
+        "variant":"500 1.4 Tin Top 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2012",
+        "variant":"695 1.4 Tributo Ferrari 3-dr AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH Punto",
+        "year":"2012",
+        "variant":"Punto 1.4 3-dr",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"500 1.4 Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"500 1.4 Cabriolet MTA AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"500 1.4 Tin Top 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"500 C 1.4 Turbo Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"500 TinTop 1.4 Turbo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"695 1.4 Tributo Ferrari 3-dr AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH Punto",
+        "year":"2013",
+        "variant":"Punto 1.4 3-dr",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2014",
+        "variant":"500 1.4 Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2014",
+        "variant":"500 1.4 Tin Top 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2014",
+        "variant":"500 C 1.4 Turbo Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2014",
+        "variant":"500 TinTop 1.4 Turbo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2014",
+        "variant":"695 1.4 Tributo Ferrari 3-dr AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH Punto",
+        "year":"2014",
+        "variant":"Punto 1.4 3-dr",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 1.4 Cabriolet MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 1.4 Cabriolet MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 1.4 Tin Top 3-dr MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 1.4 Tin Top 3-dr MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 C 1.4 Turbo Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 TinTop 1.4 Turbo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"695 1.4 Tributo Ferrari 3-dr AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 124 Spider",
+        "year":"2016",
+        "variant":"124 Spider 1.4 Turismo",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2016",
+        "variant":"500 1.4 Cabriolet MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2016",
+        "variant":"500 1.4 Cabriolet MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2016",
+        "variant":"500 1.4 Tin Top 3-dr MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2016",
+        "variant":"500 1.4 Tin Top 3-dr MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4 Biposto 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Competizione 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Competizione 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Competizione S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turbo Base 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turbo Base 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turbo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turismo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turismo 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turismo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 124 Spider",
+        "year":"2017",
+        "variant":"124 Spider 1.4 Turismo",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2017",
+        "variant":"500 1.4 Cabriolet MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2017",
+        "variant":"500 1.4 Cabriolet MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2017",
+        "variant":"500 1.4 Tin Top 3-dr MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2017",
+        "variant":"500 1.4 Tin Top 3-dr MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4 Biposto 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Competizione 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Competizione 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Competizione S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turbo Base 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turbo Base 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turbo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turismo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turismo 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turismo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 124 Spider",
+        "year":"2018",
+        "variant":"124 Spider 1.4 Turismo",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2018",
+        "variant":"500 1.4 Cabriolet MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2018",
+        "variant":"500 1.4 Tin Top 3-dr MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2018",
+        "variant":"500 1.4 Tin Top 3-dr MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4 Biposto 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Competizione 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Competizione 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Competizione S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turbo Base 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turbo Base 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turbo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turismo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turismo 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turismo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 124 Spider",
+        "year":"2019",
+        "variant":"124 Spider 1.4 Turismo",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4 Biposto 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Competizione 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Competizione 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Competizione S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turbo Base 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turbo Base 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turbo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turismo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turismo 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turismo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 124 Spider",
+        "year":"2020",
+        "variant":"124 Spider 1.4 Turismo",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Competizione 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Competizione 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Competizione S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turbo Base 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turbo Base 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turbo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turismo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turismo 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turismo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Competizione 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Competizione 3-dr MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Competizione Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Competizione Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Scorpion Oro 3-dr MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Scorpion Oro Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turismo 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turismo 3-dr MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turismo Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turismo Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Yamaha Monster 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Yamaha Monster Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Yamaha Monster Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Competizione 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Competizione Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Scorpion Oro 3-dr MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Scorpion Oro Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Turismo 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Turismo Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Yamaha Monster 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Yamaha Monster Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Competizione 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Competizione Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Scorpion Oro 3-dr MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Scorpion Oro Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Turismo 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Turismo Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Yamaha Monster 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Yamaha Monster Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    }
+]

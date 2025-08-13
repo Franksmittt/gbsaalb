@@ -1,26 +1,98 @@
-@import "tailwindcss";
+/* FILE: src/app/globals.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.bg-blueprint {
+  background-color: #0f172a; /* A very dark navy, almost black */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 2rem 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.glowing-border {
+  position: relative;
+}
+
+.glowing-border::before,
+.glowing-border::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: conic-gradient(from var(--angle), 
+    transparent 0%, 
+    rgba(96, 165, 250, 0.5), /* navy-400 with opacity */
+    transparent 25%);
+  border-radius: 1.25rem; /* Matches the card's border-radius */
+  animation: spin 6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.group:hover .glowing-border::before,
+.group:hover .glowing-border::after {
+  opacity: 1;
+}
+
+.glowing-border::after {
+  filter: blur(10px);
+}
+
+@keyframes spin {
+  to {
+    --angle: 360deg;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* --- Styles for Animated WhatsApp Button --- */
+.whatsapp-button-animated {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.whatsapp-button-animated::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  z-index: -2;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) * 1));
+  background: conic-gradient(
+    from var(--angle),
+    #1E3A8A, /* navy-800 */
+    #FFD300, /* brand-yellow */
+    #60A5FA, /* navy-400 */
+    #1E3A8A  /* Loop back to navy-800 for a smooth transition */
+  );
+  animation: spin 6s linear infinite;
+}
+
+.whatsapp-button-animated::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 3px;
+  border-radius: 9999px;
+  background: #22c55e;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.whatsapp-button-animated:hover::after {
+  background: #16a34a;
 }

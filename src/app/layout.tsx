@@ -1,38 +1,40 @@
+// FILE: src/app/layout.tsx (REPLACE ENTIRE FILE)
+import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Script from 'next/script';
 import './globals.css';
+import LiveChatWidget from '@/components/ui/LiveChatWidget';
 
-const inter = Inter({ subsets: ['latin'], preload: true });
+// PERFORMANCE FIX: Set adjustFontFallback to true (boolean, not string)
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+  adjustFontFallback: true, 
+});
 
-export const metadata = {
-  title: 'Global Batteries Alberton',
-  description: 'Your trusted battery specialists in Alberton for cars, trucks, and solar solutions.',
+export const metadata: Metadata = {
+  title: {
+    default: 'Global Batteries Alberton | Your Trusted Battery Specialists',
+    template: '%s | Global Batteries Alberton',
+  },
+  description: 'Your trusted battery specialists in Alberton for cars, trucks, and solar solutions. We offer free testing, fitment, and expert advice on top brands like Willard, Exide, and Novax.',
+  metadataBase: new URL('https://www.globalbatteriesalberton.co.za'),
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={`${inter.variable} font-sans`}>
       <head>
         <link rel="preconnect" href="https://cdn.shopify.com" />
-        <link rel="preconnect" href="https://your-sanity-project-id.api.sanity.io" />
-        <link
-          rel="preload"
-          href="/fonts/inter-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body>
-        {children}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-          strategy="lazyOnload"
-        />
-        <Script
-          src="https://static.hotjar.com/c/hotjar-0.js?sv=6"
-          strategy="lazyOnload"
-        />
+      <body className="bg-white">
+        <main>{children}</main>
+        <LiveChatWidget />
       </body>
     </html>
   );

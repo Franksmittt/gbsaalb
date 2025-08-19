@@ -1,4 +1,4 @@
-// FILE: src/components/ui/LiveChatWidget.tsx
+// FILE: src/components/ui/LiveChatWidget.tsx (CREATE NEW FILE)
 "use client";
 
 import React, { useState, useEffect } from 'react';

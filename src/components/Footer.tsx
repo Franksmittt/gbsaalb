@@ -1,4 +1,4 @@
-// FILE: src/components/Footer.tsx
+// FILE: src/components/Footer.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
 import Link from 'next/link';
 import Icon from './ui/Icon';
@@ -15,17 +15,18 @@ export default function Footer() {
             <div className="space-y-4 text-sm text-gray-300">
               <div>
                 <p className="font-semibold text-white">Alberton (Main)</p>
-                <a href="tel:0118692427" className="hover:text-brand-yellow">Call: 011 869 2427</a><br/>
-                <a href="https://wa.me/27793203014" className="hover:text-brand-yellow">WhatsApp: 079 320 3014</a>
+                {/* ACCESSIBILITY FIX: Added padding to links */}
+                <a href="tel:0118692427" className="hover:text-brand-yellow inline-block py-1">Call: 011 869 2427</a><br/>
+                <a href="https://wa.me/27793203014" className="hover:text-brand-yellow inline-block py-1">WhatsApp: 079 320 3014</a>
               </div>
               <div>
                 <p className="font-semibold text-white">Vanderbijlpark</p>
-                <a href="tel:0160230161" className="hover:text-brand-yellow">Call: 016 023 0161</a><br/>
-                <a href="https://wa.me/27711394043" className="hover:text-brand-yellow">WhatsApp: 071 139 4043</a>
+                <a href="tel:0160230161" className="hover:text-brand-yellow inline-block py-1">Call: 016 023 0161</a><br/>
+                <a href="https://wa.me/27711394043" className="hover:text-brand-yellow inline-block py-1">WhatsApp: 071 139 4043</a>
               </div>
               <div>
                 <p className="font-semibold text-white">Sasolburg</p>
-                <a href="tel:0169762076" className="hover:text-brand-yellow">Call: 016 976 2076</a>
+                <a href="tel:0169762076" className="hover:text-brand-yellow inline-block py-1">Call: 016 976 2076</a>
               </div>
             </div>
           </div>
@@ -34,13 +35,14 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Shop</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link href="/shop?type=Automotive" className="hover:text-brand-yellow">Automotive Batteries</Link></li>
-              <li><Link href="/shop?type=Stop-Start" className="hover:text-brand-yellow">Stop-Start (AGM/EFB)</Link></li>
-              <li><Link href="/shop?type=Truck" className="hover:text-brand-yellow">Truck & Commercial</Link></li>
-              <li><Link href="/shop?type=Motorcycle" className="hover:text-brand-yellow">Motorcycle</Link></li>
-              <li><Link href="/shop?type=Security" className="hover:text-brand-yellow">Security & Gate</Link></li>
-              <li><Link href="/shop?type=Solar" className="hover:text-brand-yellow">Solar & Deep-Cycle</Link></li>
-              <li><Link href="/shop?type=Accessories" className="hover:text-brand-yellow">Accessories</Link></li>
+              {/* ACCESSIBILITY FIX: Added padding to links */}
+              <li><Link href="/shop?type=Automotive" className="hover:text-brand-yellow inline-block py-1">Automotive Batteries</Link></li>
+              <li><Link href="/shop?type=Stop-Start" className="hover:text-brand-yellow inline-block py-1">Stop-Start (AGM/EFB)</Link></li>
+              <li><Link href="/shop?type=Truck" className="hover:text-brand-yellow inline-block py-1">Truck & Commercial</Link></li>
+              <li><Link href="/shop?type=Motorcycle" className="hover:text-brand-yellow inline-block py-1">Motorcycle</Link></li>
+              <li><Link href="/shop?type=Security" className="hover:text-brand-yellow inline-block py-1">Security & Gate</Link></li>
+              <li><Link href="/shop?type=Solar" className="hover:text-brand-yellow inline-block py-1">Solar & Deep-Cycle</Link></li>
+              <li><Link href="/shop?type=Accessories" className="hover:text-brand-yellow inline-block py-1">Accessories</Link></li>
             </ul>
           </div>
 
@@ -48,13 +50,14 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Information</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link href="/about" className="hover:text-brand-yellow">About Us</Link></li>
-              <li><Link href="/blog" className="hover:text-brand-yellow">Expert Advice</Link></li>
-              <li><Link href="/faq" className="hover:text-brand-yellow">FAQ</Link></li>
-              <li><Link href="/contact" className="hover:text-brand-yellow">Contact Us</Link></li>
-              <li><Link href="/privacy-policy" className="hover:text-brand-yellow">Privacy Policy</Link></li>
-              <li><Link href="/refund-policy" className="hover:text-brand-yellow">Refund Policy</Link></li>
-              <li><Link href="/terms-of-service" className="hover:text-brand-yellow">Terms of Service</Link></li>
+              {/* ACCESSIBILITY FIX: Added padding to links */}
+              <li><Link href="/about" className="hover:text-brand-yellow inline-block py-1">About Us</Link></li>
+              <li><Link href="/blog" className="hover:text-brand-yellow inline-block py-1">Expert Advice</Link></li>
+              <li><Link href="/faq" className="hover:text-brand-yellow inline-block py-1">FAQ</Link></li>
+              <li><Link href="/contact" className="hover:text-brand-yellow inline-block py-1">Contact Us</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-brand-yellow inline-block py-1">Privacy Policy</Link></li>
+              <li><Link href="/refund-policy" className="hover:text-brand-yellow inline-block py-1">Refund Policy</Link></li>
+              <li><Link href="/terms-of-service" className="hover:text-brand-yellow inline-block py-1">Terms of Service</Link></li>
             </ul>
           </div>
 
@@ -73,7 +76,7 @@ export default function Footer() {
       </div>
       <div className="bg-gray-900 py-4 border-t border-gray-700">
         <div className="container mx-auto px-4 text-center text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} Global Batteries Alberton. All Rights Reserved.
+          © {new Date().getFullYear()} Global Batteries Alberton. All Rights Reserved.
         </div>
       </div>
     </footer>

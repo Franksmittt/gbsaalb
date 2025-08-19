@@ -22,6 +22,7 @@ export interface Product {
     weight_kg?: string;
     terminal_layout?: string; 
     hold_down?: string;
+    discount?: string;
   };
 }
 
@@ -42,4 +43,14 @@ export interface Testimonial {
   quote: string;
   avatarUrl: string;
   branch?: 'Alberton' | 'Vanderbijlpark' | 'Sasolburg';
+}
+
+// FIX: Added the missing BlogPost interface
+export interface BlogPost {
+  id: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  imageUrl: string;
+  href: string;
 }

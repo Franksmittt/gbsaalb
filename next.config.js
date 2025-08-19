@@ -1,23 +1,49 @@
-// FILE: next.config.js
+// FILE: next.config.js (REPLACE ENTIRE FILE)
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  compress: true,
   images: {
-    // This is the correct way to whitelist image domains
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'cdn.shopify.com',
-        port: '',
         pathname: '/**',
       },
-       {
+      {
         protocol: 'https',
         hostname: 'placehold.co',
-        port: '',
         pathname: '/**',
-      }
+      },
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  // START: Add this headers configuration
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+        ],
+      },
+    ];
+  },
+  // END: Add this headers configuration
 };
 
 export default nextConfig;

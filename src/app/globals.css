@@ -13,14 +13,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* PERFORMANCE FIX: Simplified keyframes to only animate 'transform' */
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .whatsapp-button-animated {
@@ -38,15 +33,7 @@ body {
   height: 200%;
   z-index: -2;
   transform-origin: center center;
-  /* PERFORMANCE FIX: Removed dynamic angle from gradient */
-  background: conic-gradient(
-    from 0deg,
-    #1E3A8A,
-    #FFD300,
-    #60A5FA,
-    #1E3A8A
-  );
-  /* PERFORMANCE FIX: Animation now directly targets transform */
+  background: conic-gradient(from 0deg, #1E3A8A, #FFD300, #60A5FA, #1E3A8A);
   animation: spin 6s linear infinite;
 }
 
@@ -105,7 +92,6 @@ body {
   box-shadow: 0 0 0 2px #334155;
 }
 
-/* --- Simple Fade-in Animation --- */
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -116,5 +102,104 @@ body {
 }
 
 .animate-fade-in-fast {
-    animation: fade-in 0.3s ease-out forwards;
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* --- Testimonial Scroller Styles --- */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-384px * 10)); }
+}
+
+.scroller {
+  max-width: 100%;
+}
+
+.scroller__inner {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  animation: scroll 60s linear infinite;
+}
+
+.scroller:hover .scroller__inner {
+  animation-play-state: paused;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+/* --- Featured Product Card Styles --- */
+.product-card-gradient {
+  background: linear-gradient(145deg, #1e3a5f, #172a46);
+}
+
+.product-image-blend {
+  mix-blend-mode: multiply;
+}
+
+/* --- Branch Status Indicator Styles --- */
+.status-indicator {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-left: 0.75rem;
+}
+.status-open {
+    background-color: #10B981; /* Tailwind Emerald-500 */
+    color: #FFFFFF;
+}
+.status-closed {
+    background-color: #475569; /* Tailwind Slate-600 */
+    color: #E2E8F0; /* Tailwind Slate-200 */
+}
+
+/* --- NEW: Brand Card Styles --- */
+.brand-card {
+    background-color: #172A46; /* navy-850 */
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem; /* same as rounded-lg */
+    padding: 2px; /* border thickness */
+    background: linear-gradient(45deg, #FFFFFF, #334155, #FFFFFF);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(23, 42, 70, 0.4);
+}
+
+.brand-card:hover::before {
+    opacity: 1;
+}
+
+.brand-logo {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%) contrast(1.2) brightness(0.7);
+}
+
+.brand-card:hover .brand-logo {
+    transform: scale(1.05);
+    filter: grayscale(0%) contrast(1) brightness(1);
 }

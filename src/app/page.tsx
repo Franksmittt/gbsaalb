@@ -7,35 +7,36 @@ import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import InteractiveBatteryFinder from '@/components/features/InteractiveBatteryFinder';
-import TrustAndValue from '@/components/home/TrustAndValue';
-import CategoryHighlights from '@/components/home/CategoryHighlights';
+import TheGlobalBatteriesAdvantage from '@/components/home/TheGlobalBatteriesAdvantage';
 import BrandShowcase from '@/components/home/BrandShowcase';
-import ServiceHub from '@/components/home/ServiceHub';
 import BlogTeaser from '@/components/home/BlogTeaser';
-import Testimonials from '@/components/home/Testimonials'; // <-- IMPORT THE NEW COMPONENT
+import Testimonials from '@/components/home/Testimonials';
 import BatteryHealthCalculator from '@/components/tools/BatteryHealthCalculator';
+import VisitOurBranches from '@/components/home/VisitOurBranches';
+import FeaturedProducts from '@/components/home/FeaturedProducts';
+import CTA from '@/components/home/CTA'; // Import the new CTA component
 import Footer from '@/components/Footer';
 
-// Dynamically import the Bestsellers component
-const Bestsellers = dynamic(() => import('@/components/home/Bestsellers'));
+const LazyLoad = dynamic(() => import('@/components/utils/LazyLoad'));
 
-export const metadata: Metadata = {
-  title: 'Global Batteries Alberton | Car, Truck & Solar Batteries',
-  description: 'Your #1 battery specialist in Alberton. We stock top brands like Willard, Exide & Novax with free testing & fitment. Powering your world with unbeatable service.',
-};
-
-// Mock data for the Bestsellers component
 const bestsellingProducts: Product[] = [
-    { id: 'novax-premium-628', name: 'Novax Premium 628 Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Novax Premium', price: 1750.00, imageUrl: '/images/brand-novax-premium.jpg', description: 'High-performance battery with a 26-month warranty.', warranty: '26-Month Warranty', stock_status: 'In Stock', specs: { cca: '450', ah: '50' }, },
-    { id: 'willard-652', name: 'Willard 652 Car Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Willard', price: 2100.00, imageUrl: '/images/brand-willard.jpg', description: 'The trusted choice for South African drivers, offering reliability and a 25-month warranty.', warranty: '25-Month Warranty', stock_status: 'In Stock', specs: { cca: '580', ah: '65' }, },
-    { id: 'exide-616', name: 'Exide 616 EFB Start-Stop Battery', category: ['Automotive'], type: ['Stop-Start'], brand: 'Exide', price: 2450.00, imageUrl: '/images/brand-exide.jpg', description: 'Enhanced Flooded Battery designed for vehicles with Start-Stop technology.', warranty: '24-Month Warranty', stock_status: 'In Stock', specs: { cca: '360', ah: '40' }, },
-    { id: 'global-619c', name: 'GLOBAL 619C Maintenance-Free Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Global Batteries', price: 1150.00, imageUrl: 'https://cdn.shopify.com/s/files/1/0245/6915/1569/files/global-619-242470_46dbe2c8-c170-4082-a6f3-3f5f8877ae27.jpg?v=1741347595', description: '12V, 42Ah, 314CCA. A reliable choice for a wide range of popular passenger vehicles.', warranty: '12-Month Warranty', stock_status: 'In Stock', specs: { cca: '314', ah: '42' }, },
-    { id: 'novax-639', name: 'Novax 639 Low-Maintenance Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Novax', price: 1700.00, imageUrl: 'https://cdn.shopify.com/s/files/1/0245/6915/1569/files/639.jpg?v=1741347635', description: '12V, 60Ah, 510CCA. Robust power for demanding South African conditions.', warranty: '18-Month Warranty', stock_status: 'In Stock', specs: { cca: '510', ah: '60' }, },
+    // Automotive
+    { id: 'willard-652', name: 'Willard 652 Car Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Willard', price: 1750.00, imageUrl: 'https://cdn.shopify.com/s/files/1/0245/6915/1569/products/willard-automotive-willard-652-12882776621137.jpg?v=1741347546', description: 'The trusted choice for South African drivers, offering reliability and a 25-month warranty.', warranty: '25-Month Warranty', stock_status: 'In Stock', specs: { cca: '520', ah: '62' }, },
+    { id: 'novax-premium-628', name: 'Novax Premium 628 Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Novax Premium', price: 1400.00, imageUrl: 'https://cdn.shopify.com/s/files/1/0245/6915/1569/products/novax-premium-automotive-novax-premium-628-12882776621137.jpg?v=1741347546', description: 'High-performance battery with a 26-month warranty.', warranty: '26-Month Warranty', stock_status: 'In Stock', specs: { cca: '375', ah: '45' }, },
+    { id: 'exide-652c', name: 'Exide 652C', category: ['Automotive'], type: ['Automotive'], brand: 'Exide', price: 1650.00, imageUrl: 'https://cdn.shopify.com/s/files/1/0245/6915/1569/products/exide-automotive-exide-652c-12882776621137.jpg?v=1741347546', description: 'Enhanced Flooded Battery designed for vehicles with Start-Stop technology.', warranty: '24-Month Warranty', stock_status: 'In Stock', specs: { cca: '516', ah: '62' }, },
+    { id: 'global-619c', name: 'GLOBAL 619', category: ['Automotive'], type: ['Automotive'], brand: 'Global Batteries', price: 1050.00, imageUrl: 'https://cdn.shopify.com/s/files/1/0245/6915/1569/products/global-automotive-global-619c-12882776621137.jpg?v=1741347546', description: '12V, 42Ah, 314CCA. A reliable choice for a wide range of popular passenger vehicles.', warranty: '12-Month Warranty', stock_status: 'In Stock', specs: { cca: '314', ah: '42' }, },
+    
+    // Truck & Commercial
     { id: 'willard-668', name: 'Willard 668 Truck Battery', category: ['Truck'], type: ['Truck'], brand: 'Willard', price: 3200.00, imageUrl: '/images/category/truck-commercial.jpg', description: 'Heavy-duty performance for commercial vehicles and trucks.', warranty: '25-Month Warranty', stock_status: 'In Stock', specs: { cca: '830', ah: '102' }, },
-    { id: 'enertec-ytx9', name: 'Enertec YTX9-BS Motorcycle Battery', category: ['Motorcycle'], type: ['Motorcycle'], brand: 'Enertec', price: 750.00, imageUrl: '/images/category/motorcycle.jpg', description: 'AGM technology for high-performance bikes and leisure craft.', warranty: '12-Month Warranty', stock_status: 'In Stock', specs: { cca: '135', ah: '8' }, },
-    { id: 'novax-658', name: 'Novax 658 Bakkie Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Novax', price: 1850.00, imageUrl: '/images/logo-novax.png', description: 'A popular and reliable choice for most light commercial vehicles and bakkies.', warranty: '18-Month Warranty', stock_status: 'In Stock', specs: { cca: '510', ah: '68' }, },
-    { id: 'exide-646', name: 'Exide 646 European Standard Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Exide', price: 1950.00, imageUrl: '/images/brand-exide.jpg', description: 'Designed for European vehicle models requiring specific fitment.', warranty: '24-Month Warranty', stock_status: 'In Stock', specs: { cca: '540', ah: '60' }, },
-    { id: 'novax-premium-652', name: 'Novax Premium 652 High-Performance', category: ['Automotive'], type: ['Automotive'], brand: 'Novax Premium', price: 1999.00, imageUrl: '/images/brand-novax-premium.jpg', description: 'Maximum power and longevity with our best 26-month warranty.', warranty: '26-Month Warranty', stock_status: 'In Stock', specs: { cca: '610', ah: '65' }, }
+
+    // Motorcycle
+    { id: 'enertec-ytx14', name: 'Enertec YTX14-BS High Output', category: ['Motorcycle'], type: ['Motorcycle'], brand: 'Enertec', price: 950.00, imageUrl: 'https://placehold.co/400x400/ffffff/172A46?text=YTX14', description: 'High output AGM battery for larger motorcycles and ATVs.', warranty: '12-Month Warranty', stock_status: 'In Stock', specs: { cca: '200', ah: '12' }, },
+
+    // Solar & Backup
+    { id: 'royal-100ah-dc', name: 'Royal 100Ah Deep Cycle', category: ['Solar'], type: ['Solar'], brand: 'Royal', price: 2500.00, imageUrl: 'https://placehold.co/400x400/ffffff/172A46?text=100Ah', description: '12V 100Ah Deep Cycle | Solar & Inverter', warranty: '12-Month Warranty', stock_status: 'In Stock', specs: { cca: 'N/A', ah: '100' }, },
+
+    // Security
+    { id: 'enertec-7ah', name: 'Enertec 7.2Ah Security Battery', category: ['Security'], type: ['Security'], brand: 'Enertec', price: 350.00, imageUrl: 'https://placehold.co/400x400/ffffff/172A46?text=7.2Ah', description: '12V 7.2Ah | Gate Motors & Alarms', warranty: '12-Month Warranty', stock_status: 'In Stock', specs: { cca: 'N/A', ah: '7.2' }, },
 ];
 
 export default function HomePage() {
@@ -45,15 +46,31 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <InteractiveBatteryFinder />
-        <TrustAndValue />
-        <Bestsellers products={bestsellingProducts} />
-        <CategoryHighlights />
+        
+        <LazyLoad placeholderHeight="600px">
+          <TheGlobalBatteriesAdvantage />
+        </LazyLoad>
+        
+        <LazyLoad placeholderHeight="800px">
+          <FeaturedProducts products={bestsellingProducts} />
+        </LazyLoad>
+
         <BrandShowcase />
-        <ServiceHub />
+
+        <LazyLoad placeholderHeight="700px">
+          <Testimonials />
+        </LazyLoad>
+        
         <BlogTeaser />
-        {/* NEW COMPONENT ADDED HERE */}
-        <Testimonials />
         <BatteryHealthCalculator />
+        
+        <div id="branches"> {/* Added ID for anchor link */}
+            <LazyLoad placeholderHeight="600px">
+                <VisitOurBranches />
+            </LazyLoad>
+        </div>
+
+        <CTA /> {/* Added the new CTA component */}
       </main>
       <Footer />
     </>

@@ -1,4 +1,4 @@
-// FILE: src/components/ui/LiveChatWidget.tsx (CREATE NEW FILE)
+// FILE: src/components/ui/LiveChatWidget.tsx (CREATE OR REPLACE)
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -7,7 +7,6 @@ import Image from 'next/image';
 const LiveChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Show a welcome message bubble after a short delay
   useEffect(() => {
     const timer = setTimeout(() => {
         setIsOpen(true);
@@ -20,7 +19,7 @@ const LiveChatWidget = () => {
     window.open('https://wa.me/27793203014', '_blank', 'noopener,noreferrer');
     setIsOpen(false);
   };
-  
+
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end">
         {/* Chat bubble message */}

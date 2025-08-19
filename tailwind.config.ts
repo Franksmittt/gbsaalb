@@ -11,18 +11,19 @@ const config: Config = {
     extend: {
       colors: {
         'navy': {
-          '900': '#0F172A', // A darker navy for backgrounds
-          '800': '#1E3A8A', // Primary Navy Blue
-          '700': '#1D4ED8', // Secondary Navy Blue
-          '400': '#60A5FA', // Lighter accent
+          '950': '#0A192F', // New: For the darkest backgrounds
+          '900': '#0F172A', 
+          '850': '#172A46', // New: For cards and slightly lighter elements
+          '800': '#1E3A8A', 
+          '700': '#1D4ED8', 
+          '400': '#60A5FA', 
         },
         'brand': {
-          'yellow': '#FFD300', // Primary Accent Yellow
+          'yellow': '#FFD300', 
         },
-        // Semantic color names for universal styling
-        primary: '#1E3A8A', // navy-800
-        secondary: '#1D4ED8', // navy-700
-        accent: '#FFD300', // brand-yellow
+        primary: '#1E3A8A', 
+        secondary: '#1D4ED8', 
+        accent: '#FFD300', 
         'neutral-black': '#000000',
         'neutral-white': '#FFFFFF',
       },
@@ -49,7 +50,7 @@ const config: Config = {
         },
       },
       animation: {
-        'spin-slow': 'spin-slow 8s linear infinite', // Slower spin for hero buttons
+        'spin-slow': 'spin-slow 8s linear infinite',
         'marquee': 'marquee 50s linear infinite',
         'marquee-reverse': 'marquee-reverse 50s linear infinite',
         'background-pan': 'background-pan 15s linear infinite',
@@ -59,4 +60,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

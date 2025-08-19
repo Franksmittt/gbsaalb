@@ -1,0 +1,83 @@
+// FILE: src/components/home/FeaturedProducts.tsx (CREATE NEW FILE)
+'use client';
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Product } from '@/types';
+
+const ProductCard = ({ product, isBestSeller }: { product: Product; isBestSeller?: boolean }) => (
+    <div className="product-card-gradient rounded-lg border border-slate-700/50 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-navy-950/50 relative overflow-hidden">
+        {isBestSeller && <div className="absolute top-4 right-4 bg-white text-navy-950 px-3 py-1 rounded-full text-xs font-semibold uppercase z-10">Best Seller</div>}
+        <div className="bg-white p-4">
+            <Link href={`/shop/${product.id}`}>
+                <Image 
+                    src={product.imageUrl} 
+                    alt={product.name} 
+                    width={400} 
+                    height={400} 
+                    className="w-full h-48 object-contain product-image-blend"
+                />
+            </Link>
+        </div>
+        <div className="p-6 flex flex-col flex-grow">
+            <h3 className="font-bold text-lg text-white">{product.name}</h3>
+            <p className="text-slate-400 text-sm mb-4 h-10">{product.warranty} | {product.specs.ah}Ah {product.specs.cca}CCA</p>
+            <p className="text-3xl font-bold text-white mb-6 mt-auto">R{product.price.toFixed(2)}</p>
+            <Link href={`/shop/${product.id}`} className="border border-white text-white font-semibold py-2 px-6 rounded-md w-full text-center transition-colors hover:bg-white hover:text-navy-950">
+                View Product
+            </Link>
+        </div>
+    </div>
+);
+
+type CategoryTab = 'automotive' | 'commercial' | 'leisure' | 'backup' | 'security';
+
+export default function FeaturedProducts({ products }: { products: Product[] }) {
+    const [activeTab, setActiveTab] = useState<CategoryTab>('automotive');
+
+    const tabs: { id: CategoryTab; label: string; type: string }[] = [
+        { id: 'automotive', label: 'Automotive', type: 'Automotive' },
+        { id: 'commercial', label: 'Truck & Commercial', type: 'Truck' },
+        { id: 'leisure', label: 'Motorcycle & Leisure', type: 'Motorcycle' },
+        { id: 'backup', label: 'Solar & Backup', type: 'Solar' },
+        { id: 'security', label: 'Security', type: 'Security' },
+    ];
+
+    return (
+        <section className="w-full bg-navy-950">
+            <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Featured Power Solutions</h2>
+                    <p className="text-slate-400 mt-4 text-lg max-w-3xl mx-auto">A curated selection of our most trusted and popular batteries for every need, available now in Alberton.</p>
+                </div>
+
+                <div className="flex flex-wrap justify-center border-b border-slate-700 mb-12">
+                    {tabs.map(tab => (
+                        <button 
+                            key={tab.id}
+                            onClick={() => setActiveTab(tab.id)}
+                            className={`font-semibold py-4 px-6 transition-all duration-300 border-b-2 ${activeTab === tab.id ? 'text-white border-white' : 'text-slate-400 border-transparent hover:text-white hover:border-slate-700'}`}
+                        >
+                            {tab.label}
+                        </button>
+                    ))}
+                </div>
+
+                <div>
+                    {tabs.map(tab => (
+                        <div key={tab.id} className={`${activeTab === tab.id ? 'grid' : 'hidden'} grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-in-fast`}>
+                            {products
+                                .filter(p => p.type.includes(tab.type))
+                                .slice(0, 4) // Show up to 4 products per tab
+                                .map((product, index) => (
+                                    <ProductCard key={product.id} product={product} isBestSeller={tab.id === 'automotive' && index === 0} />
+                                ))
+                            }
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

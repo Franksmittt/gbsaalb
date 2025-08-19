@@ -3,68 +3,74 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// Updated and expanded list of brands
 const brands = [
   {
     name: 'Willard Batteries',
     logoUrl: '/images/logo-willard.png',
     href: '/brands/willard',
-    width: 140,
-    height: 40
   },
   {
     name: 'Exide Batteries',
     logoUrl: '/images/brand-exide.jpg',
     href: '/brands/exide',
-    width: 130,
-    height: 40
   },
   {
     name: 'Novax Premium Batteries',
     logoUrl: '/images/logo-novax.png',
     href: '/brands/novax-premium',
-    width: 150,
-    height: 40
   },
   {
-    name: 'Enertec Motorcycle Batteries',
-    logoUrl: '/images/logo-placeholder.png', // Placeholder - replace when you have the Enertec logo
-    href: '/brands/enertec',
-    width: 140,
-    height: 40
+    name: 'Novax Batteries',
+    logoUrl: '/images/logo-novax.jpg', // Using alternate logo
+    href: '/brands/novax',
   },
   {
     name: 'Global Batteries',
-    logoUrl: '/images/logo-placeholder.png', // Placeholder - replace with your own Global Batteries logo
+    logoUrl: '/images/logo-placeholder.png', // Placeholder
     href: '/brands/global',
-    width: 150,
-    height: 40
+  },
+  {
+    name: 'Enertec Batteries',
+    logoUrl: '/images/logo-placeholder.png', // Placeholder
+    href: '/brands/enertec',
+  },
+  {
+    name: 'Royal Batteries',
+    logoUrl: '/images/logo-placeholder.png', // Placeholder
+    href: '/brands/royal',
+  },
+  {
+    name: 'Forbatt Batteries',
+    logoUrl: '/images/logo-placeholder.png', // Placeholder
+    href: '/brands/forbatt',
   },
 ];
 
 const BrandShowcase = () => {
   return (
-    <div className="bg-white">
-      <div className="container mx-auto px-4 py-16 sm:py-20">
-        <h2 className="text-center text-2xl font-bold text-navy-900 sm:text-3xl">
-          Featuring South Africa's Most Trusted Brands
-        </h2>
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-10 gap-x-8 justify-items-center">
-          {brands.map((brand) => (
-            <Link key={brand.name} href={brand.href} className="flex items-center justify-center">
-              <Image
-                src={brand.logoUrl}
-                alt={`${brand.name} logo`}
-                width={brand.width}
-                height={brand.height}
-                style={{ objectFit: 'contain' }}
-                className="filter grayscale transition-all duration-300 hover:grayscale-0 hover:scale-110"
-                unoptimized={true} 
-              />
-            </Link>
-          ))}
+    <section className="w-full bg-navy-950">
+        <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+            <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Featuring South Africa's Most Trusted Battery Brands</h2>
+                <p className="text-slate-400 mt-4 text-lg max-w-3xl mx-auto">As official stockists for <strong>Willard</strong>, <strong>Exide</strong>, and <strong>Novax</strong>, we provide authentic products backed by nationwide warranties and expert fitment.</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {brands.map((brand) => (
+                    <Link key={brand.name} href={brand.href} className="brand-card p-8 rounded-lg flex items-center justify-center aspect-video">
+                        <Image
+                            src={brand.logoUrl}
+                            alt={`${brand.name} logo`}
+                            width={200}
+                            height={100}
+                            className="brand-logo max-h-16 w-auto object-contain"
+                            unoptimized={true} 
+                        />
+                    </Link>
+                ))}
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
   );
 };
 

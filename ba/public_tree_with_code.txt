@@ -1,0 +1,1564 @@
+# Tree for: C:\Users\shop\Desktop\global-batteries-alberton\public
+
+public/
+├── data/
+├── icons/
+├── images/
+├── file.svg
+├── globe.svg
+├── manifest.json
+├── next.svg
+├── sw.js
+├── vercel.svg
+├── window.svg
+└── workbox-4754cb34.js
+    └── abarth.json
+    ├── car_battery_icon.png
+    ├── whatsapp.png
+    └── whatsapp.svg
+    ├── blog/
+    ├── category/
+    ├── process/
+    ├── brand-exide.jpg
+    ├── brand-novax-premium.jpg
+    ├── brand-willard.jpg
+    ├── dashboard-bg.jpg
+    ├── logo-novax.jpg
+    ├── logo-novax.png
+    ├── logo-willard.png
+    ├── megamenu-featured.jpg
+    ├── sample-report.jpg
+    ├── sample-report.png
+    ├── technician-smiling.jpg
+    └── technician-testing.jpg
+        ├── clean-terminals.jpg
+        ├── start-stop-battery.jpg
+        └── warning-signs.jpg
+        ├── automotive.jpg
+        ├── automotive.png
+        ├── motorcycle.jpg
+        ├── security-gate.jpg
+        ├── solar-deep-cycle.jpg
+        ├── stop-start.jpg
+        ├── stop-start.png
+        └── truck-commercial.jpg
+        ├── step1-arrive.jpg
+        ├── step2-test.jpg
+        └── step3-drive.jpg
+
+
+# File contents
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\file.svg
+SIZE: 391 bytes
+--------------------------------------------------------------------------------
+<svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 13.5V5.41a1 1 0 0 0-.3-.7L9.8.29A1 1 0 0 0 9.08 0H1.5v13.5A2.5 2.5 0 0 0 4 16h8a2.5 2.5 0 0 0 2.5-2.5m-1.5 0v-7H8v-5H3v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1M9.5 5V2.12L12.38 5zM5.13 5h-.62v1.25h2.12V5zm-.62 3h7.12v1.25H4.5zm.62 3h-.62v1.25h7.12V11z" clip-rule="evenodd" fill="#666" fill-rule="evenodd"/></svg>
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\globe.svg
+SIZE: 1035 bytes
+--------------------------------------------------------------------------------
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.27 14.1a6.5 6.5 0 0 0 3.67-3.45q-1.24.21-2.7.34-.31 1.83-.97 3.1M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.48-1.52a7 7 0 0 1-.96 0H7.5a4 4 0 0 1-.84-1.32q-.38-.89-.63-2.08a40 40 0 0 0 3.92 0q-.25 1.2-.63 2.08a4 4 0 0 1-.84 1.31zm2.94-4.76q1.66-.15 2.95-.43a7 7 0 0 0 0-2.58q-1.3-.27-2.95-.43a18 18 0 0 1 0 3.44m-1.27-3.54a17 17 0 0 1 0 3.64 39 39 0 0 1-4.3 0 17 17 0 0 1 0-3.64 39 39 0 0 1 4.3 0m1.1-1.17q1.45.13 2.69.34a6.5 6.5 0 0 0-3.67-3.44q.65 1.26.98 3.1M8.48 1.5l.01.02q.41.37.84 1.31.38.89.63 2.08a40 40 0 0 0-3.92 0q.25-1.2.63-2.08a4 4 0 0 1 .85-1.32 7 7 0 0 1 .96 0m-2.75.4a6.5 6.5 0 0 0-3.67 3.44 29 29 0 0 1 2.7-.34q.31-1.83.97-3.1M4.58 6.28q-1.66.16-2.95.43a7 7 0 0 0 0 2.58q1.3.27 2.95.43a18 18 0 0 1 0-3.44m.17 4.71q-1.45-.12-2.69-.34a6.5 6.5 0 0 0 3.67 3.44q-.65-1.27-.98-3.1" fill="#666"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\manifest.json
+SIZE: 545 bytes
+--------------------------------------------------------------------------------
+{
+  "name": "Global Batteries Alberton",
+  "short_name": "GB Alberton",
+  "description": "Your trusted battery specialists in Alberton for cars, trucks, and solar solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1E3A8A",
+  "icons": [
+    {
+      "src": "/images/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\next.svg
+SIZE: 1375 bytes
+--------------------------------------------------------------------------------
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80"><path fill="#000" d="M262 0h68.5v12.7h-27.2v66.6h-13.6V12.7H262V0ZM149 0v12.7H94v20.4h44.3v12.6H94v21h55v12.6H80.5V0h68.7zm34.3 0h-17.8l63.8 79.4h17.9l-32-39.7 32-39.6h-17.9l-23 28.6-23-28.6zm18.3 56.7-9-11-27.1 33.7h17.8l18.3-22.7z"/><path fill="#000" d="M81 79.3 17 0H0v79.3h13.6V17l50.2 62.3H81Zm252.6-.4c-1 0-1.8-.4-2.5-1s-1.1-1.6-1.1-2.6.3-1.8 1-2.5 1.6-1 2.6-1 1.8.3 2.5 1a3.4 3.4 0 0 1 .6 4.3 3.7 3.7 0 0 1-3 1.8zm23.2-33.5h6v23.3c0 2.1-.4 4-1.3 5.5a9.1 9.1 0 0 1-3.8 3.5c-1.6.8-3.5 1.3-5.7 1.3-2 0-3.7-.4-5.3-1s-2.8-1.8-3.7-3.2c-.9-1.3-1.4-3-1.4-5h6c.1.8.3 1.6.7 2.2s1 1.2 1.6 1.5c.7.4 1.5.5 2.4.5 1 0 1.8-.2 2.4-.6a4 4 0 0 0 1.6-1.8c.3-.8.5-1.8.5-3V45.5zm30.9 9.1a4.4 4.4 0 0 0-2-3.3 7.5 7.5 0 0 0-4.3-1.1c-1.3 0-2.4.2-3.3.5-.9.4-1.6 1-2 1.6a3.5 3.5 0 0 0-.3 4c.3.5.7.9 1.3 1.2l1.8 1 2 .5 3.2.8c1.3.3 2.5.7 3.7 1.2a13 13 0 0 1 3.2 1.8 8.1 8.1 0 0 1 3 6.5c0 2-.5 3.7-1.5 5.1a10 10 0 0 1-4.4 3.5c-1.8.8-4.1 1.2-6.8 1.2-2.6 0-4.9-.4-6.8-1.2-2-.8-3.4-2-4.5-3.5a10 10 0 0 1-1.7-5.6h6a5 5 0 0 0 3.5 4.6c1 .4 2.2.6 3.4.6 1.3 0 2.5-.2 3.5-.6 1-.4 1.8-1 2.4-1.7a4 4 0 0 0 .8-2.4c0-.9-.2-1.6-.7-2.2a11 11 0 0 0-2.1-1.4l-3.2-1-3.8-1c-2.8-.7-5-1.7-6.6-3.2a7.2 7.2 0 0 1-2.4-5.7 8 8 0 0 1 1.7-5 10 10 0 0 1 4.3-3.5c2-.8 4-1.2 6.4-1.2 2.3 0 4.4.4 6.2 1.2 1.8.8 3.2 2 4.3 3.4 1 1.4 1.5 3 1.5 5h-5.8z"/></svg>
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\sw.js
+SIZE: 11115 bytes
+--------------------------------------------------------------------------------
+if(!self.define){let e,a={};const s=(s,i)=>(s=new URL(s+".js",i).href,a[s]||new Promise(a=>{if("document"in self){const e=document.createElement("script");e.src=s,e.onload=a,document.head.appendChild(e)}else e=s,importScripts(s),a()}).then(()=>{let e=a[s];if(!e)throw new Error(`Module ${s} didn’t register its module`);return e}));self.define=(i,c)=>{const n=e||("document"in self?document.currentScript.src:"")||location.href;if(a[n])return;let t={};const r=e=>s(e,n),d={module:{uri:n},exports:t,require:r};a[n]=Promise.all(i.map(e=>d[e]||r(e))).then(e=>(c(...e),t))}}define(["./workbox-4754cb34"],function(e){"use strict";importScripts(),self.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"/_next/app-build-manifest.json",revision:"09f09cad7c515defac2173e32f6c210b"},{url:"/_next/static/chunks/133.a279efa6c96804cb.js",revision:"a279efa6c96804cb"},{url:"/_next/static/chunks/341.2870a8d69da724c3.js",revision:"2870a8d69da724c3"},{url:"/_next/static/chunks/472.a3826d29d6854395.js",revision:"a3826d29d6854395"},{url:"/_next/static/chunks/4bd1b696-cf72ae8a39fa05aa.js",revision:"cf72ae8a39fa05aa"},{url:"/_next/static/chunks/615-0ab7e824eb1cace7.js",revision:"0ab7e824eb1cace7"},{url:"/_next/static/chunks/766-62c35d26db8f5f24.js",revision:"62c35d26db8f5f24"},{url:"/_next/static/chunks/874-88e24f0e286df0b2.js",revision:"88e24f0e286df0b2"},{url:"/_next/static/chunks/964-7a34cadcb7695cec.js",revision:"7a34cadcb7695cec"},{url:"/_next/static/chunks/app/_not-found/page-767001a0152e5e50.js",revision:"767001a0152e5e50"},{url:"/_next/static/chunks/app/about/page-6d2a64e32eebdb8f.js",revision:"6d2a64e32eebdb8f"},{url:"/_next/static/chunks/app/blog/%5Bslug%5D/page-938010ddc56e1652.js",revision:"938010ddc56e1652"},{url:"/_next/static/chunks/app/blog/page-4f3391a0b77ca6e7.js",revision:"4f3391a0b77ca6e7"},{url:"/_next/static/chunks/app/brands/enertec/page-d7130e36dcfe129a.js",revision:"d7130e36dcfe129a"},{url:"/_next/static/chunks/app/brands/exide/page-71d99da4d55a4f97.js",revision:"71d99da4d55a4f97"},{url:"/_next/static/chunks/app/brands/novax-premium/page-52d17033249ae3a0.js",revision:"52d17033249ae3a0"},{url:"/_next/static/chunks/app/brands/novax/page-919f27635df27ef4.js",revision:"919f27635df27ef4"},{url:"/_next/static/chunks/app/brands/page-dab55dcb86263b53.js",revision:"dab55dcb86263b53"},{url:"/_next/static/chunks/app/brands/willard/page-523423d57078ccb3.js",revision:"523423d57078ccb3"},{url:"/_next/static/chunks/app/collection-terms/page-68628b30fb9d3a80.js",revision:"68628b30fb9d3a80"},{url:"/_next/static/chunks/app/contact/page-6cce63d73f731b9f.js",revision:"6cce63d73f731b9f"},{url:"/_next/static/chunks/app/faq/page-aee735f42b5f7a40.js",revision:"aee735f42b5f7a40"},{url:"/_next/static/chunks/app/layout-21a8668c1ebe0aa6.js",revision:"21a8668c1ebe0aa6"},{url:"/_next/static/chunks/app/page-ac8b0b489ca35f04.js",revision:"ac8b0b489ca35f04"},{url:"/_next/static/chunks/app/privacy-policy/page-cd40cebece1a620f.js",revision:"cd40cebece1a620f"},{url:"/_next/static/chunks/app/products/%5BproductId%5D/page-2937af81ba765628.js",revision:"2937af81ba765628"},{url:"/_next/static/chunks/app/refund-policy/page-4fb7f66409046c52.js",revision:"4fb7f66409046c52"},{url:"/_next/static/chunks/app/services/battery-terminal-repair/page-266e96a809a3b96e.js",revision:"266e96a809a3b96e"},{url:"/_next/static/chunks/app/services/free-battery-testing/page-59238cedb132f3e6.js",revision:"59238cedb132f3e6"},{url:"/_next/static/chunks/app/shipping-policy/page-0c99a6b388969375.js",revision:"0c99a6b388969375"},{url:"/_next/static/chunks/app/shop/page-efa8cda4d95dfce0.js",revision:"efa8cda4d95dfce0"},{url:"/_next/static/chunks/app/terms-of-service/page-9cbabc38645424f6.js",revision:"9cbabc38645424f6"},{url:"/_next/static/chunks/framework-f75312fc4004b783.js",revision:"f75312fc4004b783"},{url:"/_next/static/chunks/main-947965ecb4ad3ee4.js",revision:"947965ecb4ad3ee4"},{url:"/_next/static/chunks/main-app-902d14cf17ffe6b8.js",revision:"902d14cf17ffe6b8"},{url:"/_next/static/chunks/pages/_app-663ec5428c344dae.js",revision:"663ec5428c344dae"},{url:"/_next/static/chunks/pages/_error-3b990c2c9298b359.js",revision:"3b990c2c9298b359"},{url:"/_next/static/chunks/polyfills-42372ed130431b0a.js",revision:"846118c33b2c0e922d7b3a7676f81f6f"},{url:"/_next/static/chunks/webpack-87dbc8e57f0222df.js",revision:"87dbc8e57f0222df"},{url:"/_next/static/css/02712dffef141327.css",revision:"02712dffef141327"},{url:"/_next/static/fUOF6XzMtLF56kIkrhigr/_buildManifest.js",revision:"68de73ac72eafc348cd5ff925e77f09d"},{url:"/_next/static/fUOF6XzMtLF56kIkrhigr/_ssgManifest.js",revision:"b6652df95db52feb4daf4eca35380933"},{url:"/_next/static/media/26a46d62cd723877-s.woff2",revision:"befd9c0fdfa3d8a645d5f95717ed6420"},{url:"/_next/static/media/55c55f0601d81cf3-s.woff2",revision:"43828e14271c77b87e3ed582dbff9f74"},{url:"/_next/static/media/581909926a08bbc8-s.woff2",revision:"f0b86e7c24f455280b8df606b89af891"},{url:"/_next/static/media/8e9860b6e62d6359-s.woff2",revision:"01ba6c2a184b8cba08b0d57167664d75"},{url:"/_next/static/media/97e0cb1ae144a2a9-s.woff2",revision:"e360c61c5bd8d90639fd4503c829c2dc"},{url:"/_next/static/media/df0a9ae256c0569c-s.woff2",revision:"d54db44de5ccb18886ece2fda72bdfe0"},{url:"/_next/static/media/e4af272ccee01ff0-s.p.woff2",revision:"65850a373e258f1c897a2b3d75eb74de"},{url:"/data/abarth.json",revision:"800a06f4d848e0ad4b4be83f18c404e6"},{url:"/file.svg",revision:"d09f95206c3fa0bb9bd9fefabfd0ea71"},{url:"/globe.svg",revision:"2aaafa6a49b6563925fe440891e32717"},{url:"/icons/whatsapp.png",revision:"9fc85178bc86e671b2a5d7e2606d9b54"},{url:"/icons/whatsapp.svg",revision:"44d14d2f798faded6a031644169e7d8e"},{url:"/images/blog/clean-terminals.jpg",revision:"efe5af37eae834c151cf2af7455422b8"},{url:"/images/blog/start-stop-battery.jpg",revision:"8fd8e363631002d29679a3827e7e5b19"},{url:"/images/blog/warning-signs.jpg",revision:"00e6a931052755693923a80c296a9f33"},{url:"/images/brand-exide.jpg",revision:"8b86003f4bb1913c2c3c049e68fbc8ea"},{url:"/images/brand-novax-premium.jpg",revision:"987ba504c714aed6eb909d51224e871d"},{url:"/images/brand-willard.jpg",revision:"39df85319ea52679fd7436795ea2a02d"},{url:"/images/category/automotive.jpg",revision:"8e2a5066526c527c92e2da8bd2f325a1"},{url:"/images/category/automotive.png",revision:"4e6ff011dae315a2e1e282c00ceaa971"},{url:"/images/category/motorcycle.jpg",revision:"264e8ca578baf4d36d481e011e6bcbd1"},{url:"/images/category/security-gate.jpg",revision:"bdbaabb01d8c05b4e657ca408bc5ecc7"},{url:"/images/category/solar-deep-cycle.jpg",revision:"a603053e594cbee655605f92bad1e825"},{url:"/images/category/stop-start.jpg",revision:"dc766c631127622b4f54662c2d328946"},{url:"/images/category/stop-start.png",revision:"5d90e6dfe50b7004f8a65f345eb61a93"},{url:"/images/category/truck-commercial.jpg",revision:"2edbf5b3ecec9b4b3537325d7473fbee"},{url:"/images/dashboard-bg.jpg",revision:"d8b815dde2b9d2d906a15587b9d44937"},{url:"/images/logo-novax.jpg",revision:"1e1a17eab2798166cb6bffe59eccda54"},{url:"/images/logo-novax.png",revision:"9785f9579611ee4f1234947f9a4b2596"},{url:"/images/logo-willard.png",revision:"458ab4eb07d3f3cf6608435d60021ff3"},{url:"/images/megamenu-featured.jpg",revision:"5eb3016e9c31d7413f06dc5abe61cde7"},{url:"/images/process/step1-arrive.jpg",revision:"68c8e0e0056476e2291f5775a5005b43"},{url:"/images/process/step2-test.jpg",revision:"9e390bed035e98616ec978a00374daa5"},{url:"/images/process/step3-drive.jpg",revision:"5ade83254fc3bd2ebcea3d1e0e2fdf0e"},{url:"/images/sample-report.jpg",revision:"3f9b9cb7d14125f31ad49195c442fba7"},{url:"/images/sample-report.png",revision:"0cf2cd4c1cbac5a3bb7b51c6e3302ade"},{url:"/images/technician-smiling.jpg",revision:"e49adfbd151a6804ef6e0c12feac80a5"},{url:"/images/technician-testing.jpg",revision:"79dd2f0dbafa0e9c10a0535d2c49f0f6"},{url:"/manifest.json",revision:"33dbe6ab41976a4033e8927059e94eca"},{url:"/next.svg",revision:"8e061864f388b47f33a1c3780831193e"},{url:"/vercel.svg",revision:"c0af2f507b369b085b35ef4bbe3bcf1e"},{url:"/window.svg",revision:"a2760511c65806022ad20adf74370ff3"}],{ignoreURLParametersMatching:[]}),e.cleanupOutdatedCaches(),e.registerRoute("/",new e.NetworkFirst({cacheName:"start-url",plugins:[{cacheWillUpdate:async({request:e,response:a,event:s,state:i})=>a&&"opaqueredirect"===a.type?new Response(a.body,{status:200,statusText:"OK",headers:a.headers}):a}]}),"GET"),e.registerRoute(/^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,new e.CacheFirst({cacheName:"google-fonts-webfonts",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:31536e3})]}),"GET"),e.registerRoute(/^https:\/\/fonts\.(?:googleapis)\.com\/.*/i,new e.StaleWhileRevalidate({cacheName:"google-fonts-stylesheets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800})]}),"GET"),e.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,new e.StaleWhileRevalidate({cacheName:"static-font-assets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800})]}),"GET"),e.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,new e.StaleWhileRevalidate({cacheName:"static-image-assets",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\/_next\/image\?url=.+$/i,new e.StaleWhileRevalidate({cacheName:"next-image",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:mp3|wav|ogg)$/i,new e.CacheFirst({cacheName:"static-audio-assets",plugins:[new e.RangeRequestsPlugin,new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:mp4)$/i,new e.CacheFirst({cacheName:"static-video-assets",plugins:[new e.RangeRequestsPlugin,new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:js)$/i,new e.StaleWhileRevalidate({cacheName:"static-js-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:css|less)$/i,new e.StaleWhileRevalidate({cacheName:"static-style-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\/_next\/data\/.+\/.+\.json$/i,new e.StaleWhileRevalidate({cacheName:"next-data",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:json|xml|csv)$/i,new e.NetworkFirst({cacheName:"static-data-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(({url:e})=>{if(!(self.origin===e.origin))return!1;const a=e.pathname;return!a.startsWith("/api/auth/")&&!!a.startsWith("/api/")},new e.NetworkFirst({cacheName:"apis",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(({url:e})=>{if(!(self.origin===e.origin))return!1;return!e.pathname.startsWith("/api/")},new e.NetworkFirst({cacheName:"others",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(({url:e})=>!(self.origin===e.origin),new e.NetworkFirst({cacheName:"cross-origin",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:3600})]}),"GET")});
+
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\vercel.svg
+SIZE: 128 bytes
+--------------------------------------------------------------------------------
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\window.svg
+SIZE: 385 bytes
+--------------------------------------------------------------------------------
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\workbox-4754cb34.js
+SIZE: 23578 bytes
+--------------------------------------------------------------------------------
+define(["exports"],function(t){"use strict";try{self["workbox:core:6.5.4"]&&_()}catch(t){}const e=(t,...e)=>{let s=t;return e.length>0&&(s+=` :: ${JSON.stringify(e)}`),s};class s extends Error{constructor(t,s){super(e(t,s)),this.name=t,this.details=s}}try{self["workbox:routing:6.5.4"]&&_()}catch(t){}const n=t=>t&&"object"==typeof t?t:{handle:t};class r{constructor(t,e,s="GET"){this.handler=n(e),this.match=t,this.method=s}setCatchHandler(t){this.catchHandler=n(t)}}class i extends r{constructor(t,e,s){super(({url:e})=>{const s=t.exec(e.href);if(s&&(e.origin===location.origin||0===s.index))return s.slice(1)},e,s)}}class a{constructor(){this.t=new Map,this.i=new Map}get routes(){return this.t}addFetchListener(){self.addEventListener("fetch",t=>{const{request:e}=t,s=this.handleRequest({request:e,event:t});s&&t.respondWith(s)})}addCacheListener(){self.addEventListener("message",t=>{if(t.data&&"CACHE_URLS"===t.data.type){const{payload:e}=t.data,s=Promise.all(e.urlsToCache.map(e=>{"string"==typeof e&&(e=[e]);const s=new Request(...e);return this.handleRequest({request:s,event:t})}));t.waitUntil(s),t.ports&&t.ports[0]&&s.then(()=>t.ports[0].postMessage(!0))}})}handleRequest({request:t,event:e}){const s=new URL(t.url,location.href);if(!s.protocol.startsWith("http"))return;const n=s.origin===location.origin,{params:r,route:i}=this.findMatchingRoute({event:e,request:t,sameOrigin:n,url:s});let a=i&&i.handler;const o=t.method;if(!a&&this.i.has(o)&&(a=this.i.get(o)),!a)return;let c;try{c=a.handle({url:s,request:t,event:e,params:r})}catch(t){c=Promise.reject(t)}const h=i&&i.catchHandler;return c instanceof Promise&&(this.o||h)&&(c=c.catch(async n=>{if(h)try{return await h.handle({url:s,request:t,event:e,params:r})}catch(t){t instanceof Error&&(n=t)}if(this.o)return this.o.handle({url:s,request:t,event:e});throw n})),c}findMatchingRoute({url:t,sameOrigin:e,request:s,event:n}){const r=this.t.get(s.method)||[];for(const i of r){let r;const a=i.match({url:t,sameOrigin:e,request:s,event:n});if(a)return r=a,(Array.isArray(r)&&0===r.length||a.constructor===Object&&0===Object.keys(a).length||"boolean"==typeof a)&&(r=void 0),{route:i,params:r}}return{}}setDefaultHandler(t,e="GET"){this.i.set(e,n(t))}setCatchHandler(t){this.o=n(t)}registerRoute(t){this.t.has(t.method)||this.t.set(t.method,[]),this.t.get(t.method).push(t)}unregisterRoute(t){if(!this.t.has(t.method))throw new s("unregister-route-but-not-found-with-method",{method:t.method});const e=this.t.get(t.method).indexOf(t);if(!(e>-1))throw new s("unregister-route-route-not-registered");this.t.get(t.method).splice(e,1)}}let o;const c=()=>(o||(o=new a,o.addFetchListener(),o.addCacheListener()),o);function h(t,e,n){let a;if("string"==typeof t){const s=new URL(t,location.href);a=new r(({url:t})=>t.href===s.href,e,n)}else if(t instanceof RegExp)a=new i(t,e,n);else if("function"==typeof t)a=new r(t,e,n);else{if(!(t instanceof r))throw new s("unsupported-route-type",{moduleName:"workbox-routing",funcName:"registerRoute",paramName:"capture"});a=t}return c().registerRoute(a),a}try{self["workbox:strategies:6.5.4"]&&_()}catch(t){}const u={cacheWillUpdate:async({response:t})=>200===t.status||0===t.status?t:null},l={googleAnalytics:"googleAnalytics",precache:"precache-v2",prefix:"workbox",runtime:"runtime",suffix:"undefined"!=typeof registration?registration.scope:""},f=t=>[l.prefix,t,l.suffix].filter(t=>t&&t.length>0).join("-"),w=t=>t||f(l.precache),d=t=>t||f(l.runtime);function p(t,e){const s=new URL(t);for(const t of e)s.searchParams.delete(t);return s.href}class y{constructor(){this.promise=new Promise((t,e)=>{this.resolve=t,this.reject=e})}}const g=new Set;function m(t){return"string"==typeof t?new Request(t):t}class v{constructor(t,e){this.h={},Object.assign(this,e),this.event=e.event,this.u=t,this.l=new y,this.p=[],this.m=[...t.plugins],this.v=new Map;for(const t of this.m)this.v.set(t,{});this.event.waitUntil(this.l.promise)}async fetch(t){const{event:e}=this;let n=m(t);if("navigate"===n.mode&&e instanceof FetchEvent&&e.preloadResponse){const t=await e.preloadResponse;if(t)return t}const r=this.hasCallback("fetchDidFail")?n.clone():null;try{for(const t of this.iterateCallbacks("requestWillFetch"))n=await t({request:n.clone(),event:e})}catch(t){if(t instanceof Error)throw new s("plugin-error-request-will-fetch",{thrownErrorMessage:t.message})}const i=n.clone();try{let t;t=await fetch(n,"navigate"===n.mode?void 0:this.u.fetchOptions);for(const s of this.iterateCallbacks("fetchDidSucceed"))t=await s({event:e,request:i,response:t});return t}catch(t){throw r&&await this.runCallbacks("fetchDidFail",{error:t,event:e,originalRequest:r.clone(),request:i.clone()}),t}}async fetchAndCachePut(t){const e=await this.fetch(t),s=e.clone();return this.waitUntil(this.cachePut(t,s)),e}async cacheMatch(t){const e=m(t);let s;const{cacheName:n,matchOptions:r}=this.u,i=await this.getCacheKey(e,"read"),a=Object.assign(Object.assign({},r),{cacheName:n});s=await caches.match(i,a);for(const t of this.iterateCallbacks("cachedResponseWillBeUsed"))s=await t({cacheName:n,matchOptions:r,cachedResponse:s,request:i,event:this.event})||void 0;return s}async cachePut(t,e){const n=m(t);var r;await(r=0,new Promise(t=>setTimeout(t,r)));const i=await this.getCacheKey(n,"write");if(!e)throw new s("cache-put-with-no-response",{url:(a=i.url,new URL(String(a),location.href).href.replace(new RegExp(`^${location.origin}`),""))});var a;const o=await this.R(e);if(!o)return!1;const{cacheName:c,matchOptions:h}=this.u,u=await self.caches.open(c),l=this.hasCallback("cacheDidUpdate"),f=l?await async function(t,e,s,n){const r=p(e.url,s);if(e.url===r)return t.match(e,n);const i=Object.assign(Object.assign({},n),{ignoreSearch:!0}),a=await t.keys(e,i);for(const e of a)if(r===p(e.url,s))return t.match(e,n)}(u,i.clone(),["__WB_REVISION__"],h):null;try{await u.put(i,l?o.clone():o)}catch(t){if(t instanceof Error)throw"QuotaExceededError"===t.name&&await async function(){for(const t of g)await t()}(),t}for(const t of this.iterateCallbacks("cacheDidUpdate"))await t({cacheName:c,oldResponse:f,newResponse:o.clone(),request:i,event:this.event});return!0}async getCacheKey(t,e){const s=`${t.url} | ${e}`;if(!this.h[s]){let n=t;for(const t of this.iterateCallbacks("cacheKeyWillBeUsed"))n=m(await t({mode:e,request:n,event:this.event,params:this.params}));this.h[s]=n}return this.h[s]}hasCallback(t){for(const e of this.u.plugins)if(t in e)return!0;return!1}async runCallbacks(t,e){for(const s of this.iterateCallbacks(t))await s(e)}*iterateCallbacks(t){for(const e of this.u.plugins)if("function"==typeof e[t]){const s=this.v.get(e),n=n=>{const r=Object.assign(Object.assign({},n),{state:s});return e[t](r)};yield n}}waitUntil(t){return this.p.push(t),t}async doneWaiting(){let t;for(;t=this.p.shift();)await t}destroy(){this.l.resolve(null)}async R(t){let e=t,s=!1;for(const t of this.iterateCallbacks("cacheWillUpdate"))if(e=await t({request:this.request,response:e,event:this.event})||void 0,s=!0,!e)break;return s||e&&200!==e.status&&(e=void 0),e}}class R{constructor(t={}){this.cacheName=d(t.cacheName),this.plugins=t.plugins||[],this.fetchOptions=t.fetchOptions,this.matchOptions=t.matchOptions}handle(t){const[e]=this.handleAll(t);return e}handleAll(t){t instanceof FetchEvent&&(t={event:t,request:t.request});const e=t.event,s="string"==typeof t.request?new Request(t.request):t.request,n="params"in t?t.params:void 0,r=new v(this,{event:e,request:s,params:n}),i=this.q(r,s,e);return[i,this.D(i,r,s,e)]}async q(t,e,n){let r;await t.runCallbacks("handlerWillStart",{event:n,request:e});try{if(r=await this.U(e,t),!r||"error"===r.type)throw new s("no-response",{url:e.url})}catch(s){if(s instanceof Error)for(const i of t.iterateCallbacks("handlerDidError"))if(r=await i({error:s,event:n,request:e}),r)break;if(!r)throw s}for(const s of t.iterateCallbacks("handlerWillRespond"))r=await s({event:n,request:e,response:r});return r}async D(t,e,s,n){let r,i;try{r=await t}catch(i){}try{await e.runCallbacks("handlerDidRespond",{event:n,request:s,response:r}),await e.doneWaiting()}catch(t){t instanceof Error&&(i=t)}if(await e.runCallbacks("handlerDidComplete",{event:n,request:s,response:r,error:i}),e.destroy(),i)throw i}}function b(t){t.then(()=>{})}function q(){return q=Object.assign?Object.assign.bind():function(t){for(var e=1;e<arguments.length;e++){var s=arguments[e];for(var n in s)({}).hasOwnProperty.call(s,n)&&(t[n]=s[n])}return t},q.apply(null,arguments)}let D,U;const x=new WeakMap,L=new WeakMap,I=new WeakMap,C=new WeakMap,E=new WeakMap;let N={get(t,e,s){if(t instanceof IDBTransaction){if("done"===e)return L.get(t);if("objectStoreNames"===e)return t.objectStoreNames||I.get(t);if("store"===e)return s.objectStoreNames[1]?void 0:s.objectStore(s.objectStoreNames[0])}return k(t[e])},set:(t,e,s)=>(t[e]=s,!0),has:(t,e)=>t instanceof IDBTransaction&&("done"===e||"store"===e)||e in t};function O(t){return t!==IDBDatabase.prototype.transaction||"objectStoreNames"in IDBTransaction.prototype?(U||(U=[IDBCursor.prototype.advance,IDBCursor.prototype.continue,IDBCursor.prototype.continuePrimaryKey])).includes(t)?function(...e){return t.apply(B(this),e),k(x.get(this))}:function(...e){return k(t.apply(B(this),e))}:function(e,...s){const n=t.call(B(this),e,...s);return I.set(n,e.sort?e.sort():[e]),k(n)}}function T(t){return"function"==typeof t?O(t):(t instanceof IDBTransaction&&function(t){if(L.has(t))return;const e=new Promise((e,s)=>{const n=()=>{t.removeEventListener("complete",r),t.removeEventListener("error",i),t.removeEventListener("abort",i)},r=()=>{e(),n()},i=()=>{s(t.error||new DOMException("AbortError","AbortError")),n()};t.addEventListener("complete",r),t.addEventListener("error",i),t.addEventListener("abort",i)});L.set(t,e)}(t),e=t,(D||(D=[IDBDatabase,IDBObjectStore,IDBIndex,IDBCursor,IDBTransaction])).some(t=>e instanceof t)?new Proxy(t,N):t);var e}function k(t){if(t instanceof IDBRequest)return function(t){const e=new Promise((e,s)=>{const n=()=>{t.removeEventListener("success",r),t.removeEventListener("error",i)},r=()=>{e(k(t.result)),n()},i=()=>{s(t.error),n()};t.addEventListener("success",r),t.addEventListener("error",i)});return e.then(e=>{e instanceof IDBCursor&&x.set(e,t)}).catch(()=>{}),E.set(e,t),e}(t);if(C.has(t))return C.get(t);const e=T(t);return e!==t&&(C.set(t,e),E.set(e,t)),e}const B=t=>E.get(t);const P=["get","getKey","getAll","getAllKeys","count"],M=["put","add","delete","clear"],W=new Map;function j(t,e){if(!(t instanceof IDBDatabase)||e in t||"string"!=typeof e)return;if(W.get(e))return W.get(e);const s=e.replace(/FromIndex$/,""),n=e!==s,r=M.includes(s);if(!(s in(n?IDBIndex:IDBObjectStore).prototype)||!r&&!P.includes(s))return;const i=async function(t,...e){const i=this.transaction(t,r?"readwrite":"readonly");let a=i.store;return n&&(a=a.index(e.shift())),(await Promise.all([a[s](...e),r&&i.done]))[0]};return W.set(e,i),i}N=(t=>q({},t,{get:(e,s,n)=>j(e,s)||t.get(e,s,n),has:(e,s)=>!!j(e,s)||t.has(e,s)}))(N);try{self["workbox:expiration:6.5.4"]&&_()}catch(t){}const S="cache-entries",K=t=>{const e=new URL(t,location.href);return e.hash="",e.href};class A{constructor(t){this._=null,this.L=t}I(t){const e=t.createObjectStore(S,{keyPath:"id"});e.createIndex("cacheName","cacheName",{unique:!1}),e.createIndex("timestamp","timestamp",{unique:!1})}C(t){this.I(t),this.L&&function(t,{blocked:e}={}){const s=indexedDB.deleteDatabase(t);e&&s.addEventListener("blocked",t=>e(t.oldVersion,t)),k(s).then(()=>{})}(this.L)}async setTimestamp(t,e){const s={url:t=K(t),timestamp:e,cacheName:this.L,id:this.N(t)},n=(await this.getDb()).transaction(S,"readwrite",{durability:"relaxed"});await n.store.put(s),await n.done}async getTimestamp(t){const e=await this.getDb(),s=await e.get(S,this.N(t));return null==s?void 0:s.timestamp}async expireEntries(t,e){const s=await this.getDb();let n=await s.transaction(S).store.index("timestamp").openCursor(null,"prev");const r=[];let i=0;for(;n;){const s=n.value;s.cacheName===this.L&&(t&&s.timestamp<t||e&&i>=e?r.push(n.value):i++),n=await n.continue()}const a=[];for(const t of r)await s.delete(S,t.id),a.push(t.url);return a}N(t){return this.L+"|"+K(t)}async getDb(){return this._||(this._=await function(t,e,{blocked:s,upgrade:n,blocking:r,terminated:i}={}){const a=indexedDB.open(t,e),o=k(a);return n&&a.addEventListener("upgradeneeded",t=>{n(k(a.result),t.oldVersion,t.newVersion,k(a.transaction),t)}),s&&a.addEventListener("blocked",t=>s(t.oldVersion,t.newVersion,t)),o.then(t=>{i&&t.addEventListener("close",()=>i()),r&&t.addEventListener("versionchange",t=>r(t.oldVersion,t.newVersion,t))}).catch(()=>{}),o}("workbox-expiration",1,{upgrade:this.C.bind(this)})),this._}}class F{constructor(t,e={}){this.O=!1,this.T=!1,this.k=e.maxEntries,this.B=e.maxAgeSeconds,this.P=e.matchOptions,this.L=t,this.M=new A(t)}async expireEntries(){if(this.O)return void(this.T=!0);this.O=!0;const t=this.B?Date.now()-1e3*this.B:0,e=await this.M.expireEntries(t,this.k),s=await self.caches.open(this.L);for(const t of e)await s.delete(t,this.P);this.O=!1,this.T&&(this.T=!1,b(this.expireEntries()))}async updateTimestamp(t){await this.M.setTimestamp(t,Date.now())}async isURLExpired(t){if(this.B){const e=await this.M.getTimestamp(t),s=Date.now()-1e3*this.B;return void 0===e||e<s}return!1}async delete(){this.T=!1,await this.M.expireEntries(1/0)}}try{self["workbox:range-requests:6.5.4"]&&_()}catch(t){}async function H(t,e){try{if(206===e.status)return e;const n=t.headers.get("range");if(!n)throw new s("no-range-header");const r=function(t){const e=t.trim().toLowerCase();if(!e.startsWith("bytes="))throw new s("unit-must-be-bytes",{normalizedRangeHeader:e});if(e.includes(","))throw new s("single-range-only",{normalizedRangeHeader:e});const n=/(\d*)-(\d*)/.exec(e);if(!n||!n[1]&&!n[2])throw new s("invalid-range-values",{normalizedRangeHeader:e});return{start:""===n[1]?void 0:Number(n[1]),end:""===n[2]?void 0:Number(n[2])}}(n),i=await e.blob(),a=function(t,e,n){const r=t.size;if(n&&n>r||e&&e<0)throw new s("range-not-satisfiable",{size:r,end:n,start:e});let i,a;return void 0!==e&&void 0!==n?(i=e,a=n+1):void 0!==e&&void 0===n?(i=e,a=r):void 0!==n&&void 0===e&&(i=r-n,a=r),{start:i,end:a}}(i,r.start,r.end),o=i.slice(a.start,a.end),c=o.size,h=new Response(o,{status:206,statusText:"Partial Content",headers:e.headers});return h.headers.set("Content-Length",String(c)),h.headers.set("Content-Range",`bytes ${a.start}-${a.end-1}/${i.size}`),h}catch(t){return new Response("",{status:416,statusText:"Range Not Satisfiable"})}}function $(t,e){const s=e();return t.waitUntil(s),s}try{self["workbox:precaching:6.5.4"]&&_()}catch(t){}function z(t){if(!t)throw new s("add-to-cache-list-unexpected-type",{entry:t});if("string"==typeof t){const e=new URL(t,location.href);return{cacheKey:e.href,url:e.href}}const{revision:e,url:n}=t;if(!n)throw new s("add-to-cache-list-unexpected-type",{entry:t});if(!e){const t=new URL(n,location.href);return{cacheKey:t.href,url:t.href}}const r=new URL(n,location.href),i=new URL(n,location.href);return r.searchParams.set("__WB_REVISION__",e),{cacheKey:r.href,url:i.href}}class G{constructor(){this.updatedURLs=[],this.notUpdatedURLs=[],this.handlerWillStart=async({request:t,state:e})=>{e&&(e.originalRequest=t)},this.cachedResponseWillBeUsed=async({event:t,state:e,cachedResponse:s})=>{if("install"===t.type&&e&&e.originalRequest&&e.originalRequest instanceof Request){const t=e.originalRequest.url;s?this.notUpdatedURLs.push(t):this.updatedURLs.push(t)}return s}}}class V{constructor({precacheController:t}){this.cacheKeyWillBeUsed=async({request:t,params:e})=>{const s=(null==e?void 0:e.cacheKey)||this.W.getCacheKeyForURL(t.url);return s?new Request(s,{headers:t.headers}):t},this.W=t}}let J,Q;async function X(t,e){let n=null;if(t.url){n=new URL(t.url).origin}if(n!==self.location.origin)throw new s("cross-origin-copy-response",{origin:n});const r=t.clone(),i={headers:new Headers(r.headers),status:r.status,statusText:r.statusText},a=e?e(i):i,o=function(){if(void 0===J){const t=new Response("");if("body"in t)try{new Response(t.body),J=!0}catch(t){J=!1}J=!1}return J}()?r.body:await r.blob();return new Response(o,a)}class Y extends R{constructor(t={}){t.cacheName=w(t.cacheName),super(t),this.j=!1!==t.fallbackToNetwork,this.plugins.push(Y.copyRedirectedCacheableResponsesPlugin)}async U(t,e){const s=await e.cacheMatch(t);return s||(e.event&&"install"===e.event.type?await this.S(t,e):await this.K(t,e))}async K(t,e){let n;const r=e.params||{};if(!this.j)throw new s("missing-precache-entry",{cacheName:this.cacheName,url:t.url});{const s=r.integrity,i=t.integrity,a=!i||i===s;n=await e.fetch(new Request(t,{integrity:"no-cors"!==t.mode?i||s:void 0})),s&&a&&"no-cors"!==t.mode&&(this.A(),await e.cachePut(t,n.clone()))}return n}async S(t,e){this.A();const n=await e.fetch(t);if(!await e.cachePut(t,n.clone()))throw new s("bad-precaching-response",{url:t.url,status:n.status});return n}A(){let t=null,e=0;for(const[s,n]of this.plugins.entries())n!==Y.copyRedirectedCacheableResponsesPlugin&&(n===Y.defaultPrecacheCacheabilityPlugin&&(t=s),n.cacheWillUpdate&&e++);0===e?this.plugins.push(Y.defaultPrecacheCacheabilityPlugin):e>1&&null!==t&&this.plugins.splice(t,1)}}Y.defaultPrecacheCacheabilityPlugin={cacheWillUpdate:async({response:t})=>!t||t.status>=400?null:t},Y.copyRedirectedCacheableResponsesPlugin={cacheWillUpdate:async({response:t})=>t.redirected?await X(t):t};class Z{constructor({cacheName:t,plugins:e=[],fallbackToNetwork:s=!0}={}){this.F=new Map,this.H=new Map,this.$=new Map,this.u=new Y({cacheName:w(t),plugins:[...e,new V({precacheController:this})],fallbackToNetwork:s}),this.install=this.install.bind(this),this.activate=this.activate.bind(this)}get strategy(){return this.u}precache(t){this.addToCacheList(t),this.G||(self.addEventListener("install",this.install),self.addEventListener("activate",this.activate),this.G=!0)}addToCacheList(t){const e=[];for(const n of t){"string"==typeof n?e.push(n):n&&void 0===n.revision&&e.push(n.url);const{cacheKey:t,url:r}=z(n),i="string"!=typeof n&&n.revision?"reload":"default";if(this.F.has(r)&&this.F.get(r)!==t)throw new s("add-to-cache-list-conflicting-entries",{firstEntry:this.F.get(r),secondEntry:t});if("string"!=typeof n&&n.integrity){if(this.$.has(t)&&this.$.get(t)!==n.integrity)throw new s("add-to-cache-list-conflicting-integrities",{url:r});this.$.set(t,n.integrity)}if(this.F.set(r,t),this.H.set(r,i),e.length>0){const t=`Workbox is precaching URLs without revision info: ${e.join(", ")}\nThis is generally NOT safe. Learn more at https://bit.ly/wb-precache`;console.warn(t)}}}install(t){return $(t,async()=>{const e=new G;this.strategy.plugins.push(e);for(const[e,s]of this.F){const n=this.$.get(s),r=this.H.get(e),i=new Request(e,{integrity:n,cache:r,credentials:"same-origin"});await Promise.all(this.strategy.handleAll({params:{cacheKey:s},request:i,event:t}))}const{updatedURLs:s,notUpdatedURLs:n}=e;return{updatedURLs:s,notUpdatedURLs:n}})}activate(t){return $(t,async()=>{const t=await self.caches.open(this.strategy.cacheName),e=await t.keys(),s=new Set(this.F.values()),n=[];for(const r of e)s.has(r.url)||(await t.delete(r),n.push(r.url));return{deletedURLs:n}})}getURLsToCacheKeys(){return this.F}getCachedURLs(){return[...this.F.keys()]}getCacheKeyForURL(t){const e=new URL(t,location.href);return this.F.get(e.href)}getIntegrityForCacheKey(t){return this.$.get(t)}async matchPrecache(t){const e=t instanceof Request?t.url:t,s=this.getCacheKeyForURL(e);if(s){return(await self.caches.open(this.strategy.cacheName)).match(s)}}createHandlerBoundToURL(t){const e=this.getCacheKeyForURL(t);if(!e)throw new s("non-precached-url",{url:t});return s=>(s.request=new Request(t),s.params=Object.assign({cacheKey:e},s.params),this.strategy.handle(s))}}const tt=()=>(Q||(Q=new Z),Q);class et extends r{constructor(t,e){super(({request:s})=>{const n=t.getURLsToCacheKeys();for(const r of function*(t,{ignoreURLParametersMatching:e=[/^utm_/,/^fbclid$/],directoryIndex:s="index.html",cleanURLs:n=!0,urlManipulation:r}={}){const i=new URL(t,location.href);i.hash="",yield i.href;const a=function(t,e=[]){for(const s of[...t.searchParams.keys()])e.some(t=>t.test(s))&&t.searchParams.delete(s);return t}(i,e);if(yield a.href,s&&a.pathname.endsWith("/")){const t=new URL(a.href);t.pathname+=s,yield t.href}if(n){const t=new URL(a.href);t.pathname+=".html",yield t.href}if(r){const t=r({url:i});for(const e of t)yield e.href}}(s.url,e)){const e=n.get(r);if(e){return{cacheKey:e,integrity:t.getIntegrityForCacheKey(e)}}}},t.strategy)}}t.CacheFirst=class extends R{async U(t,e){let n,r=await e.cacheMatch(t);if(!r)try{r=await e.fetchAndCachePut(t)}catch(t){t instanceof Error&&(n=t)}if(!r)throw new s("no-response",{url:t.url,error:n});return r}},t.ExpirationPlugin=class{constructor(t={}){this.cachedResponseWillBeUsed=async({event:t,request:e,cacheName:s,cachedResponse:n})=>{if(!n)return null;const r=this.V(n),i=this.J(s);b(i.expireEntries());const a=i.updateTimestamp(e.url);if(t)try{t.waitUntil(a)}catch(t){}return r?n:null},this.cacheDidUpdate=async({cacheName:t,request:e})=>{const s=this.J(t);await s.updateTimestamp(e.url),await s.expireEntries()},this.X=t,this.B=t.maxAgeSeconds,this.Y=new Map,t.purgeOnQuotaError&&function(t){g.add(t)}(()=>this.deleteCacheAndMetadata())}J(t){if(t===d())throw new s("expire-custom-caches-only");let e=this.Y.get(t);return e||(e=new F(t,this.X),this.Y.set(t,e)),e}V(t){if(!this.B)return!0;const e=this.Z(t);if(null===e)return!0;return e>=Date.now()-1e3*this.B}Z(t){if(!t.headers.has("date"))return null;const e=t.headers.get("date"),s=new Date(e).getTime();return isNaN(s)?null:s}async deleteCacheAndMetadata(){for(const[t,e]of this.Y)await self.caches.delete(t),await e.delete();this.Y=new Map}},t.NetworkFirst=class extends R{constructor(t={}){super(t),this.plugins.some(t=>"cacheWillUpdate"in t)||this.plugins.unshift(u),this.tt=t.networkTimeoutSeconds||0}async U(t,e){const n=[],r=[];let i;if(this.tt){const{id:s,promise:a}=this.et({request:t,logs:n,handler:e});i=s,r.push(a)}const a=this.st({timeoutId:i,request:t,logs:n,handler:e});r.push(a);const o=await e.waitUntil((async()=>await e.waitUntil(Promise.race(r))||await a)());if(!o)throw new s("no-response",{url:t.url});return o}et({request:t,logs:e,handler:s}){let n;return{promise:new Promise(e=>{n=setTimeout(async()=>{e(await s.cacheMatch(t))},1e3*this.tt)}),id:n}}async st({timeoutId:t,request:e,logs:s,handler:n}){let r,i;try{i=await n.fetchAndCachePut(e)}catch(t){t instanceof Error&&(r=t)}return t&&clearTimeout(t),!r&&i||(i=await n.cacheMatch(e)),i}},t.RangeRequestsPlugin=class{constructor(){this.cachedResponseWillBeUsed=async({request:t,cachedResponse:e})=>e&&t.headers.has("range")?await H(t,e):e}},t.StaleWhileRevalidate=class extends R{constructor(t={}){super(t),this.plugins.some(t=>"cacheWillUpdate"in t)||this.plugins.unshift(u)}async U(t,e){const n=e.fetchAndCachePut(t).catch(()=>{});e.waitUntil(n);let r,i=await e.cacheMatch(t);if(i);else try{i=await n}catch(t){t instanceof Error&&(r=t)}if(!i)throw new s("no-response",{url:t.url,error:r});return i}},t.cleanupOutdatedCaches=function(){self.addEventListener("activate",t=>{const e=w();t.waitUntil((async(t,e="-precache-")=>{const s=(await self.caches.keys()).filter(s=>s.includes(e)&&s.includes(self.registration.scope)&&s!==t);return await Promise.all(s.map(t=>self.caches.delete(t))),s})(e).then(t=>{}))})},t.clientsClaim=function(){self.addEventListener("activate",()=>self.clients.claim())},t.precacheAndRoute=function(t,e){!function(t){tt().precache(t)}(t),function(t){const e=tt();h(new et(e,t))}(e)},t.registerRoute=h});
+
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\data\abarth.json
+SIZE: 38219 bytes
+--------------------------------------------------------------------------------
+[
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2011",
+        "variant":"500 1.4 Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2011",
+        "variant":"500 1.4 Tin Top 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2011",
+        "variant":"695 1.4 Tributo Ferrari 3-dr AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2012",
+        "variant":"500 1.4 Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2012",
+        "variant":"500 1.4 Cabriolet MTA AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2012",
+        "variant":"500 1.4 Tin Top 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2012",
+        "variant":"695 1.4 Tributo Ferrari 3-dr AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH Punto",
+        "year":"2012",
+        "variant":"Punto 1.4 3-dr",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"500 1.4 Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"500 1.4 Cabriolet MTA AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"500 1.4 Tin Top 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"500 C 1.4 Turbo Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"500 TinTop 1.4 Turbo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2013",
+        "variant":"695 1.4 Tributo Ferrari 3-dr AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH Punto",
+        "year":"2013",
+        "variant":"Punto 1.4 3-dr",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2014",
+        "variant":"500 1.4 Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2014",
+        "variant":"500 1.4 Tin Top 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2014",
+        "variant":"500 C 1.4 Turbo Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2014",
+        "variant":"500 TinTop 1.4 Turbo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2014",
+        "variant":"695 1.4 Tributo Ferrari 3-dr AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH Punto",
+        "year":"2014",
+        "variant":"Punto 1.4 3-dr",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 1.4 Cabriolet MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 1.4 Cabriolet MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 1.4 Tin Top 3-dr MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 1.4 Tin Top 3-dr MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 C 1.4 Turbo Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"500 TinTop 1.4 Turbo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2015",
+        "variant":"695 1.4 Tributo Ferrari 3-dr AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 124 Spider",
+        "year":"2016",
+        "variant":"124 Spider 1.4 Turismo",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2016",
+        "variant":"500 1.4 Cabriolet MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2016",
+        "variant":"500 1.4 Cabriolet MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2016",
+        "variant":"500 1.4 Tin Top 3-dr MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2016",
+        "variant":"500 1.4 Tin Top 3-dr MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4 Biposto 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Competizione 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Competizione 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Competizione S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turbo Base 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turbo Base 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turbo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turismo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turismo 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2016",
+        "variant":"595 1.4T Turismo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 124 Spider",
+        "year":"2017",
+        "variant":"124 Spider 1.4 Turismo",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2017",
+        "variant":"500 1.4 Cabriolet MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2017",
+        "variant":"500 1.4 Cabriolet MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2017",
+        "variant":"500 1.4 Tin Top 3-dr MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2017",
+        "variant":"500 1.4 Tin Top 3-dr MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4 Biposto 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Competizione 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Competizione 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Competizione S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turbo Base 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turbo Base 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turbo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turismo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turismo 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2017",
+        "variant":"595 1.4T Turismo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 124 Spider",
+        "year":"2018",
+        "variant":"124 Spider 1.4 Turismo",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2018",
+        "variant":"500 1.4 Cabriolet MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2018",
+        "variant":"500 1.4 Tin Top 3-dr MY15",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 500",
+        "year":"2018",
+        "variant":"500 1.4 Tin Top 3-dr MY15 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4 Biposto 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Competizione 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Competizione 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Competizione S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turbo Base 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turbo Base 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turbo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turismo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turismo 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2018",
+        "variant":"595 1.4T Turismo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 124 Spider",
+        "year":"2019",
+        "variant":"124 Spider 1.4 Turismo",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4 Biposto 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Competizione 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Competizione 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Competizione S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turbo Base 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turbo Base 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turbo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turismo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turismo 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2019",
+        "variant":"595 1.4T Turismo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 124 Spider",
+        "year":"2020",
+        "variant":"124 Spider 1.4 Turismo",
+        "recommended_battery":"LN2AGM",
+        "alternative_battery":"646CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Competizione 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Competizione 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Competizione S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turbo Base 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turbo Base 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turbo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turismo 3-dr",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turismo 3-dr MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2020",
+        "variant":"595 1.4T Turismo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Competizione 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Competizione 3-dr MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Competizione Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Competizione Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Competizione S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Scorpion Oro 3-dr MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Scorpion Oro Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turbo S-Top Cabriolet MTA",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turismo 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turismo 3-dr MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turismo Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turismo Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Turismo S-Top Cabriolet",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Yamaha Monster 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Yamaha Monster Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2021",
+        "variant":"595 1.4T Yamaha Monster Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Competizione 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Competizione Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Scorpion Oro 3-dr MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Scorpion Oro Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Turismo 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Turismo Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Yamaha Monster 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2022",
+        "variant":"595 1.4T Yamaha Monster Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Competizione 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Competizione Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Scorpion Oro 3-dr MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Scorpion Oro Cabriolet MY21 AT",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Turismo 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Turismo Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Yamaha Monster 3-dr MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    },
+    {
+        "vehicle_type":"Passenger vehicle",
+        "make":"ABARTH",
+        "model":"ABARTH 595",
+        "year":"2023",
+        "variant":"595 1.4T Yamaha Monster Cabriolet MY21",
+        "recommended_battery":"LN1AGM",
+        "alternative_battery":"612CE"
+    }
+]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\icons\car_battery_icon.png
+SIZE: 8660 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\icons\whatsapp.png
+SIZE: 33811 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\icons\whatsapp.svg
+SIZE: 39128 bytes
+--------------------------------------------------------------------------------
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="240" viewBox="0 0 240 240">
+  <image x="8" y="7" width="225" height="225" xlink:href="data:img/png;base64,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"/>
+</svg>
+
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\brand-exide.jpg
+SIZE: 181801 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\brand-novax-premium.jpg
+SIZE: 33741 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\brand-willard.jpg
+SIZE: 237852 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\dashboard-bg.jpg
+SIZE: 153569 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\logo-novax.jpg
+SIZE: 34277 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\logo-novax.png
+SIZE: 24650 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\logo-willard.png
+SIZE: 31528 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\megamenu-featured.jpg
+SIZE: 6995321 bytes
+--------------------------------------------------------------------------------
+[Skipped: file too large to display content (6995321 bytes)]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\sample-report.jpg
+SIZE: 264287 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\sample-report.png
+SIZE: 510381 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\technician-smiling.jpg
+SIZE: 132940 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\technician-testing.jpg
+SIZE: 333494 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\blog\clean-terminals.jpg
+SIZE: 205287 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\blog\start-stop-battery.jpg
+SIZE: 173890 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\blog\warning-signs.jpg
+SIZE: 141272 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\category\automotive.jpg
+SIZE: 147896 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\category\automotive.png
+SIZE: 135342 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\category\motorcycle.jpg
+SIZE: 148680 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\category\security-gate.jpg
+SIZE: 164177 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\category\solar-deep-cycle.jpg
+SIZE: 166570 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\category\stop-start.jpg
+SIZE: 111785 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\category\stop-start.png
+SIZE: 134263 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\category\truck-commercial.jpg
+SIZE: 137043 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\process\step1-arrive.jpg
+SIZE: 137508 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\process\step2-test.jpg
+SIZE: 99461 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\images\process\step3-drive.jpg
+SIZE: 111179 bytes
+--------------------------------------------------------------------------------
+[Skipped: binary file]

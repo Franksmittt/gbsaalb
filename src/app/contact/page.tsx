@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ClockIcon } from '@/components/icons/ClockIcon';
 import { EnvelopeIcon } from '@/components/icons/EnvelopeIcon';
-import { PhoneHandsetIcon } from '@/components/icons/PhoneHandsetIcon';
+import { PhoneIcon } from '@/components/icons/PhoneIcon';
 import { LocationPinIcon } from '@/components/icons/LocationPinIcon';
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ const contactDetails = [
     href: 'https://www.google.com/maps/search/?api=1&query=-26.2669,28.1245',
   },
   {
-    icon: PhoneHandsetIcon,
+    icon: PhoneIcon,
     title: 'Call Us',
     content: 'Alberton: 011 869 2427',
     href: 'tel:0118692427',

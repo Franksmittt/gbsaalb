@@ -5,7 +5,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import Icon from './ui/Icon';
+
+// UPDATED: Final icon import list
+import { LocationPinIcon } from '@/components/icons/LocationPinIcon';
+import { SearchIcon } from '@/components/icons/SearchIcon';
+import { PhoneIcon } from '@/components/icons/PhoneIcon';
+import { CartIcon } from '@/components/icons/CartIcon';
+import { MenuIcon } from '@/components/icons/MenuIcon';
+import { ShopIcon } from '@/components/icons/ShopIcon';
+import { ChevronDownIcon } from '@/components/icons/ChevronDownIcon';
 
 const CategoryMegaMenu = dynamic(() => import('./ui/CategoryMegaMenu'));
 
@@ -58,7 +66,7 @@ export default function Header() {
           </div>
           <div className="hidden md:flex items-center">
             <a href="https://www.google.com/maps/search/?api=1&query=Global+Batteries+Alberton" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-white flex items-center gap-1 p-2">
-                <Icon path="M12,2a8,8,0,0,0-8,8c0,5.4,7,11.5,7.35,11.8a1,1,0,0,0,1.3,0C13,21.5,20,15.4,20,10A8,8,0,0,0,12,2Zm0,11.5A3.5,3.5,0,1,1,15.5,10,3.5,3.5,0,0,1,12,13.5Z" className="w-4 h-4" />
+                <LocationPinIcon className="w-4 h-4" />
                 Get Directions
             </a>
           </div>
@@ -79,13 +87,13 @@ export default function Header() {
                 aria-label="Search products"
              />
               <div className="absolute top-0 right-0 h-full flex items-center pr-4 pointer-events-none">
-                <Icon path="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z" className="w-6 h-6 text-gray-400" />
+                <SearchIcon className="w-6 h-6 text-gray-400" />
               </div>
             </div>
           </div>
           <div className="flex items-center gap-2">
              <div className="hidden md:flex items-center gap-4">
-              <Icon path="M6.62,10.79a15.25,15.25,0,0,0,6.59,6.59l2.2-2.2a1,1,0,0,1,1-.24,11.36,11.36,0,0,0,3.57.57,1,1,0,0,1,1,1V20a1,1,0,0,1-1,1A17,17,0,0,1,3,4,1,1,0,0,1,4,3H7.5a1,1,0,0,1,1,1,11.36,11.36,0,0,0,.57,3.57,1,1,0,0,1-.24,1Z" className="w-8 h-8 text-blue-400"/>
+              <PhoneIcon className="w-8 h-8 text-blue-400"/>
               <div>
                 <p className="text-xs text-gray-400">NEED HELP?</p>
                 <a href="tel:0118692427" className="font-bold text-lg hover:text-white">011 869 2427</a>
@@ -94,12 +102,12 @@ export default function Header() {
             </div>
             <div className="flex items-center">
               <Link href="/cart" className="relative hover:text-white transition-colors p-3" aria-label="View shopping cart">
-                <Icon path="M17,18a2,2,0,0,1-2,2H9a2,2,0,0,1-2-2V8H5V6H8.55a4,4,0,0,1,7.9,0H20v2H19v10ZM9,8v10h6V8Z" className="w-7 h-7"/>
+                <CartIcon className="w-7 h-7"/>
                 <NotificationBadge count={0} />
               </Link>
             </div>
             <button className="lg:hidden p-3" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Open menu">
-              <Icon path="M3,6H21a1,1,0,0,0,0-2H3A1,1,0,0,0,3,6ZM21,11H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm0,5H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z" className="w-7 h-7" />
+              <MenuIcon className="w-7 h-7" />
             </button>
           </div>
         </div>
@@ -112,11 +120,11 @@ export default function Header() {
             <div className="relative h-full" ref={categoryMenuRef}>
               <button 
                 onClick={() => setIsCategoryMenuOpen(!isCategoryMenuOpen)}
-                className="bg-blue-600 text-white px-6 h-14 flex items-center gap-2 font-bold text-base transition-colors hover:bg-blue-500"
+                className="bg-brand-blue text-white px-6 h-14 flex items-center gap-2 font-bold text-base transition-colors hover:bg-brand-blue-hover"
               >
-                <Icon path="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" className="w-5 h-5"/>
+                <ShopIcon className="w-5 h-5"/>
                 Shop By Category
-                <Icon path="M12,15a1,1,0,0,1-.71-.29l-4-4A1,1,0,0,1,8.71,9.29L12,12.59l3.29-3.29a1,1,0,1,1,1.42,1.42l-4,4A1,1,0,0,1,12,15Z" className={`w-5 h-5 transition-transform duration-300 ${isCategoryMenuOpen ? 'rotate-180' : ''}`} />
+                <ChevronDownIcon className={`w-5 h-5 transition-transform duration-300 ${isCategoryMenuOpen ? 'rotate-180' : ''}`} />
               </button>
               <CategoryMegaMenu isOpen={isCategoryMenuOpen} onClose={() => setIsCategoryMenuOpen(false)} />
             </div>

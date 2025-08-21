@@ -1,7 +1,7 @@
-// FILE: src/components/icons/EnvelopeIcon.tsx (CREATE NEW FILE)
+// FILE: src/components/icons/PhoneIcon.tsx (CREATE NEW FILE)
 import React from 'react';
 
-export const EnvelopeIcon = (props: React.SVGProps<SVGSVGElement>) => (
+export const PhoneIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
     fill="none"
@@ -12,7 +12,7 @@ export const EnvelopeIcon = (props: React.SVGProps<SVGSVGElement>) => (
     viewBox="0 0 32 32"
     {...props}
   >
-    <rect x="2" y="6" width="28" height="20" rx="2.47" ry="2.47"/>
-    <polyline points="2 9 16 16 30 9"/>
+    <rect x="7" y="2" width="18" height="28" rx="2" ry="2"/>
+    <line x1="15" y1="27" x2="17" y2="27"/>
   </svg>
 );

@@ -1,4 +1,5 @@
 // FILE: src/components/home/Testimonials.tsx (REPLACE ENTIRE FILE)
+
 'use client';
 
 import React, { useEffect, useRef } from 'react';
@@ -30,8 +31,9 @@ const newMockTestimonials: NewTestimonial[] = [
 const TestimonialCard = ({ testimonial }: { testimonial: NewTestimonial }) => (
     <div className="bg-navy-850 p-8 rounded-lg border border-slate-700/50 shadow-lg w-96 flex-shrink-0 flex flex-col">
         <div className="flex items-center mb-5">
+            {/* FIX: Use via.placeholder.com to generate PNGs instead of SVGs */}
             <Image 
-                src={`https://placehold.co/56x56/FFFFFF/0A192F?text=${testimonial.avatarText}`} 
+                src={`https://via.placeholder.com/56/0A192F/FFFFFF?text=${testimonial.avatarText}`} 
                 alt={`Avatar for ${testimonial.name}`} 
                 width={56}
                 height={56}
@@ -39,7 +41,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: NewTestimonial }) => (
             />
             <div>
                 <p className="font-semibold text-white text-lg">{testimonial.name}</p>
-                <p className="text-sm text-slate-400">{testimonial.role}</p>
+                <p className="text-sm text-slate-300">{testimonial.role}</p>
             </div>
         </div>
         <div className="flex items-center mb-4 text-yellow-400">
@@ -79,7 +81,7 @@ const Testimonials = () => {
                 <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
                     Trusted Car Battery Specialists in Alberton
                 </h2>
-                <p className="text-slate-400 mt-4 text-lg max-w-3xl mx-auto">
+                <p className="text-slate-300 mt-4 text-lg max-w-3xl mx-auto">
                     Hear directly from drivers about our fast <strong>car battery replacement</strong>, <strong>free battery testing</strong>, and expert service on leading brands like <strong>Willard</strong> and <strong>Novax</strong>.
                 </p>
             </div>

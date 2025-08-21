@@ -1,7 +1,9 @@
 // FILE: src/components/home/TheGlobalBatteriesAdvantage.tsx (REPLACE ENTIRE FILE)
+
 import React from 'react';
 import Icon from '@/components/ui/Icon';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const advantages = [
   {
@@ -23,11 +25,18 @@ const advantages = [
 
 const TheGlobalBatteriesAdvantage = () => {
   return (
-    <div className="relative bg-navy-900 text-white py-16 sm:py-24">
-      {/* Background Texture */}
-      <div className="absolute inset-0 bg-[url('/images/dashboard-bg.jpg')] bg-cover bg-center opacity-10 animate-background-pan [animation-duration:20s]"></div>
+    <div className="relative w-full bg-navy-900 text-white">
+      <Image
+        src="/images/dashboard-bg.jpg"
+        alt="Abstract dashboard background texture"
+        fill
+        style={{ objectFit: 'cover' }}
+        className="opacity-10"
+        quality={75}
+        sizes="100vw"
+      />
       
-      <div className="relative container mx-auto px-4">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl font-extrabold sm:text-4xl">The Global Batteries Advantage</h2>
           <p className="mt-4 text-lg text-gray-300">
@@ -40,7 +49,7 @@ const TheGlobalBatteriesAdvantage = () => {
               key={index} 
               className="group text-center p-6 transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-navy-800 border-2 border-blue-900/50 text-blue-400 transition-all duration-300 group-hover:animate-pulse-glow group-hover:scale-110">
+              <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-navy-800 border-2 border-blue-900/50 text-brand-blue transition-all duration-300 group-hover:animate-pulse-glow group-hover:scale-110">
                 <Icon path={advantage.iconPath} className="w-10 h-10" />
               </div>
               <h3 className="mt-6 text-xl font-bold">{advantage.title}</h3>
@@ -51,9 +60,10 @@ const TheGlobalBatteriesAdvantage = () => {
           ))}
         </div>
         <div className="text-center mt-16">
+            {/* THIS BUTTON IS NOW CORRECTED */}
             <Link 
               href="/services/free-battery-testing" 
-              className="bg-brand-yellow text-navy-900 font-bold py-4 px-10 rounded-lg text-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 inline-block shadow-lg hover:shadow-yellow-400/30"
+              className="inline-block bg-brand-blue text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-300 transform hover:bg-brand-blue-hover hover:-translate-y-1 shadow-lg"
             >
                 Explore Our Services
             </Link>

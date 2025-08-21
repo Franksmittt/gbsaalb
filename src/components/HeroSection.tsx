@@ -1,61 +1,53 @@
 // FILE: src/components/HeroSection.tsx (REPLACE ENTIRE FILE)
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Icon from './ui/Icon';
 
-const categories = [
-    { name: 'Car', href: '/shop?type=Automotive' },
-    { name: 'Truck', href: '/shop?type=Truck' },
-    { name: 'Motorcycle', href: '/shop?type=Motorcycle' },
-    { name: 'Solar', href: '/shop?type=Solar' },
-    { name: 'Security', href: '/shop?type=Security' },
-    { name: 'Boat', href: '/shop?type=Marine' },
-];
-
-export default function HeroSection() {
+const HeroSection = () => {
     return (
-        <div className="relative h-[70vh] min-h-[550px] w-full flex items-center justify-center text-white bg-navy-900">
-            {/* FIX: Removed the placeholder="blur" prop to resolve the build error for images served from the public directory. */}
-            <Image 
-                src="/images/technician-testing.jpg" 
-                alt="High-performance car battery in a clean engine bay" 
-                fill
-                style={{objectFit: 'cover'}}
-                className="brightness-50"
-                priority={true}
-                sizes="100vw"
-            />
-            
+        <section className="relative h-[600px] md:h-[700px] text-white flex items-center bg-navy-950">
+            <div className="absolute inset-0 z-0">
+                <Image 
+                    src="/images/technician-testing.jpg"
+                    alt="Technician testing a car battery in Alberton"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    className="brightness-50"
+                    sizes="100vw"
+                    priority 
+                    fetchPriority="high"
+                />
+            </div>
             <div className="relative z-10 container mx-auto px-4 text-center">
-                <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg">
-                    The Power You Rely On.
-                    <br/>
-                    The Service You Trust.
-                </h1>
-                <p className="text-lg md:text-xl mb-10 drop-shadow-md text-gray-200 max-w-3xl mx-auto">
-                    South Africa's premier battery specialists, providing expert advice, free testing, and guaranteed fitment.
-                </p>
-
-                <div className="flex flex-wrap justify-center gap-4">
-                    {categories.map(cat => (
+                <div className="max-w-3xl mx-auto">
+                    <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-shadow-md">
+                        Your Trusted Battery Specialists in Alberton
+                    </h1>
+                    <p className="mt-6 text-lg md:text-xl text-slate-200 text-shadow">
+                        Shop South Africa’s top battery brands like Willard, Exide & Novax online. <br/>
+                         Expert advice, free testing, and professional fitment at our Alberton branch.
+                    </p>
+                    <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link 
-                            key={cat.name} 
-                            href={cat.href} 
-                            className="group relative w-32 h-14 rounded-lg font-semibold overflow-hidden transition-transform hover:scale-105"
+                            href="/#vehicle-finder"
+                            className="inline-flex items-center justify-center bg-brand-blue text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:bg-brand-blue-hover hover:-translate-y-1 shadow-lg w-full sm:w-auto"
                         >
-                            <div 
-                                className="absolute inset-[-1000%] animate-spin-slow group-hover:opacity-100 opacity-0 transition-opacity duration-500"
-                                style={{ 
-                                    background: 'conic-gradient(from 90deg at 50% 50%, #60A5FA 0%, #1D4ED8 50%, #60A5FA 100%)' 
-                                }}
-                            />
-                            <div className="absolute inset-[2px] bg-white/10 border border-white/20 rounded-md backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                                <span>{cat.name}</span>
-                            </div>
+                            <Icon path="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z" className="w-5 h-5 mr-3" />
+                            Find Your Battery
                         </Link>
-                    ))}
+                        <Link 
+                            href="/shop"
+                            className="inline-flex items-center justify-center border-2 border-white text-white font-semibold py-4 px-8 rounded-lg text-lg hover:bg-white hover:text-navy-900 transition-colors w-full sm:w-auto"
+                        >
+                            Shop All Products
+                        </Link>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
+
+export default HeroSection;

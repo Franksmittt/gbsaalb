@@ -1,14 +1,36 @@
-// FILE: src/components/home/FeaturedProducts.tsx (CREATE NEW FILE)
+// FILE: src/components/home/FeaturedProducts.tsx (REPLACE ENTIRE FILE)
 'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/types';
+import Icon from '@/components/ui/Icon';
+
+const StockStatus = ({ status }: { status: Product['stock_status'] }) => {
+  if (status === 'Out of Stock') {
+    return (
+      <div className="absolute top-3 left-3 bg-slate-600 text-white text-xs font-bold px-2.5 py-1 rounded-full z-10 flex items-center gap-1.5">
+        <Icon path="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Zm-1-4h2v2H11Zm0-8h2v6H11Z" className="w-4 h-4" />
+        OUT OF STOCK
+      </div>
+    );
+  }
+  if (status === 'Low Stock') {
+    return (
+      <div className="absolute top-3 left-3 bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full z-10 flex items-center gap-1.5 animate-pulse">
+        <Icon path="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Zm-1-4h2v2H11Zm0-8h2v6H11Z" className="w-4 h-4" />
+        LOW STOCK
+      </div>
+    );
+  }
+  return null;
+};
 
 const ProductCard = ({ product, isBestSeller }: { product: Product; isBestSeller?: boolean }) => (
     <div className="product-card-gradient rounded-lg border border-slate-700/50 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-navy-950/50 relative overflow-hidden">
-        {isBestSeller && <div className="absolute top-4 right-4 bg-white text-navy-950 px-3 py-1 rounded-full text-xs font-semibold uppercase z-10">Best Seller</div>}
+        <StockStatus status={product.stock_status} />
+        {isBestSeller && <div className="absolute top-3 right-3 bg-white text-navy-950 px-3 py-1 rounded-full text-xs font-semibold uppercase z-10">Best Seller</div>}
         <div className="bg-white p-4">
             <Link href={`/shop/${product.id}`}>
                 <Image 
@@ -25,7 +47,7 @@ const ProductCard = ({ product, isBestSeller }: { product: Product; isBestSeller
             <p className="text-slate-400 text-sm mb-4 h-10">{product.warranty} | {product.specs.ah}Ah {product.specs.cca}CCA</p>
             <p className="text-3xl font-bold text-white mb-6 mt-auto">R{product.price.toFixed(2)}</p>
             <Link href={`/shop/${product.id}`} className="border border-white text-white font-semibold py-2 px-6 rounded-md w-full text-center transition-colors hover:bg-white hover:text-navy-950">
-                View Product
+                View Details
             </Link>
         </div>
     </div>
@@ -68,8 +90,9 @@ export default function FeaturedProducts({ products }: { products: Product[] }) 
                     {tabs.map(tab => (
                         <div key={tab.id} className={`${activeTab === tab.id ? 'grid' : 'hidden'} grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-in-fast`}>
                             {products
-                                .filter(p => p.type.includes(tab.type))
-                                .slice(0, 4) // Show up to 4 products per tab
+                                // FIX: Made the filter case-insensitive to ensure products always match.
+                                .filter(p => p.type.map(t => t.toLowerCase()).includes(tab.type.toLowerCase()))
+                                .slice(0, 4)
                                 .map((product, index) => (
                                     <ProductCard key={product.id} product={product} isBestSeller={tab.id === 'automotive' && index === 0} />
                                 ))

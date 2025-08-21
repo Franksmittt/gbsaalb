@@ -71,11 +71,11 @@ export default function Header() {
             <span className="text-2xl font-extrabold tracking-tight text-white">Global Batteries</span>
           </Link>
           <div className="hidden lg:block flex-grow max-w-2xl">
-             <div className="relative">
-              <input 
-                type="search" 
-                placeholder="Search by battery size, vehicle, or brand..." 
-                className="w-full bg-white text-black rounded-md py-3 pl-5 pr-12 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+            <div className="relative">
+              <input
+                type="search"
+                placeholder="Search by battery size, vehicle, or brand..."
+                className="w-full bg-white text-black rounded-md py-3 pl-5 pr-12 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 aria-label="Search products"
              />
               <div className="absolute top-0 right-0 h-full flex items-center pr-4 pointer-events-none">
@@ -88,12 +88,12 @@ export default function Header() {
               <Icon path="M6.62,10.79a15.25,15.25,0,0,0,6.59,6.59l2.2-2.2a1,1,0,0,1,1-.24,11.36,11.36,0,0,0,3.57.57,1,1,0,0,1,1,1V20a1,1,0,0,1-1,1A17,17,0,0,1,3,4,1,1,0,0,1,4,3H7.5a1,1,0,0,1,1,1,11.36,11.36,0,0,0,.57,3.57,1,1,0,0,1-.24,1Z" className="w-8 h-8 text-blue-400"/>
               <div>
                 <p className="text-xs text-gray-400">NEED HELP?</p>
-                <a href="tel:0118692427" className="font-bold text-lg hover:text-blue-400">011 869 2427</a>
-                 <a href="https://wa.me/27793203014" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-blue-400">WhatsApp Us</a>
+                <a href="tel:0118692427" className="font-bold text-lg hover:text-white">011 869 2427</a>
+                 <a href="https://wa.me/27793203014" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white">WhatsApp Us</a>
               </div>
             </div>
             <div className="flex items-center">
-              <Link href="/cart" className="relative hover:text-blue-400 transition-colors p-3" aria-label="View shopping cart">
+              <Link href="/cart" className="relative hover:text-white transition-colors p-3" aria-label="View shopping cart">
                 <Icon path="M17,18a2,2,0,0,1-2,2H9a2,2,0,0,1-2-2V8H5V6H8.55a4,4,0,0,1,7.9,0H20v2H19v10ZM9,8v10h6V8Z" className="w-7 h-7"/>
                 <NotificationBadge count={0} />
               </Link>
@@ -106,18 +106,15 @@ export default function Header() {
       </div>
 
       <nav className="bg-[#34373e] text-white font-semibold">
-        {/* --- UPDATED NAVIGATION BAR --- */}
-        {/* UPDATED: justify-between to anchor items left/right, and `relative` for positioning context */}
         <div className="container mx-auto px-4 h-14 flex items-center justify-between relative">
           
-          {/* Left-aligned items */}
           <div className="flex items-center gap-6">
             <div className="relative h-full" ref={categoryMenuRef}>
               <button 
                 onClick={() => setIsCategoryMenuOpen(!isCategoryMenuOpen)}
                 className="bg-blue-600 text-white px-6 h-14 flex items-center gap-2 font-bold text-base transition-colors hover:bg-blue-500"
               >
-                <Icon path="M3,8H8V3A1,1,0,0,1,9,2h6a1,1,0,0,1,1,1V8h5a1,1,0,0,1,1,1v6a1,1,0,0,1-1,1H16v5a1,1,0,0,1-1,1H9a1,1,0,0,1-1-1V16H3a1,1,0,0,1-1-1V9A1,1,0,0,1,3,8ZM4,14H8V10H4Zm6,0h4V10H10Zm6,0h4V10H16ZM14,8H10V4h4Z" className="w-5 h-5"/>
+                <Icon path="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" className="w-5 h-5"/>
                 Shop By Category
                 <Icon path="M12,15a1,1,0,0,1-.71-.29l-4-4A1,1,0,0,1,8.71,9.29L12,12.59l3.29-3.29a1,1,0,1,1,1.42,1.42l-4,4A1,1,0,0,1,12,15Z" className={`w-5 h-5 transition-transform duration-300 ${isCategoryMenuOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -125,20 +122,17 @@ export default function Header() {
             </div>
           </div>
           
-          {/* UPDATED: Absolutely centered slogan */}
           <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <p className="text-sm text-white font-medium whitespace-nowrap px-6">
               The largest selection of battery brands in South Africa
             </p>
           </div>
 
-          {/* Right-aligned Nav Links */}
           <div className="hidden lg:flex items-center gap-8">
              {navLinks.map(link => (
-              <Link key={link.name} href={link.href} className="hover:text-blue-400 transition-colors">{link.name}</Link>
+              <Link key={link.name} href={link.href} className="hover:text-white transition-colors">{link.name}</Link>
             ))}
           </div>
-
         </div>
       </nav>
     </header>

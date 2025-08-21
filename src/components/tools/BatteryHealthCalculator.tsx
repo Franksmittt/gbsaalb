@@ -9,7 +9,7 @@ type Climate = 'hot' | 'moderate';
 
 const SegmentedControl = ({ label, options, selectedValue, onSelect }: any) => (
     <div>
-        <label className="block text-sm font-semibold text-gray-400 mb-2">{label}</label>
+        <label className="block text-sm font-semibold text-slate-300 mb-2">{label}</label>
         <div className="flex w-full bg-gray-800 rounded-lg p-1">
             {options.map((option: any) => (
                 <button
@@ -57,19 +57,18 @@ const BatteryHealthCalculator = () => {
     };
 
     return (
-        <div className="bg-navy-900 py-16 sm:py-24" id="battery-health-calculator">
-            {/* UPDATED: Removed max-w-5xl to align with the standard container */}
-            <div className="container mx-auto px-4">
+        <section className="w-full bg-navy-900 py-16 md:py-24" id="battery-health-calculator">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center">
                     <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Battery Health Estimator</h2>
-                    <p className="mt-4 text-lg text-gray-400">A quick estimate of your battery's condition. For 100% accuracy, visit us for a free professional test.</p>
+                    <p className="mt-4 text-lg text-slate-300">A quick estimate of your battery's condition. For 100% accuracy, visit us for a free professional test.</p>
                 </div>
 
-                <div className="mt-12 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div className="mt-12 grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-4xl mx-auto">
                     {/* Column 1: Controls */}
                     <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 space-y-6">
                         <div>
-                            <label htmlFor="age" className="block text-sm font-semibold text-gray-400">Battery Age: <span className="font-bold text-blue-400">{age} {age === 1 ? 'year' : 'years'}</span></label>
+                            <label htmlFor="age" className="block text-sm font-semibold text-slate-300">Battery Age: <span className="font-bold text-blue-400">{age} {age === 1 ? 'year' : 'years'}</span></label>
                             <input type="range" id="age" min="1" max="8" value={age} onChange={(e) => setAge(Number(e.target.value))} className="w-full h-2 rounded-lg appearance-none cursor-pointer mt-2 custom-slider" />
                         </div>
                         <SegmentedControl label="Primary Driving Style" options={[{ value: 'short', label: 'Short Trips' }, { value: 'mixed', label: 'Mixed' }, { value: 'long', label: 'Long Trips' }]} selectedValue={usage} onSelect={setUsage} />
@@ -80,11 +79,15 @@ const BatteryHealthCalculator = () => {
                     <div className="text-center">
                         {result ? (
                             <div className="p-6 animate-fade-in">
-                                <p className="font-semibold text-gray-400">Estimated Health</p>
-                                <div className="relative w-full bg-gray-700 rounded-full h-10 mt-4 mb-2 overflow-hidden">
+                                <p className="font-semibold text-slate-300">Estimated Health</p>
+                                {/* UPDATED: The container now has the dynamic width */}
+                                <div 
+                                    className="relative w-full bg-gray-700 rounded-full h-10 mt-4 mb-2 overflow-hidden"
+                                    style={{ width: `${result.health}%` }}
+                                >
+                                    {/* The inner bar animates its scale from 0 to 1 */}
                                     <div 
-                                        className={`h-full rounded-full animate-progress-bar-fill ${result.colorClass}`}
-                                        style={{ width: `${result.health}%` }}
+                                        className={`h-full w-full rounded-full animate-progress-bar-fill ${result.colorClass}`}
                                     ></div>
                                     <span className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-white mix-blend-exclusion">
                                         {result.health}%
@@ -105,7 +108,7 @@ const BatteryHealthCalculator = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

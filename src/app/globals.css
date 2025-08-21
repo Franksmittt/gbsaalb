@@ -3,12 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-inter: 'Inter', sans-serif;
-}
-
 body {
-  font-family: var(--font-inter);
+  font-family: var(--font-figtree), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,7 +29,7 @@ body {
   height: 200%;
   z-index: -2;
   transform-origin: center center;
-  background: conic-gradient(from 0deg, #1E3A8A, #FFD300, #60A5FA, #1E3A8A);
+  background: conic-gradient(from 0deg, #1E3A8A, #3B82F6, #FFFFFF, #1E3A8A);
   animation: spin 6s linear infinite;
 }
 
@@ -52,10 +48,12 @@ body {
 }
 
 @keyframes progress-bar-fill {
-  from { width: 0%; }
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 .animate-progress-bar-fill {
+  transform-origin: left;
   animation: progress-bar-fill 1s ease-out forwards;
 }
 
@@ -75,7 +73,7 @@ body {
   appearance: none;
   width: 24px;
   height: 24px;
-  background: #60A5FA;
+  background: #1D4ED8;
   cursor: pointer;
   border-radius: 9999px;
   border: 4px solid #0F172A;
@@ -85,7 +83,7 @@ body {
 .custom-slider::-moz-range-thumb {
   width: 24px;
   height: 24px;
-  background: #60A5FA;
+  background: #1D4ED8;
   cursor: pointer;
   border-radius: 9999px;
   border: 4px solid #0F172A;
@@ -152,19 +150,21 @@ body {
     font-size: 0.875rem;
     font-weight: 600;
     margin-left: 0.75rem;
+    min-width: 105px;
+    text-align: center;
 }
 .status-open {
-    background-color: #10B981; /* Tailwind Emerald-500 */
-    color: #FFFFFF;
+    background-color: #10B981;
+    color: #0F172A;
 }
 .status-closed {
-    background-color: #475569; /* Tailwind Slate-600 */
-    color: #E2E8F0; /* Tailwind Slate-200 */
+    background-color: #475569;
+    color: #E2E8F0;
 }
 
-/* --- NEW: Brand Card Styles --- */
+/* --- Brand Card Styles --- */
 .brand-card {
-    background-color: #172A46; /* navy-850 */
+    background-color: #172A46;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -173,11 +173,15 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 0.5rem; /* same as rounded-lg */
-    padding: 2px; /* border thickness */
-    background: linear-gradient(45deg, #FFFFFF, #334155, #FFFFFF);
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
+    border-radius: 0.5rem;
+    padding: 2px;
+    background: linear-gradient(45deg, #FFFFFF, #3B82F6, #FFFFFF);
+    /* UPDATED: Added standard mask properties for compatibility */
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -202,4 +206,10 @@ body {
 .brand-card:hover .brand-logo {
     transform: scale(1.05);
     filter: grayscale(0%) contrast(1) brightness(1);
+}
+
+/* --- Accessible Placeholders --- */
+input::placeholder {
+  color: #9ca3af;
+  opacity: 1;
 }

@@ -37,7 +37,7 @@ const InteractiveBatteryFinder = () => {
 
     // 1. Fetch and initialize data on component mount
     useEffect(() => {
-        const dataFiles = ['abarth.json']; 
+        const dataFiles = ['abarth.json'];
 
         const fetchAllData = async () => {
             try {
@@ -86,7 +86,7 @@ const InteractiveBatteryFinder = () => {
     useEffect(() => {
         if (year) {
              const filtered = allVehicleData.filter(item => item.make === make && item.model === model && item.year === year);
-            setVariants(Array.from(new Set(filtered.map(item => item.variant))).sort());
+             setVariants(Array.from(new Set(filtered.map(item => item.variant))).sort());
             setVariant('');
             setResult(null);
         }

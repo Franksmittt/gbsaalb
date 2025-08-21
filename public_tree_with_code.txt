@@ -63,7 +63,7 @@ SIZE: 1035 bytes
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\manifest.json
-SIZE: 545 bytes
+SIZE: 525 bytes
 --------------------------------------------------------------------------------
 {
   "name": "Global Batteries Alberton",
@@ -121,7 +121,7 @@ define(["exports"],function(t){"use strict";try{self["workbox:core:6.5.4"]&&_()}
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\public\data\abarth.json
-SIZE: 38219 bytes
+SIZE: 36958 bytes
 --------------------------------------------------------------------------------
 [
     {

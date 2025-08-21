@@ -4,7 +4,6 @@
 import React, { useState, useEffect } from 'react';
 import Icon from '@/components/ui/Icon';
 
-// --- Data for the branches, updated from your new HTML ---
 const branches = [
   {
     name: 'Alberton',
@@ -47,24 +46,23 @@ const branches = [
   },
 ];
 
-// --- Custom Hook for Store Status Logic ---
 const useStoreStatus = (hours: typeof branches[0]['hours']) => {
     const [status, setStatus] = useState({ text: 'Checking...', className: '' });
 
     useEffect(() => {
         const now = new Date();
         const utcHours = now.getUTCHours();
-        const sastHours = (utcHours + 2); // SAST is UTC+2
+        const sastHours = (utcHours + 2);
         const minutes = now.getUTCMinutes();
         const currentTime = sastHours + (minutes / 60);
-        const day = now.getUTCDay(); // Sunday = 0, Saturday = 6
+        const day = now.getUTCDay();
 
         let currentHours;
-        if (day >= 1 && day <= 5) { // Monday to Friday
+        if (day >= 1 && day <= 5) {
             currentHours = hours.weekday;
-        } else if (day === 6) { // Saturday
+        } else if (day === 6) {
             currentHours = hours.saturday;
-        } else { // Sunday
+        } else {
             currentHours = null;
         }
 
@@ -78,7 +76,6 @@ const useStoreStatus = (hours: typeof branches[0]['hours']) => {
     return status;
 };
 
-// --- Branch Card Sub-Component ---
 const BranchCard = ({ branch }: { branch: typeof branches[0] }) => {
     const status = useStoreStatus(branch.hours);
 
@@ -96,7 +93,8 @@ const BranchCard = ({ branch }: { branch: typeof branches[0] }) => {
                     <div className="flex items-start min-h-[56px]"><Icon path="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM16.24,16.24,11,13V7h2v5.18l4.24,2.54Z" className="w-6 text-center mr-2 mt-1 text-slate-500 flex-shrink-0" /><span>{branch.hours.weekday.string}<br />{branch.hours.saturday.string}</span></div>
                 </div>
                 {branch.whatsapp ? (
-                    <a href={`https://wa.me/27${branch.whatsapp.substring(1).replace(/\s/g, '')}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-green-600 text-white rounded-md px-4 py-3 font-semibold my-8 hover:bg-green-700 transition-colors">
+                    // FIX: Changed text-white to text-navy-900 for high contrast
+                    <a href={`https://wa.me/27${branch.whatsapp.substring(1).replace(/\s/g, '')}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-green-600 text-navy-900 rounded-md px-4 py-3 font-semibold my-8 hover:bg-green-500 transition-colors">
                         <Icon path="M12,2A10,10,0,0,0,2,12a9.89,9.89,0,0,0,1.53,5.29L2,22l4.83-1.26A10,10,0,1,0,12,2Zm4.23,12.82a1.48,1.48,0,0,1-1.24,1,3,3,0,0,1-1.75-.58,10.37,10.37,0,0,1-3.43-2.17,10.37,10.37,0,0,1-2.17-3.43,3,3,0,0,1-.58-1.75,1.48,1.48,0,0,1,1-1.24,1.18,1.18,0,0,1,.81.12l.24.12a1,1,0,0,1,.48.86,5.33,5.33,0,0,1,.2,1.23,1,1,0,0,1-.27.83l-.42.42a1,1,0,0,0-.2,1.18,7.9,7.9,0,0,0,2.17,2.17,1,1,0,0,0,1.18-.2l.42-.42a1,1,0,0,1,.83-.27,5.33,5.33,0,0,1,1.23.2,1,1,0,0,1,.86.48l.12.24A1.18,1.18,0,0,1,16.23,12.82Z" className="w-5 h-5 mr-3" />
                         WhatsApp {branch.name}
                     </a>
@@ -111,15 +109,14 @@ const BranchCard = ({ branch }: { branch: typeof branches[0] }) => {
     );
 };
 
-
-// --- Main Component ---
 export default function VisitOurBranches() {
   return (
     <section className="w-full bg-navy-950">
         <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
             <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Expert Battery Fitment & Testing</h2>
-                <p className="text-slate-400 mt-4 text-lg max-w-3xl mx-auto">Find our Alberton and Vanderbijlpark branches in <strong>Gauteng</strong>, or visit our Sasolburg branch in the <strong>Free State</strong> for professional advice and immediate service.</p>
+                {/* FIX: Increased contrast from slate-400 to slate-300 */}
+                <p className="text-slate-300 mt-4 text-lg max-w-3xl mx-auto">Find our Alberton and Vanderbijlpark branches in <strong>Gauteng</strong>, or visit our Sasolburg branch in the <strong>Free State</strong> for professional advice and immediate service.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {branches.map((branch) => (

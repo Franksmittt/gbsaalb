@@ -1,9 +1,9 @@
-// FILE: src/types.ts
+// FILE: src/types.ts (REPLACE ENTIRE FILE)
 
 export interface Product {
   id: string; // This is the Shopify handle
   name: string;
-  category: string[];
+  category?: string[];
   type: string[];
   brand: string;
   price: number;
@@ -20,9 +20,32 @@ export interface Product {
     width?: string;
     height?: string;
     weight_kg?: string;
-    terminal_layout?: string; 
+    terminal_layout?: string;
     hold_down?: string;
     discount?: string;
+  };
+  tags: string[];
+}
+
+export interface ShopifyProduct {
+  handle: string;
+  title: string;
+  description: string;
+  vendor: string;
+  tags: string[];
+  productType: string;
+  priceRange: {
+    minVariantPrice: {
+      amount: string;
+    };
+  };
+  images: {
+    edges: {
+      node: {
+        url: string;
+        altText: string;
+      };
+    }[];
   };
 }
 
@@ -38,19 +61,19 @@ export interface VehicleData {
 
 export interface Testimonial {
   id: number;
-  name:string;
+  name: string;
   location: string;
   quote: string;
   avatarUrl: string;
   branch?: 'Alberton' | 'Vanderbijlpark' | 'Sasolburg';
 }
 
-// FIX: Added the missing BlogPost interface
 export interface BlogPost {
-  id: string;
+  _id: string;
   title: string;
-  date: string;
+  publishedAt: string;
   excerpt: string;
-  imageUrl: string;
-  href: string;
+  mainImage: string;
+  slug: string;
+  category: string;
 }

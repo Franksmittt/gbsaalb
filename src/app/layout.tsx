@@ -4,14 +4,12 @@ import { Figtree } from 'next/font/google';
 import './globals.css';
 import LiveChatWidget from '@/components/ui/LiveChatWidget';
 
-// Restored the original Figtree font
 const figtree = Figtree({ 
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-figtree', 
 });
 
-// Kept the updated metadata for local targeting
 export const metadata: Metadata = {
   title: {
     default: 'Global Batteries Alberton | Car, Truck, Solar & Motorcycle Batteries',
@@ -29,8 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${figtree.variable} font-sans`}>
       <head>
+        {/* The problematic preload link has been removed from here */}
         <link rel="preconnect" href="https://cdn.shopify.com" />
-        {/* SCHEMA MARKUP: Added for Local Business SEO */}
         <script type="application/ld+json">
           {`
             {

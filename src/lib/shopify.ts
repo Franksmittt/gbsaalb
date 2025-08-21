@@ -1,145 +1,198 @@
 // FILE: src/lib/shopify.ts (REPLACE ENTIRE FILE)
-import { cache } from 'react';
-import { Product } from '@/types';
 
-const domain = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN;
-const storefrontAccessToken = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+import { Product, ShopifyProduct } from '@/types';
 
-async function shopifyFetch({ query, variables }: { query: string; variables?: Record<string, any> }) {
-  if (!domain || !storefrontAccessToken) {
-    throw new Error("Shopify credentials are not configured.");
-  }
-  const endpoint = `https://${domain}/api/2024-07/graphql.json`;
+const domain = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN!;
+const storefrontAccessToken = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
+
+async function shopifyRequest(query: string) {
+  const URL = `https://${domain}/api/2024-04/graphql.json`;
+
+  const options: RequestInit = {
+    method: 'POST',
+    headers: {
+      'X-Shopify-Storefront-Access-Token': storefrontAccessToken,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ query }),
+    next: { revalidate: 60 * 60 } // Revalidate data every hour
+  };
 
   try {
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Shopify-Storefront-Access-Token': storefrontAccessToken,
-      },
-      body: JSON.stringify({ query, variables }),
-      // PERFORMANCE: Cache results for 1 hour (3600s)
-      next: { revalidate: 3600 },
-    });
-
+    const response = await fetch(URL, options);
     if (!response.ok) {
-      throw new Error(`Shopify API responded with status ${response.status}`);
+      const errorBody = await response.text();
+      throw new Error(`Shopify API request failed: ${response.status} ${response.statusText}\n${errorBody}`);
     }
-
-    const jsonResponse = await response.json();
-    if (jsonResponse.errors) {
-      console.error('GraphQL Errors:', jsonResponse.errors);
-      throw new Error('Failed to fetch from Shopify API due to GraphQL errors.');
-    }
-    return jsonResponse.data;
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error('Error in shopifyFetch:', error);
-    return null;
+    console.error('Error making Shopify API request:', error);
+    return { error: 'Shopify API request failed.', details: error instanceof Error ? error.message : String(error) };
   }
 }
 
-const processProductNode = (product: any): Product | null => {
-  try {
-    if (!product) return null;
-    const productTypes: string[] = [product.productType || 'Uncategorized'];
-    let warranty = 'Standard Warranty';
+// Helper function to format the raw Shopify product data into our simpler Product type
+function formatProduct(product: ShopifyProduct): Product {
+    const {
+      handle,
+      title,
+      description,
+      vendor,
+      tags,
+      productType,
+      priceRange,
+      images
+    } = product;
+  
+    const imageUrl = images.edges[0]?.node.url || '/images/placeholder.jpg';
+  
     const specs: Product['specs'] = {};
-
-    product.tags.forEach((tag: string) => {
-      const parts = tag.split(':');
-      if (parts.length === 2) {
-        const key = parts[0].trim().toLowerCase();
-        const value = parts[1].trim();
-        if (['voltage', 'ah', 'cca', 'size', 'length', 'width', 'height'].includes(key)) {
-          specs[key as keyof Product['specs']] = value;
-        } else if (key === 'warranty') {
-          warranty = value;
-        } else if (key === 'type') {
-          // Add unique types to the array
-          if (!productTypes.includes(value)) {
-            productTypes.push(value);
+    const warrantyTag = tags.find(tag => tag.toLowerCase().startsWith('warranty:'));
+    
+    tags.forEach(tag => {
+      if (tag.toLowerCase().startsWith('spec:')) {
+        const parts = tag.split(':');
+        if (parts.length === 2) {
+          const specParts = parts[1].match(/(\d+)(\w+)/);
+          if (specParts && specParts.length === 3) {
+            specs[specParts[2].toLowerCase() as keyof Product['specs']] = specParts[1];
           }
         }
       }
     });
-
+  
     return {
-      id: product.handle,
-      name: product.title,
-      category: productTypes,
-      type: productTypes,
-      brand: product.vendor || 'Unknown Brand',
-      price: parseFloat(product.priceRange?.minVariantPrice?.amount || '0.00'),
-      imageUrl: product.images?.edges?.[0]?.node?.url || '/images/placeholder.jpg',
-      description: product.descriptionHtml || '',
+      id: handle,
+      name: title,
+      description: description || '',
+      brand: vendor,
+      category: [],
+      type: productType ? [productType] : [],
+      price: parseFloat(priceRange.minVariantPrice.amount),
+      imageUrl: imageUrl,
+      warranty: warrantyTag ? warrantyTag.split(':')[1].trim() : 'Standard Warranty',
       stock_status: 'In Stock',
-      warranty,
-      specs,
+      tags: tags,
+      // FIX: Ensure specs is always included to match the interface
+      specs: specs 
     };
-  } catch (error) {
-    console.error(`Failed to process Shopify product: ${product?.handle || '(unknown handle)'}`, error);
-    return null;
-  }
-};
-
-const getProductsQuery = `
-  query getProducts($first: Int!, $after: String) {
-    products(first: $first, after: $after) {
-      edges { cursor node { id handle title descriptionHtml productType vendor tags priceRange { minVariantPrice { amount } } images(first: 1) { edges { node { url altText } } } } }
-      pageInfo { hasNextPage endCursor }
-    }
-  }
-`;
-
-export const getAllProducts = cache(async (): Promise<Product[]> => {
-    let allEdges: any[] = [];
-    let hasNextPage = true;
-    let cursor: string | null = null;
+}
   
-    while (hasNextPage) {
-      const data = await shopifyFetch({ 
-          query: getProductsQuery,
-          variables: { first: 250, after: cursor }
-      });
-      if (!data?.products) {
-          hasNextPage = false;
-          continue;
+
+export async function getAllProducts() {
+  const query = `
+    {
+      products(first: 250) {
+        edges {
+          node {
+            handle
+            title
+            description
+            vendor
+            tags
+            productType
+            priceRange {
+              minVariantPrice {
+                amount
+              }
+            }
+            images(first: 1) {
+              edges {
+                node {
+                  url
+                  altText
+                }
+              }
+            }
+          }
+        }
       }
-  
-      allEdges = allEdges.concat(data.products.edges);
-      hasNextPage = data.products.pageInfo.hasNextPage;
-      cursor = data.products.pageInfo.endCursor;
     }
-    
-    if (allEdges.length === 0) return [];
-    return allEdges
-      .map((edge: any) => processProductNode(edge.node))
-      .filter((p: Product | null): p is Product => p !== null);
-});
+  `;
+  const response = await shopifyRequest(query);
 
-const getProductByHandleQuery = `
-  query getProductByHandle($handle: String!) {
-    product(handle: $handle) { id handle title descriptionHtml productType vendor tags priceRange { minVariantPrice { amount } } images(first: 5) { edges { node { url altText } } } }
+  if (response.error || !response.data?.products) {
+    return [];
   }
-`;
 
-export const getProductByHandle = cache(async (handle: string): Promise<Product | null> => {
-  const data = await shopifyFetch({ query: getProductByHandleQuery, variables: { handle } });
-  if (!data?.product) return null;
-  return processProductNode(data.product);
-});
+  const products = response.data.products.edges.map((edge: { node: ShopifyProduct }) => formatProduct(edge.node));
+  return products;
+}
 
-const getCollectionProductsQuery = `
-  query getCollectionProducts($handle: String!, $first: Int!) {
-    collection(handle: $handle) { products(first: $first) { edges { node { id handle title descriptionHtml productType vendor tags priceRange { minVariantPrice { amount } } images(first: 1) { edges { node { url altText } } } } } } }
-  }
-`;
+export async function getProductByHandle(handle: string) {
+    const query = `
+      {
+        product(handle: "${handle}") {
+            handle
+            title
+            description
+            vendor
+            tags
+            productType
+            priceRange {
+              minVariantPrice {
+                amount
+              }
+            }
+            images(first: 5) {
+              edges {
+                node {
+                  url
+                  altText
+                }
+              }
+            }
+        }
+      }
+    `;
+    const response = await shopifyRequest(query);
+  
+    if (response.error || !response.data?.product) {
+      return null;
+    }
+  
+    return formatProduct(response.data.product);
+}
 
-export const getCollectionProducts = cache(async (handle: string, count: number = 8): Promise<Product[]> => {
-    const data = await shopifyFetch({ query: getCollectionProductsQuery, variables: { handle, first: count } });
-    if (!data?.collection?.products?.edges) return [];
-    return data.collection.products.edges
-      .map((edge: any) => processProductNode(edge.node))
-      .filter((p: Product | null): p is Product => p !== null);
-});
+export async function getCollectionProducts(collection: string) {
+    const query = `
+      {
+        collection(handle: "${collection}") {
+          products(first: 250) {
+            edges {
+              node {
+                handle
+                title
+                description
+                vendor
+                tags
+                productType
+                priceRange {
+                  minVariantPrice {
+                    amount
+                  }
+                }
+                images(first: 1) {
+                  edges {
+                    node {
+                      url
+                      altText
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `;
+    const response = await shopifyRequest(query);
+  
+    if (response.error || !response.data?.collection?.products) {
+      return [];
+    }
+  
+    const products = response.data.collection.products.edges.map((edge: { node: ShopifyProduct }) => formatProduct(edge.node));
+    return products;
+}

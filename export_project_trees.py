@@ -1,16 +1,12 @@
 # export_project_trees.py
 # -*- coding: utf-8 -*-
 """
-Exports three text files to the project root:
+Exports a single text file to the project root named 'project_summary.txt'.
 
-  1) src_tree_with_code.txt
-     - Full tree of /src and the contents of each readable file.
-
-  2) public_tree_with_code.txt
-     - Full tree of /public and the contents of each readable file.
-
-  3) project_root_selected_files.txt
-     - Contents of selected files in the project root.
+This file contains:
+  1) The full tree and contents of the /src directory.
+  2) The full tree and contents of the /public directory.
+  3) The contents of selected files from the project root.
 
 Safe for Windows paths (raw strings), skips obvious binaries and very large files.
 """
@@ -22,6 +18,9 @@ from pathlib import Path
 PROJECT_ROOT = Path(r"C:\Users\shop\Desktop\global-batteries-alberton")
 SRC_DIR = PROJECT_ROOT / "src"
 PUBLIC_DIR = PROJECT_ROOT / "public"
+
+# The single output file for the combined project summary
+OUT_FILE = PROJECT_ROOT / "project_summary.txt"
 
 # Include all requested root files (now including .env.local)
 ROOT_SELECTED_FILES = [
@@ -36,10 +35,6 @@ ROOT_SELECTED_FILES = [
     PROJECT_ROOT / "package-lock.json",
     PROJECT_ROOT / "postcss.config.mjs",
 ]
-
-OUT_SRC = PROJECT_ROOT / "src_tree_with_code.txt"
-OUT_PUBLIC = PROJECT_ROOT / "public_tree_with_code.txt"
-OUT_ROOT = PROJECT_ROOT / "project_root_selected_files.txt"
 
 # --- SETTINGS ---
 IGNORE_DIRS = {
@@ -84,6 +79,7 @@ def safe_read_text(path: Path) -> str:
     if is_probably_binary(path):
         return "[Skipped: binary file]"
 
+    # Try common encodings first
     for enc in ("utf-8", "utf-8-sig", "cp1252", "latin-1"):
         try:
             with path.open("r", encoding=enc, errors="strict") as f:
@@ -91,6 +87,7 @@ def safe_read_text(path: Path) -> str:
         except Exception:
             continue
 
+    # Fallback to a lossy read if all else fails
     try:
         with path.open("r", encoding="utf-8", errors="replace") as f:
             return f.read()
@@ -102,7 +99,7 @@ def build_tree_lines(root_dir: Path) -> list[str]:
     """Return ASCII tree lines for root_dir, skipping IGNORE_DIRS."""
     lines = [f"{root_dir.name}/"]
     for current_root, dirs, files in os.walk(root_dir):
-        # prune and sort
+        # Prune and sort directories and files
         dirs[:] = [d for d in dirs if d not in IGNORE_DIRS]
         dirs.sort(key=lambda s: s.lower())
         files.sort(key=lambda s: s.lower())
@@ -115,9 +112,8 @@ def build_tree_lines(root_dir: Path) -> list[str]:
 
         depth = len(rel_parts)
 
-        # Compose prefix with vertical guides for depth-1 levels
         def prefix_for(depth_level: int) -> str:
-            # For a clean simple tree we’ll just indent by 4*depth spaces
+            # Indent by 4 spaces per depth level for a clean tree
             return "    " * depth_level
 
         # List directories
@@ -135,54 +131,53 @@ def build_tree_lines(root_dir: Path) -> list[str]:
     return lines
 
 
-def write_folder_dump(folder: Path, out_file: Path) -> None:
-    out_file.parent.mkdir(parents=True, exist_ok=True)
-    with out_file.open("w", encoding="utf-8", newline="\r\n") as out:
-        # 1) Tree
-        out.write(f"# Tree for: {folder}\r\n\r\n")
-        for line in build_tree_lines(folder):
-            out.write(line + "\r\n")
+def append_folder_dump(folder: Path, out_stream) -> None:
+    """Appends the tree and contents of a folder to the given file stream."""
+    # 1) Write the directory tree structure
+    out_stream.write(f"# Tree for: {folder}\r\n\r\n")
+    for line in build_tree_lines(folder):
+        out_stream.write(line + "\r\n")
 
-        # 2) File contents
-        out.write("\r\n\r\n# File contents\r\n")
-        for current_root, dirs, files in os.walk(folder):
-            dirs[:] = [d for d in dirs if d not in IGNORE_DIRS]
-            dirs.sort(key=lambda s: s.lower())
-            files.sort(key=lambda s: s.lower())
+    # 2) Write the contents of each file
+    out_stream.write("\r\n\r\n# File contents\r\n")
+    for current_root, dirs, files in os.walk(folder):
+        dirs[:] = [d for d in dirs if d not in IGNORE_DIRS]
+        dirs.sort(key=lambda s: s.lower())
+        files.sort(key=lambda s: s.lower())
 
-            for f in files:
-                path = Path(current_root) / f
-                out.write("\r\n" + "=" * 80 + "\r\n")
-                out.write(f"PATH: {path}\r\n")
-                try:
-                    size = path.stat().st_size
-                    out.write(f"SIZE: {size} bytes\r\n")
-                except Exception:
-                    pass
-                out.write("-" * 80 + "\r\n")
-                out.write(safe_read_text(path) + "\r\n")
-
-
-def write_root_selected_files(selected_files: list[Path], out_file: Path) -> None:
-    out_file.parent.mkdir(parents=True, exist_ok=True)
-    with out_file.open("w", encoding="utf-8", newline="\r\n") as out:
-        out.write("# Selected root files (content)\r\n")
-        for p in selected_files:
-            out.write("\r\n" + "=" * 80 + "\r\n")
-            out.write(f"PATH: {p}\r\n")
-            if not p.exists():
-                out.write("[Missing]\r\n")
-                continue
+        for f in files:
+            path = Path(current_root) / f
+            out_stream.write("\r\n" + "=" * 80 + "\r\n")
+            out_stream.write(f"PATH: {path}\r\n")
             try:
-                size = p.stat().st_size
-                out.write(f"SIZE: {size} bytes\r\n")
+                size = path.stat().st_size
+                out_stream.write(f"SIZE: {size} bytes\r\n")
             except Exception:
-                pass
-            out.write("-" * 80 + "\r\n")
-            out.write(safe_read_text(p) + "\r\n")
+                pass  # Ignore if stat fails
+            out_stream.write("-" * 80 + "\r\n")
+            out_stream.write(safe_read_text(path) + "\r\n")
+
+
+def append_root_selected_files(selected_files: list[Path], out_stream) -> None:
+    """Appends the contents of selected root files to the given file stream."""
+    out_stream.write("# Selected root files (content)\r\n")
+    for p in selected_files:
+        out_stream.write("\r\n" + "=" * 80 + "\r\n")
+        out_stream.write(f"PATH: {p}\r\n")
+        if not p.exists():
+            out_stream.write("[Missing]\r\n")
+            continue
+        try:
+            size = p.stat().st_size
+            out_stream.write(f"SIZE: {size} bytes\r\n")
+        except Exception:
+            pass  # Ignore if stat fails
+        out_stream.write("-" * 80 + "\r\n")
+        out_stream.write(safe_read_text(p) + "\r\n")
 
 
 def main():
+    """Main function to orchestrate the project export."""
     problems = []
     if not SRC_DIR.exists():
         problems.append(f"Missing folder: {SRC_DIR}")
@@ -192,16 +187,32 @@ def main():
     if problems:
         print("Warnings:")
         for p in problems:
-            print(" - " + p)
+            print(f" - {p}")
 
-    print(f"Writing: {OUT_SRC}")
-    write_folder_dump(SRC_DIR, OUT_SRC)
+    print(f"Writing combined project summary to: {OUT_FILE}")
+    
+    # Ensure the parent directory for the output file exists
+    OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-    print(f"Writing: {OUT_PUBLIC}")
-    write_folder_dump(PUBLIC_DIR, OUT_PUBLIC)
+    # Open the single output file and write all sections to it
+    with OUT_FILE.open("w", encoding="utf-8", newline="\r\n") as out:
+        # Section 1: Source Directory
+        print("Processing /src directory...")
+        append_folder_dump(SRC_DIR, out)
 
-    print(f"Writing: {OUT_ROOT}")
-    write_root_selected_files(ROOT_SELECTED_FILES, OUT_ROOT)
+        # Section 2: Public Directory
+        print("Processing /public directory...")
+        out.write("\r\n\r\n" + "#" * 80 + "\r\n")
+        out.write("### END OF SRC / START OF PUBLIC ###\r\n")
+        out.write("#" * 80 + "\r\n\r\n")
+        append_folder_dump(PUBLIC_DIR, out)
+
+        # Section 3: Root Files
+        print("Processing root configuration files...")
+        out.write("\r\n\r\n" + "#" * 80 + "\r\n")
+        out.write("### END OF PUBLIC / START OF ROOT FILES ###\r\n")
+        out.write("#" * 80 + "\r\n\r\n")
+        append_root_selected_files(ROOT_SELECTED_FILES, out)
 
     print("Done.")
 

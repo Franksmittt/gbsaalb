@@ -3,7 +3,6 @@
 src/
 ├── app/
 ├── components/
-├── data/
 ├── lib/
 └── types.ts
     ├── cart/
@@ -33,15 +32,23 @@ src/
         └── InteractiveBatteryFinder.tsx
         ├── Bestsellers.tsx
         ├── BlogTeaser.tsx
+        ├── BrandExplorer.tsx
         ├── BrandShowcase.tsx
         ├── CategoryHighlights.tsx
+        ├── CTA.tsx
+        ├── FeaturedProducts.tsx
         ├── PromoBannersFour.tsx
         ├── PromoBannersTwo.tsx
         ├── ServiceHub.tsx
+        ├── ShopByCategoryGrid.tsx
+        ├── SocialProofBanner.tsx
         ├── Testimonials.tsx
         ├── TheGlobalBatteriesAdvantage.tsx
         ├── TrustAndValue.tsx
-        └── VisitOurBranches.tsx
+        ├── TrustBanner.tsx
+        ├── VisitOurBranches.tsx
+        ├── WhyGlobalBatteries.module.css
+        └── WhyGlobalBatteries.tsx
         └── BatteryHealthCalculator.tsx
         ├── CategoryMegaMenu.tsx
         ├── Icon.tsx
@@ -55,7 +62,7 @@ src/
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\types.ts
-SIZE: 1163 bytes
+SIZE: 1107 bytes
 --------------------------------------------------------------------------------
 // FILE: src/types.ts
 
@@ -123,7 +130,7 @@ SIZE: 25931 bytes
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\app\globals.css
-SIZE: 2465 bytes
+SIZE: 4393 bytes
 --------------------------------------------------------------------------------
 /* FILE: src/app/globals.css (REPLACE ENTIRE FILE) */
 @tailwind base;
@@ -140,14 +147,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* PERFORMANCE FIX: Simplified keyframes to only animate 'transform' */
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .whatsapp-button-animated {
@@ -165,15 +167,7 @@ body {
   height: 200%;
   z-index: -2;
   transform-origin: center center;
-  /* PERFORMANCE FIX: Removed dynamic angle from gradient */
-  background: conic-gradient(
-    from 0deg,
-    #1E3A8A,
-    #FFD300,
-    #60A5FA,
-    #1E3A8A
-  );
-  /* PERFORMANCE FIX: Animation now directly targets transform */
+  background: conic-gradient(from 0deg, #1E3A8A, #FFD300, #60A5FA, #1E3A8A);
   animation: spin 6s linear infinite;
 }
 
@@ -232,7 +226,6 @@ body {
   box-shadow: 0 0 0 2px #334155;
 }
 
-/* --- Simple Fade-in Animation --- */
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -243,12 +236,111 @@ body {
 }
 
 .animate-fade-in-fast {
-    animation: fade-in 0.3s ease-out forwards;
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* --- Testimonial Scroller Styles --- */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-384px * 10)); }
+}
+
+.scroller {
+  max-width: 100%;
+}
+
+.scroller__inner {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  animation: scroll 60s linear infinite;
+}
+
+.scroller:hover .scroller__inner {
+  animation-play-state: paused;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+/* --- Featured Product Card Styles --- */
+.product-card-gradient {
+  background: linear-gradient(145deg, #1e3a5f, #172a46);
+}
+
+.product-image-blend {
+  mix-blend-mode: multiply;
+}
+
+/* --- Branch Status Indicator Styles --- */
+.status-indicator {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-left: 0.75rem;
+}
+.status-open {
+    background-color: #10B981; /* Tailwind Emerald-500 */
+    color: #FFFFFF;
+}
+.status-closed {
+    background-color: #475569; /* Tailwind Slate-600 */
+    color: #E2E8F0; /* Tailwind Slate-200 */
+}
+
+/* --- NEW: Brand Card Styles --- */
+.brand-card {
+    background-color: #172A46; /* navy-850 */
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem; /* same as rounded-lg */
+    padding: 2px; /* border thickness */
+    background: linear-gradient(45deg, #FFFFFF, #334155, #FFFFFF);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(23, 42, 70, 0.4);
+}
+
+.brand-card:hover::before {
+    opacity: 1;
+}
+
+.brand-logo {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%) contrast(1.2) brightness(0.7);
+}
+
+.brand-card:hover .brand-logo {
+    transform: scale(1.05);
+    filter: grayscale(0%) contrast(1) brightness(1);
 }
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\app\layout.tsx
-SIZE: 2899 bytes
+SIZE: 2817 bytes
 --------------------------------------------------------------------------------
 // FILE: src/app/layout.tsx (REPLACE ENTIRE FILE)
 import type { Metadata } from 'next';
@@ -336,9 +428,12 @@ export default function RootLayout({
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\app\page.tsx
-SIZE: 6453 bytes
+SIZE: 4187 bytes
 --------------------------------------------------------------------------------
 // FILE: src/app/page.tsx (REPLACE ENTIRE FILE)
+
+'use client';
+
 import React from 'react';
 import type { Metadata } from 'next';
 import { Product } from '@/types';
@@ -347,85 +442,100 @@ import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import InteractiveBatteryFinder from '@/components/features/InteractiveBatteryFinder';
+import TrustBanner from '@/components/home/TrustBanner'; 
 import TheGlobalBatteriesAdvantage from '@/components/home/TheGlobalBatteriesAdvantage';
+import SocialProofBanner from '@/components/home/SocialProofBanner';
 import CategoryHighlights from '@/components/home/CategoryHighlights';
 import BrandShowcase from '@/components/home/BrandShowcase';
+import BrandExplorer from '@/components/home/BrandExplorer'; // ✅ NEW
 import BlogTeaser from '@/components/home/BlogTeaser';
 import Testimonials from '@/components/home/Testimonials';
 import BatteryHealthCalculator from '@/components/tools/BatteryHealthCalculator';
 import VisitOurBranches from '@/components/home/VisitOurBranches';
 import Footer from '@/components/Footer';
+import WhyGlobalBatteries from '@/components/home/WhyGlobalBatteries';
+import ShopByCategoryGrid from '@/components/home/ShopByCategoryGrid';
 
 // Dynamically import heavy components
 const Bestsellers = dynamic(() => import('@/components/home/Bestsellers'));
 const LazyLoad = dynamic(() => import('@/components/utils/LazyLoad'));
 
-// EXPANDED: Product data to populate new tabs in Bestsellers
+// Mock bestseller products (replace later with Shopify API)
 const bestsellingProducts: Product[] = [
-    // Top Sellers (Automotive)
-    { id: 'willard-652', name: 'Willard 652 Car Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Willard', price: 2100.00, imageUrl: '/images/brand-willard.jpg', description: 'The trusted choice for South African drivers, offering reliability and a 25-month warranty.', warranty: '25-Month Warranty', stock_status: 'In Stock', specs: { cca: '580', ah: '65' }, },
-    { id: 'novax-premium-628', name: 'Novax Premium 628 Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Novax Premium', price: 1750.00, imageUrl: '/images/brand-novax-premium.jpg', description: 'High-performance battery with a 26-month warranty.', warranty: '26-Month Warranty', stock_status: 'In Stock', specs: { cca: '450', ah: '50' }, },
-    { id: 'exide-616', name: 'Exide 616 EFB Start-Stop Battery', category: ['Automotive'], type: ['Stop-Start', 'Automotive'], brand: 'Exide', price: 2450.00, imageUrl: '/images/brand-exide.jpg', description: 'Enhanced Flooded Battery designed for vehicles with Start-Stop technology.', warranty: '24-Month Warranty', stock_status: 'In Stock', specs: { cca: '360', ah: '40' }, },
-    { id: 'global-619c', name: 'GLOBAL 619C Maintenance-Free Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Global Batteries', price: 1150.00, imageUrl: 'https://cdn.shopify.com/s/files/1/0245/6915/1569/files/global-619-242470_46dbe2c8-c170-4082-a6f3-3f5f8877ae27.jpg?v=1741347595', description: '12V, 42Ah, 314CCA. A reliable choice for a wide range of popular passenger vehicles.', warranty: '12-Month Warranty', stock_status: 'In Stock', specs: { cca: '314', ah: '42' }, },
-    { id: 'novax-639', name: 'Novax 639 Low-Maintenance Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Novax', price: 1700.00, imageUrl: 'https://cdn.shopify.com/s/files/1/0245/6915/1569/files/639.jpg?v=1741347635', description: '12V, 60Ah, 510CCA. Robust power for demanding South African conditions.', warranty: '18-Month Warranty', stock_status: 'In Stock', specs: { cca: '510', ah: '60' }, },
-    
-    // Truck & Commercial
-    { id: 'willard-668', name: 'Willard 668 Truck Battery', category: ['Truck'], type: ['Truck'], brand: 'Willard', price: 3200.00, imageUrl: '/images/category/truck-commercial.jpg', description: 'Heavy-duty performance for commercial vehicles and trucks.', warranty: '25-Month Warranty', stock_status: 'In Stock', specs: { cca: '830', ah: '102' }, },
-    { id: 'exide-682', name: 'Exide 682 Heavy Duty Commercial', category: ['Truck'], type: ['Truck'], brand: 'Exide', price: 3550.00, imageUrl: '/images/brand-exide.jpg', description: 'Maximum durability for the most demanding commercial applications.', warranty: '24-Month Warranty', stock_status: 'In Stock', specs: { cca: '950', ah: '120' }, },
-
-    // Motorcycle
-    { id: 'enertec-ytx9', name: 'Enertec YTX9-BS Motorcycle Battery', category: ['Motorcycle'], type: ['Motorcycle'], brand: 'Enertec', price: 750.00, imageUrl: '/images/category/motorcycle.jpg', description: 'AGM technology for high-performance bikes and leisure craft.', warranty: '12-Month Warranty', stock_status: 'In Stock', specs: { cca: '135', ah: '8' }, },
-    { id: 'enertec-ytx14', name: 'Enertec YTX14-BS High Output', category: ['Motorcycle'], type: ['Motorcycle'], brand: 'Enertec', price: 950.00, imageUrl: '/images/category/motorcycle.jpg', description: 'High output AGM battery for larger motorcycles and ATVs.', warranty: '12-Month Warranty', stock_status: 'In Stock', specs: { cca: '200', ah: '12' }, },
-
-    // Accessories
-    { id: 'jumper-cables', name: 'Heavy Duty Jumper Cables', category: ['Accessories'], type: ['Accessories'], brand: 'Global', price: 399.00, imageUrl: '/images/accessories/jumper-cables.jpg', description: '4-meter heavy-duty jumper cables with insulated clamps.', warranty: '6-Month Warranty', stock_status: 'In Stock', specs: {} },
-    { id: 'battery-terminal', name: 'Universal Battery Terminals (Pair)', category: ['Accessories'], type: ['Accessories'], brand: 'Global', price: 89.00, imageUrl: '/images/accessories/terminals.jpg', description: 'High-quality lead terminals for a secure connection.', warranty: 'N/A', stock_status: 'In Stock', specs: {} },
+  { id: 'willard-652', name: 'Willard 652 Car Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Willard', price: 2100.00, imageUrl: '/images/brand-willard.jpg', description: 'The trusted choice for South African drivers, offering reliability and a 25-month warranty.', warranty: '25-Month Warranty', stock_status: 'In Stock', specs: { cca: '580', ah: '65' } },
+  { id: 'novax-premium-628', name: 'Novax Premium 628 Battery', category: ['Automotive'], type: ['Automotive'], brand: 'Novax Premium', price: 1750.00, imageUrl: '/images/brand-novax-premium.jpg', description: 'High-performance battery with a 26-month warranty.', warranty: '26-Month Warranty', stock_status: 'In Stock', specs: { cca: '450', ah: '50' } },
+  { id: 'exide-616', name: 'Exide 616 EFB Start-Stop Battery', category: ['Automotive'], type: ['Stop-Start', 'Automotive'], brand: 'Exide', price: 2450.00, imageUrl: '/images/brand-exide.jpg', description: 'Enhanced Flooded Battery designed for vehicles with Start-Stop technology.', warranty: '24-Month Warranty', stock_status: 'In Stock', specs: { cca: '360', ah: '40' } },
 ];
-
 
 export default function HomePage() {
   return (
     <>
       <Header />
       <main>
+        {/* Hero and intro */}
         <HeroSection />
         <InteractiveBatteryFinder />
-        
-        {/* PHASE 1: New Narrative Section */}
+        <WhyGlobalBatteries />
+        <TrustBanner />
+
+        {/* Advantage section */}
         <LazyLoad placeholderHeight="600px">
           <TheGlobalBatteriesAdvantage />
         </LazyLoad>
-        
-        {/* PHASE 2: Evolved Components */}
+
+        {/* Social Proof */}
+        <LazyLoad placeholderHeight="500px">
+          <SocialProofBanner />
+        </LazyLoad>
+
+        {/* Shop by Category */}
+        <LazyLoad placeholderHeight="900px">
+          <ShopByCategoryGrid />
+        </LazyLoad>
+
+        {/* NEW: Brand Explorer */}
+        <LazyLoad placeholderHeight="900px">
+          <BrandExplorer />
+        </LazyLoad>
+
+        {/* Category Highlights */}
         <LazyLoad placeholderHeight="800px">
           <CategoryHighlights />
         </LazyLoad>
+
+        {/* Bestsellers */}
         <LazyLoad placeholderHeight="800px">
           <Bestsellers products={bestsellingProducts} />
         </LazyLoad>
 
+        {/* Old Brand Showcase (optional keep/remove later) */}
         <BrandShowcase />
 
-        {/* PHASE 3: Deeper Engagement */}
+        {/* Testimonials */}
         <LazyLoad placeholderHeight="700px">
           <Testimonials />
         </LazyLoad>
-        
+
+        {/* Blog */}
         <BlogTeaser />
+
+        {/* Tools */}
         <BatteryHealthCalculator />
-        
+
+        {/* Branches */}
         <LazyLoad placeholderHeight="600px">
-            <VisitOurBranches />
+          <VisitOurBranches />
         </LazyLoad>
       </main>
       <Footer />
     </>
   );
-}
+}
+
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\app\cart\page.tsx
-SIZE: 495 bytes
+SIZE: 479 bytes
 --------------------------------------------------------------------------------
 // FILE: src/app/cart/page.tsx (CREATE NEW FILE)
 import React from 'react';
@@ -447,7 +557,7 @@ export default function CartPage() {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\app\collection-terms\page.tsx
-SIZE: 522 bytes
+SIZE: 506 bytes
 --------------------------------------------------------------------------------
 // FILE: src/app/collection-terms/page.tsx (CREATE NEW FILE)
 import React from 'react';
@@ -469,7 +579,7 @@ export default function CollectionTermsPage() {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\app\contact\page.tsx
-SIZE: 498 bytes
+SIZE: 482 bytes
 --------------------------------------------------------------------------------
 // FILE: src/app/contact/page.tsx (CREATE NEW FILE)
 import React from 'react';
@@ -491,7 +601,7 @@ export default function ContactPage() {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\app\faq\page.tsx
-SIZE: 506 bytes
+SIZE: 490 bytes
 --------------------------------------------------------------------------------
 // FILE: src/app/faq/page.tsx (CREATE NEW FILE)
 import React from 'react';
@@ -513,7 +623,7 @@ export default function FaqPage() {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\app\shop\page.tsx
-SIZE: 517 bytes
+SIZE: 501 bytes
 --------------------------------------------------------------------------------
 // FILE: src/app/shop/page.tsx (CREATE NEW FILE)
 import React from 'react';
@@ -535,7 +645,7 @@ export default function ShopPage() {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\app\shop\[productId]\page.tsx
-SIZE: 810 bytes
+SIZE: 787 bytes
 --------------------------------------------------------------------------------
 // FILE: src/app/shop/[productId]/page.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
@@ -564,7 +674,7 @@ export default function ProductPage({ params }: any) {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\Footer.tsx
-SIZE: 5207 bytes
+SIZE: 5124 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/Footer.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
@@ -653,7 +763,7 @@ export default function Footer() {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\Header.tsx
-SIZE: 8016 bytes
+SIZE: 7871 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/Header.tsx (REPLACE ENTIRE FILE)
 "use client";
@@ -804,7 +914,7 @@ export default function Header() {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\HeroSection.tsx
-SIZE: 3016 bytes
+SIZE: 2956 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/HeroSection.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
@@ -870,7 +980,7 @@ export default function HeroSection() {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\features\InteractiveBatteryFinder.tsx
-SIZE: 10933 bytes
+SIZE: 10722 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/features/InteractiveBatteryFinder.tsx (REPLACE ENTIRE FILE)
 "use client";
@@ -1087,7 +1197,7 @@ export default InteractiveBatteryFinder;
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\Bestsellers.tsx
-SIZE: 6718 bytes
+SIZE: 6581 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/home/Bestsellers.tsx (REPLACE ENTIRE FILE)
 "use client";
@@ -1137,7 +1247,7 @@ const ProductCard = ({ product }: { product: Product }) => (
         <div className="mt-auto pt-5">
           <p className="text-gray-500 text-sm">Starts From</p>
           <p className="text-3xl font-extrabold text-navy-900">R{product.price.toFixed(2)}</p>
-          <Link href={`/shop/${product.id}`} className="mt-4 w-full inline-block text-center bg-navy-800 text-white font-bold py-3 px-4 rounded-lg hover:bg-navy-700 transition-all duration-300 transform hover:scale-105">
+          <Link href={`/shop/${product.id}`} className="mt-4 w-full inline-block text-center bg-brand-yellow text-navy-900 font-bold py-3 px-4 rounded-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
             View Details
           </Link>
         </div>
@@ -1169,12 +1279,11 @@ const Bestsellers = ({ products }: { products: Product[] }) => {
          return products.filter(p => p.type.includes('Accessories'));
       case 'Top Sellers':
       default:
-        return products.filter(p => p.type.includes('Automotive')).slice(0, 8); // Show a curated list for top sellers
+        return products.filter(p => p.type.includes('Automotive')).slice(0, 8);
     }
   };
 
   const filteredProducts = getFilteredProducts();
-
   const tabs: CategoryTab[] = ['Top Sellers', 'Truck & Commercial', 'Motorcycle', 'Accessories'];
 
   return (
@@ -1225,23 +1334,24 @@ export default Bestsellers;
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\BlogTeaser.tsx
-SIZE: 3274 bytes
+SIZE: 3884 bytes
 --------------------------------------------------------------------------------
-// FILE: src/components/home/BlogTeaser.tsx (CREATE NEW FILE)
+// FILE: src/components/home/BlogTeaser.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BlogPost } from '@/types'; // We'll use the BlogPost type we defined earlier
+import { BlogPost } from '@/types';
 
-// Mock data for 3 blog posts. Later, this will come from your Sanity CMS.
-const mockPosts: BlogPost[] = [
+// Updated mock data to include a category for the tag
+const mockPosts: (BlogPost & { category: string })[] = [
   {
     id: '1',
     title: "The Truth About Stop-Start Batteries (AGM vs EFB)",
     date: "August 12, 2025",
     excerpt: "Modern vehicles demand modern power. We break down the difference between AGM and EFB batteries...",
     imageUrl: "/images/blog/start-stop-battery.jpg",
-    href: "/blog/agm-vs-efb-batteries"
+    href: "/blog/agm-vs-efb-batteries",
+    category: "Tech Guide"
   },
   {
     id: '2',
@@ -1249,7 +1359,8 @@ const mockPosts: BlogPost[] = [
     date: "August 05, 2025",
     excerpt: "Don't get caught stranded. Learn the subtle signs your battery is giving you before it's too late.",
     imageUrl: "/images/blog/warning-signs.jpg",
-    href: "/blog/5-warning-signs"
+    href: "/blog/5-warning-signs",
+    category: "Maintenance"
   },
   {
     id: '3',
@@ -1257,124 +1368,216 @@ const mockPosts: BlogPost[] = [
     date: "July 28, 2025",
     excerpt: "A little maintenance goes a long way. Our step-by-step guide to cleaning your terminals for a better connection.",
     imageUrl: "/images/blog/clean-terminals.jpg",
-    href: "/blog/how-to-clean-terminals"
+    href: "/blog/how-to-clean-terminals",
+    category: "DIY Guide"
   }
 ];
 
-const BlogTeaser = () => {
+export default function BlogTeaser() {
   return (
-    <div className="bg-gray-50 py-16 sm:py-24">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-navy-900 sm:text-4xl">From the Workshop: Expert Advice</h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Tap into our years of experience with battery tips, maintenance guides, and the latest in power technology.
-          </p>
+    <section className="w-full bg-navy-950">
+      <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Car Battery Tips & Maintenance Guides</h2>
+            <p className="text-slate-400 mt-4 text-lg max-w-3xl mx-auto">Learn how to spot a failing <strong>car battery</strong>, understand <strong>AGM technology</strong>, and perform basic <strong>battery maintenance</strong> with our expert guides from Global Batteries Alberton.</p>
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {mockPosts.map((post) => (
-            <Link key={post.id} href={post.href} className="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-              <div className="relative w-full h-56">
-                <Image
-                  src={post.imageUrl}
-                  alt={`Blog post image for ${post.title}`}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  className="transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 30vw"
-                />
-              </div>
-              <div className="p-6">
-                <p className="text-sm text-gray-500">{post.date}</p>
-                <h3 className="mt-2 text-xl font-bold text-navy-900 group-hover:text-blue-600 transition-colors">
-                  {post.title}
-                </h3>
-                <p className="mt-3 text-base text-gray-600">{post.excerpt}</p>
-                <div className="mt-4 font-bold text-blue-600 group-hover:text-blue-500">
-                  Read More &rarr;
-                </div>
-              </div>
-            </Link>
-          ))}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {mockPosts.map((post) => (
+                <Link key={post.id} href={post.href} className="group blog-card rounded-lg border border-slate-700/50 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-navy-950/50">
+                    <div className="overflow-hidden">
+                        <Image 
+                            src={post.imageUrl} 
+                            alt={`Blog post image for ${post.title}`}
+                            width={600}
+                            height={400}
+                            className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                    </div>
+                    <div className="p-8 flex flex-col flex-grow">
+                        <div className="flex-grow">
+                            <div className="flex items-center justify-between mb-2">
+                                <p className="text-slate-400 text-sm">{post.date}</p>
+                                <span className="bg-slate-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full">{post.category}</span>
+                            </div>
+                            <h3 className="font-bold text-xl text-white mb-4">{post.title}</h3>
+                            <p className="text-slate-400">{post.excerpt}</p>
+                        </div>
+                        <div className="text-white font-semibold mt-6 transition-colors group-hover:text-slate-300">
+                            Read More <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                        </div>
+                    </div>
+                </Link>
+            ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
+};
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\BrandExplorer.tsx
+SIZE: 2985 bytes
+--------------------------------------------------------------------------------
+'use client';
 
-export default BlogTeaser;
+import Image from 'next/image';
+
+export default function BrandExplorer() {
+  const brands = [
+    {
+      name: 'Willard',
+      description:
+        'South Africa’s most trusted automotive battery brand with up to 25-month warranty.',
+      image: '/images/brands/willard.jpg',
+      link: '#',
+    },
+    {
+      name: 'Exide',
+      description:
+        'High-performance batteries built for durability and innovation in modern vehicles.',
+      image: '/images/brands/exide.jpg',
+      link: '#',
+    },
+    {
+      name: 'Novax',
+      description:
+        'Affordable reliability designed to power everyday drivers across South Africa.',
+      image: '/images/brands/novax.jpg',
+      link: '#',
+    },
+    {
+      name: 'Enertec',
+      description:
+        'Premium AGM and specialty batteries for motorcycles, ATVs, and marine use.',
+      image: '/images/brands/enertec.jpg',
+      link: '#',
+    },
+    {
+      name: 'Global Batteries',
+      description:
+        'Our own brand – exceptional value, reliable power, and nationwide warranty support.',
+      image: '/images/brands/global.jpg',
+      link: '#',
+    },
+  ];
+
+  return (
+    <section className="text-center py-16 px-6 bg-gradient-to-br from-[#001f3f] to-black text-white">
+      <h2 className="text-4xl font-bold uppercase mb-4">Shop by Brand</h2>
+      <p className="text-lg mb-10 text-gray-300 max-w-2xl mx-auto">
+        Explore trusted battery brands – premium quality, long warranties, and unbeatable performance.
+      </p>
+
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 max-w-6xl mx-auto">
+        {brands.map((brand) => (
+          <div
+            key={brand.name}
+            className="relative bg-[#0a0a0a] rounded-2xl overflow-hidden cursor-pointer transition-transform duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,102,255,0.6)] border-2 border-transparent hover:border-blue-700"
+          >
+            <Image
+              src={brand.image}
+              alt={`${brand.name} Batteries`}
+              width={400}
+              height={180}
+              className="w-full h-44 object-cover"
+            />
+
+            <div className="absolute inset-0 bg-[rgba(0,31,63,0.9)] opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-4">
+              <h3 className="text-xl font-semibold text-white mb-2">{brand.name}</h3>
+              <p className="text-gray-300 text-sm mb-3">{brand.description}</p>
+              <a
+                href={brand.link}
+                className="inline-block px-5 py-2 bg-blue-700 text-white font-bold rounded-lg hover:bg-blue-600 transition-colors"
+              >
+                Shop {brand.name}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\BrandShowcase.tsx
-SIZE: 2124 bytes
+SIZE: 2585 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/home/BrandShowcase.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// Updated and expanded list of brands
 const brands = [
   {
     name: 'Willard Batteries',
     logoUrl: '/images/logo-willard.png',
     href: '/brands/willard',
-    width: 140,
-    height: 40
   },
   {
     name: 'Exide Batteries',
     logoUrl: '/images/brand-exide.jpg',
     href: '/brands/exide',
-    width: 130,
-    height: 40
   },
   {
     name: 'Novax Premium Batteries',
     logoUrl: '/images/logo-novax.png',
     href: '/brands/novax-premium',
-    width: 150,
-    height: 40
   },
   {
-    name: 'Enertec Motorcycle Batteries',
-    logoUrl: '/images/logo-placeholder.png', // Placeholder - replace when you have the Enertec logo
-    href: '/brands/enertec',
-    width: 140,
-    height: 40
+    name: 'Novax Batteries',
+    logoUrl: '/images/logo-novax.jpg', // Using alternate logo
+    href: '/brands/novax',
   },
   {
     name: 'Global Batteries',
-    logoUrl: '/images/logo-placeholder.png', // Placeholder - replace with your own Global Batteries logo
+    logoUrl: '/images/logo-placeholder.png', // Placeholder
     href: '/brands/global',
-    width: 150,
-    height: 40
+  },
+  {
+    name: 'Enertec Batteries',
+    logoUrl: '/images/logo-placeholder.png', // Placeholder
+    href: '/brands/enertec',
+  },
+  {
+    name: 'Royal Batteries',
+    logoUrl: '/images/logo-placeholder.png', // Placeholder
+    href: '/brands/royal',
+  },
+  {
+    name: 'Forbatt Batteries',
+    logoUrl: '/images/logo-placeholder.png', // Placeholder
+    href: '/brands/forbatt',
   },
 ];
 
 const BrandShowcase = () => {
   return (
-    <div className="bg-white">
-      <div className="container mx-auto px-4 py-16 sm:py-20">
-        <h2 className="text-center text-2xl font-bold text-navy-900 sm:text-3xl">
-          Featuring South Africa's Most Trusted Brands
-        </h2>
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-10 gap-x-8 justify-items-center">
-          {brands.map((brand) => (
-            <Link key={brand.name} href={brand.href} className="flex items-center justify-center">
-              <Image
-                src={brand.logoUrl}
-                alt={`${brand.name} logo`}
-                width={brand.width}
-                height={brand.height}
-                style={{ objectFit: 'contain' }}
-                className="filter grayscale transition-all duration-300 hover:grayscale-0 hover:scale-110"
-                unoptimized={true} 
-              />
-            </Link>
-          ))}
+    <section className="w-full bg-navy-950">
+        <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+            <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Featuring South Africa's Most Trusted Battery Brands</h2>
+                <p className="text-slate-400 mt-4 text-lg max-w-3xl mx-auto">As official stockists for <strong>Willard</strong>, <strong>Exide</strong>, and <strong>Novax</strong>, we provide authentic products backed by nationwide warranties and expert fitment.</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {brands.map((brand) => (
+                    <Link key={brand.name} href={brand.href} className="brand-card p-8 rounded-lg flex items-center justify-center aspect-video">
+                        <Image
+                            src={brand.logoUrl}
+                            alt={`${brand.name} logo`}
+                            width={200}
+                            height={100}
+                            className="brand-logo max-h-16 w-auto object-contain"
+                            unoptimized={true} 
+                        />
+                    </Link>
+                ))}
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
   );
 };
 
@@ -1382,7 +1585,7 @@ export default BrandShowcase;
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\CategoryHighlights.tsx
-SIZE: 4042 bytes
+SIZE: 3883 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/home/CategoryHighlights.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
@@ -1396,35 +1599,35 @@ const categoryData = [
         description: "For Cars, Bakkies & SUVs",
         imageUrl: "/images/category/automotive.jpg",
         href: "/shop?type=Automotive",
-        className: "md:col-span-4 h-80" // Main banner block
+        className: "md:col-span-4 h-80"
     },
     {
         title: "Truck & Commercial",
         description: "Heavy-Duty Power",
         imageUrl: "/images/category/truck-commercial.jpg",
         href: "/shop?type=Truck",
-        className: "md:col-span-2 h-64" // Half-width block
+        className: "md:col-span-2 h-64"
     },
     {
         title: "Motorcycle & Leisure",
         description: "For Bikes, Quads & Jetskis",
         imageUrl: "/images/category/motorcycle.jpg",
         href: "/shop?type=Motorcycle",
-        className: "md:col-span-2 h-64" // Half-width block
+        className: "md:col-span-2 h-64"
     },
     {
         title: "Solar & Backup Power",
         description: "Deep-Cycle & Inverter",
         imageUrl: "/images/category/solar-deep-cycle.jpg",
         href: "/shop?type=Solar",
-        className: "md:col-span-2 h-64" // Half-width block
+        className: "md:col-span-2 h-64"
     },
      {
         title: "Security & Gate Motors",
         description: "Reliable Backup Power",
         imageUrl: "/images/category/security-gate.jpg",
         href: "/shop?type=Security",
-        className: "md:col-span-2 h-64" // Half-width block
+        className: "md:col-span-2 h-64"
     }
 ];
 
@@ -1435,31 +1638,30 @@ const CategoryCard = ({ item }: { item: typeof categoryData[0] }) => (
             alt={item.title}
             fill
             style={{ objectFit: 'cover' }}
-            className="transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+            className="transition-transform duration-500 group-hover:scale-110 opacity-60 group-hover:opacity-80"
             sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 30vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 p-6 text-white w-full">
-            <h3 className="text-2xl font-extrabold">{item.title}</h3>
-            <p className="text-base text-gray-300 mt-1">{item.description}</p>
-            <div className="mt-4 flex items-center gap-2 font-bold text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 className="text-2xl font-extrabold drop-shadow-md">{item.title}</h3>
+            <p className="text-base text-gray-300 mt-1 drop-shadow-sm">{item.description}</p>
+            <div className="mt-4 flex items-center gap-2 font-bold text-brand-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1">
                 <span>Shop Now</span>
                 <Icon path="M9.71,17.29a1,1,0,0,1,0-1.42L13.59,12,9.71,8.12a1,1,0,0,1,1.42-1.42l4.58,4.58a1,1,0,0,1,0,1.42l-4.58,4.58A1,1,0,0,1,9.71,17.29Z" className="w-5 h-5" />
             </div>
         </div>
-        <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-blue-500 transition-colors duration-300 pointer-events-none"></div>
+        <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-brand-yellow/50 transition-colors duration-300 pointer-events-none"></div>
     </Link>
 );
 
 const CategoryHighlights = () => {
     return (
-        <div className="bg-gray-50 py-16 sm:py-24">
+        <div className="bg-gray-100 py-16 sm:py-24">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-extrabold text-navy-900 sm:text-4xl">Power For Every Purpose</h2>
                     <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">From daily drives in Alberton to heavy-duty commercial fleets and off-grid solar systems, we have the expert-backed power solution for every application.</p>
                 </div>
-                {/* Corrected Grid Container */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     {categoryData.map((item) => (
                         <CategoryCard key={item.title} item={item} />
@@ -1473,8 +1675,138 @@ const CategoryHighlights = () => {
 export default CategoryHighlights;
 
 ================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\CTA.tsx
+SIZE: 2093 bytes
+--------------------------------------------------------------------------------
+// FILE: src/components/home/CTA.tsx (CREATE NEW FILE)
+import React from 'react';
+import Link from 'next/link';
+import Icon from '@/components/ui/Icon';
+
+export default function CTA() {
+  return (
+    <section className="w-full bg-navy-950">
+      <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+        <div className="bg-navy-850 rounded-lg p-10 md:p-16 text-center border border-slate-700/50">
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+            Need Power Now?
+          </h2>
+          <p className="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">
+            Get a free quote or find your nearest branch for expert advice and immediate, professional battery fitment.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link 
+              href="/#branches" // Updated to link to the branches section on the same page
+              className="inline-flex items-center justify-center bg-white text-navy-950 font-semibold py-3 px-8 rounded-md w-full sm:w-auto transition-all duration-300 hover:bg-slate-200 hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              <Icon path="M12,2a8,8,0,0,0-8,8c0,5.4,7,11.5,7.35,11.8a1,1,0,0,0,1.3,0C13,21.5,20,15.4,20,10A8,8,0,0,0,12,2Zm0,11.5A3.5,3.5,0,1,1,15.5,10,3.5,3.5,0,0,1,12,13.5Z" className="w-5 h-5 mr-2" />
+              Find Your Nearest Branch
+            </Link>
+            <Link 
+              href="/shop" 
+              className="inline-flex items-center justify-center border border-white text-white font-semibold py-3 px-8 rounded-md w-full sm:w-auto transition-colors duration-300 hover:bg-white hover:text-navy-950"
+            >
+              <Icon path="M20,8H16V6a1,1,0,0,0-1-1H9A1,1,0,0,0,8,6V8H4a2,2,0,0,0-2,2v8a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V10A2,2,0,0,0,20,8Zm-4,6H14v2a1,1,0,0,1-2,0V14H10a1,1,0,0,1,0-2h2V10a1,1,0,0,1,2,0v2h2a1,1,0,0,1,0,2Z" className="w-5 h-5 mr-2" />
+              Browse All Batteries
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\FeaturedProducts.tsx
+SIZE: 4394 bytes
+--------------------------------------------------------------------------------
+// FILE: src/components/home/FeaturedProducts.tsx (CREATE NEW FILE)
+'use client';
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Product } from '@/types';
+
+const ProductCard = ({ product, isBestSeller }: { product: Product; isBestSeller?: boolean }) => (
+    <div className="product-card-gradient rounded-lg border border-slate-700/50 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-navy-950/50 relative overflow-hidden">
+        {isBestSeller && <div className="absolute top-4 right-4 bg-white text-navy-950 px-3 py-1 rounded-full text-xs font-semibold uppercase z-10">Best Seller</div>}
+        <div className="bg-white p-4">
+            <Link href={`/shop/${product.id}`}>
+                <Image 
+                    src={product.imageUrl} 
+                    alt={product.name} 
+                    width={400} 
+                    height={400} 
+                    className="w-full h-48 object-contain product-image-blend"
+                />
+            </Link>
+        </div>
+        <div className="p-6 flex flex-col flex-grow">
+            <h3 className="font-bold text-lg text-white">{product.name}</h3>
+            <p className="text-slate-400 text-sm mb-4 h-10">{product.warranty} | {product.specs.ah}Ah {product.specs.cca}CCA</p>
+            <p className="text-3xl font-bold text-white mb-6 mt-auto">R{product.price.toFixed(2)}</p>
+            <Link href={`/shop/${product.id}`} className="border border-white text-white font-semibold py-2 px-6 rounded-md w-full text-center transition-colors hover:bg-white hover:text-navy-950">
+                View Product
+            </Link>
+        </div>
+    </div>
+);
+
+type CategoryTab = 'automotive' | 'commercial' | 'leisure' | 'backup' | 'security';
+
+export default function FeaturedProducts({ products }: { products: Product[] }) {
+    const [activeTab, setActiveTab] = useState<CategoryTab>('automotive');
+
+    const tabs: { id: CategoryTab; label: string; type: string }[] = [
+        { id: 'automotive', label: 'Automotive', type: 'Automotive' },
+        { id: 'commercial', label: 'Truck & Commercial', type: 'Truck' },
+        { id: 'leisure', label: 'Motorcycle & Leisure', type: 'Motorcycle' },
+        { id: 'backup', label: 'Solar & Backup', type: 'Solar' },
+        { id: 'security', label: 'Security', type: 'Security' },
+    ];
+
+    return (
+        <section className="w-full bg-navy-950">
+            <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Featured Power Solutions</h2>
+                    <p className="text-slate-400 mt-4 text-lg max-w-3xl mx-auto">A curated selection of our most trusted and popular batteries for every need, available now in Alberton.</p>
+                </div>
+
+                <div className="flex flex-wrap justify-center border-b border-slate-700 mb-12">
+                    {tabs.map(tab => (
+                        <button 
+                            key={tab.id}
+                            onClick={() => setActiveTab(tab.id)}
+                            className={`font-semibold py-4 px-6 transition-all duration-300 border-b-2 ${activeTab === tab.id ? 'text-white border-white' : 'text-slate-400 border-transparent hover:text-white hover:border-slate-700'}`}
+                        >
+                            {tab.label}
+                        </button>
+                    ))}
+                </div>
+
+                <div>
+                    {tabs.map(tab => (
+                        <div key={tab.id} className={`${activeTab === tab.id ? 'grid' : 'hidden'} grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-in-fast`}>
+                            {products
+                                .filter(p => p.type.includes(tab.type))
+                                .slice(0, 4) // Show up to 4 products per tab
+                                .map((product, index) => (
+                                    <ProductCard key={product.id} product={product} isBestSeller={tab.id === 'automotive' && index === 0} />
+                                ))
+                            }
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\PromoBannersFour.tsx
-SIZE: 3481 bytes
+SIZE: 3403 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/home/PromoBannersFour.tsx (CREATE NEW FILE)
 import React from 'react';
@@ -1558,7 +1890,7 @@ export default function PromoBannersFour() {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\PromoBannersTwo.tsx
-SIZE: 2822 bytes
+SIZE: 2750 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/home/PromoBannersTwo.tsx (CREATE NEW FILE)
 import React from 'react';
@@ -1636,7 +1968,7 @@ export default function PromoBannersTwo() {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\ServiceHub.tsx
-SIZE: 3382 bytes
+SIZE: 3317 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/home/ServiceHub.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
@@ -1706,151 +2038,395 @@ const ServiceHub = () => {
 export default ServiceHub;
 
 ================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\ShopByCategoryGrid.tsx
+SIZE: 3556 bytes
+--------------------------------------------------------------------------------
+// FILE: src/components/home/ShopByCategoryGrid.tsx
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+
+const categories = [
+  {
+    name: 'Automotive Batteries',
+    slug: '/collections/automotive',
+    description: 'Premium car batteries for everyday drivers and performance vehicles.',
+    image: '/images/category/automotive.jpg',
+  },
+  {
+    name: 'Truck & Commercial',
+    slug: '/collections/truck-commercial',
+    description: 'Heavy-duty power for trucks, bakkies, and commercial fleets.',
+    image: '/images/category/truck-commercial.jpg',
+  },
+  {
+    name: 'Motorcycle & Leisure',
+    slug: '/collections/motorcycle',
+    description: 'AGM technology batteries for motorcycles, quads, and watercraft.',
+    image: '/images/category/motorcycle.jpg',
+  },
+  {
+    name: 'Battery Accessories',
+    slug: '/collections/accessories',
+    description: 'Cables, terminals, chargers, and everything to keep you powered.',
+    image: '/images/category/accessories.jpg',
+  },
+  {
+    name: 'AGM & Start-Stop',
+    slug: '/collections/agm',
+    description: 'The latest AGM batteries designed for modern stop-start vehicles.',
+    image: '/images/category/agm.jpg',
+  },
+  {
+    name: 'Solar & Security',
+    slug: '/collections/solar-security',
+    description: 'Batteries for solar systems, gate motors, alarms, and inverters.',
+    image: '/images/category/solar.jpg',
+  },
+];
+
+export default function ShopByCategoryGrid() {
+  return (
+    <section className="bg-black text-white py-20 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+            Shop by Category
+          </h2>
+          <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+            Explore our full range of batteries and accessories, tailored for every vehicle and need.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categories.map((cat, i) => (
+            <motion.div
+              key={cat.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ scale: 1.03 }}
+              className="relative rounded-2xl overflow-hidden shadow-lg group bg-gray-900"
+            >
+              <div className="relative h-64 w-full">
+                <Image
+                  src={cat.image}
+                  alt={cat.name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110 opacity-80"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  {cat.name}
+                </h3>
+                <p className="text-gray-400 mb-4">{cat.description}</p>
+                <Link
+                  href={cat.slug}
+                  className="inline-block px-5 py-2 rounded-lg bg-brand-yellow text-black font-semibold hover:bg-yellow-400 transition-colors"
+                >
+                  Shop Now
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\SocialProofBanner.tsx
+SIZE: 10529 bytes
+--------------------------------------------------------------------------------
+// FILE: src/components/home/SocialProofBanner.tsx (REPLACE ENTIRE FILE)
+"use client";
+
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView, animate } from 'framer-motion';
+import Icon from '@/components/ui/Icon';
+import Image from 'next/image'; // FIX: Added missing import for Next.js Image component
+
+const reviews = [
+    { quote: "The free battery test was quick and professional. They identified the problem with my alternator... saving me a huge headache.", name: "Jaco V.", location: "Alberton" },
+    { quote: "Excellent service! They had the exact Willard battery for my Fortuner in stock and fitted it in under 15 minutes.", name: "Brenda M.", location: "Brackenhurst" },
+    { quote: "My gate motor battery died during load shedding. The team sorted me out with a reliable solution at a great price.", name: "Sipho K.", location: "Meyersdal" },
+    { quote: "The team is so knowledgeable. They explained the difference between AGM and regular batteries for my BMW and even handled the coding.", name: "Lindiwe P.", location: "Randhart" },
+    { quote: "Best prices on Exide batteries I could find anywhere. The free fitment is a huge bonus. I won't go anywhere else.", name: "Fatima A.", location: "Alberton North" }
+];
+
+// FIX: Refactored AnimatedCounter to use the `animate` utility from Framer Motion
+const AnimatedCounter = ({ to, suffix }: { to: number, suffix?: string }) => {
+    const ref = useRef<HTMLParagraphElement>(null);
+    const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+    useEffect(() => {
+        if (isInView && ref.current) {
+            const node = ref.current;
+            const controls = animate(0, to, {
+                duration: 2,
+                ease: "easeOut",
+                onUpdate(value) {
+                    if (to % 1 !== 0) {
+                        node.textContent = value.toFixed(1) + (suffix || '');
+                    } else {
+                        node.textContent = Math.floor(value).toLocaleString('en-US') + (suffix || '');
+                    }
+                }
+            });
+            return () => controls.stop();
+        }
+    }, [isInView, to, suffix]);
+
+    return <p ref={ref} className="text-5xl lg:text-6xl font-extrabold text-brand-yellow tracking-tighter">0</p>;
+};
+
+const SocialProofBanner = () => {
+    const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+    const startInterval = () => {
+        if (intervalRef.current) clearInterval(intervalRef.current);
+        intervalRef.current = setInterval(() => {
+            setIsAnimating(true);
+            setTimeout(() => {
+                setCurrentReviewIndex(prev => (prev + 1) % reviews.length);
+                setIsAnimating(false);
+            }, 400);
+        }, 5000);
+    };
+
+    useEffect(() => {
+        startInterval();
+        return () => {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+        };
+    }, []);
+
+    const handleMouseEnter = () => {
+        if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+
+    const handleMouseLeave = () => {
+        startInterval();
+    };
+    
+    const review = reviews[currentReviewIndex];
+
+    return (
+        <section className="bg-navy-900 text-white rounded-2xl overflow-hidden">
+            <div className="container mx-auto px-4 py-16 sm:py-24">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
+                    <motion.div 
+                        className="space-y-8 text-center lg:text-left"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                    >
+                        <div>
+                            <AnimatedCounter to={50000} suffix="+" />
+                            <p className="mt-1 text-lg text-gray-300">Batteries Sold</p>
+                        </div>
+                        <div>
+                            <AnimatedCounter to={50} suffix="+" />
+                            <p className="mt-1 text-lg text-gray-300">Years of Combined Experience</p>
+                        </div>
+                        <div>
+                            <AnimatedCounter to={3} />
+                            <p className="mt-1 text-lg text-gray-300">Locations Across Gauteng</p>
+                        </div>
+                    </motion.div>
+
+                    <motion.div 
+                        onMouseEnter={handleMouseEnter} 
+                        onMouseLeave={handleMouseLeave}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                        <div className="relative bg-navy-800 p-8 rounded-xl border border-blue-900/50 h-full flex flex-col hover:border-blue-500 transition-colors duration-300 shadow-lg">
+                            <div className="flex items-center justify-between pb-4 border-b border-blue-900/50">
+                                <Image src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" width={32} height={32} className="h-8 w-8"/>
+                                <div className="flex items-center">
+                                    <span className="font-bold text-lg mr-2">4.9</span>
+                                    <div className="flex text-yellow-400">
+                                        {[...Array(5)].map((_, i) => <Icon key={i} path="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" className="w-5 h-5" />)}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={`mt-6 flex-grow flex flex-col transition-all duration-300 ${isAnimating ? 'opacity-0 transform -translate-y-2' : 'opacity-100 transform translate-y-0'}`}>
+                                <blockquote className="flex-grow">
+                                    <p className="text-gray-300 italic text-lg leading-relaxed">"{review.quote}"</p>
+                                </blockquote>
+                                <footer className="mt-4 text-sm text-gray-400">
+                                    - <span className="font-bold text-white">{review.name}</span> ({review.location})
+                                </footer>
+                            </div>
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-blue-900/50 rounded-b-xl overflow-hidden">
+                                <div key={currentReviewIndex} className="h-full bg-brand-yellow" style={{ animation: 'progress-bar 5s linear forwards' }}></div>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    <motion.div 
+                        className="space-y-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                         <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-navy-800/50 transition-colors">
+                            <div className="flex-shrink-0 bg-navy-800 rounded-full p-3 border border-blue-900/50">
+                                <Icon path="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" className="w-6 h-6 text-blue-400" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-lg">Nationwide Warranties</h4>
+                                <p className="text-gray-400 text-sm">Peace of mind with up to 26 months of coverage on our premium ranges.</p>
+                            </div>
+                        </div>
+                         <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-navy-800/50 transition-colors">
+                            <div className="flex-shrink-0 bg-navy-800 rounded-full p-3 border border-blue-900/50">
+                                <Icon path="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2z" className="w-6 h-6 text-blue-400" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-lg">Guaranteed Fitment</h4>
+                                <p className="text-gray-400 text-sm">Our expert technicians ensure the correct battery is installed professionally, every time.</p>
+                            </div>
+                        </div>
+                         <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-navy-800/50 transition-colors">
+                            <div className="flex-shrink-0 bg-navy-800 rounded-full p-3 border border-blue-900/50">
+                                <Icon path="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3" className="w-6 h-6 text-blue-400" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-lg">Free Battery Testing</h4>
+                                <p className="text-gray-400 text-sm">Get a comprehensive, no-obligation health check for your battery and alternator.</p>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default SocialProofBanner;
+
+
+================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\Testimonials.tsx
-SIZE: 6363 bytes
+SIZE: 6253 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/home/Testimonials.tsx (REPLACE ENTIRE FILE)
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { Testimonial } from '@/types';
 import Icon from '@/components/ui/Icon';
 
-const mockTestimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: 'Jaco V.',
-    location: 'Alberton',
-    quote: "The free battery test was quick and professional. They identified the problem with my alternator, not just the battery, saving me a huge headache. The go-to guys in Alberton!",
-    avatarUrl: '/images/avatars/avatar-1.jpg',
-    branch: 'Alberton'
-  },
-  {
-    id: 2,
-    name: 'Brenda M.',
-    location: 'Brackenhurst',
-    quote: "Excellent service! They had the exact Willard battery for my Fortuner in stock and fitted it in under 15 minutes. No fuss, just great work. Highly recommended.",
-    avatarUrl: '/images/avatars/avatar-2.jpg',
-    branch: 'Alberton'
-  },
-  {
-    id: 3,
-    name: 'Sipho K.',
-    location: 'Meyersdal',
-    quote: "My gate motor battery died during load shedding. The team sorted me out with a reliable solution at a great price. Thank you for the fantastic service!",
-    avatarUrl: '/images/avatars/avatar-3.jpg',
-    branch: 'Alberton'
-  },
-  {
-    id: 4,
-    name: 'Lindiwe P.',
-    location: 'Randhart',
-    quote: "The team is so knowledgeable. They explained the difference between AGM and regular batteries for my BMW and even handled the coding. Top-tier service.",
-    avatarUrl: '/images/avatars/avatar-4.jpg',
-    branch: 'Alberton'
-  },
-  {
-    id: 5,
-    name: 'Chris N.',
-    location: 'New Redruth',
-    quote: "Called them for a jump-start and they were there within 20 minutes. Got my car to the shop and a new battery fitted in no time. Lifesavers!",
-    avatarUrl: '/images/avatars/avatar-5.jpg',
-    branch: 'Alberton'
-  },
-  {
-    id: 6,
-    name: 'Fatima A.',
-    location: 'Alberton North',
-    quote: "Best prices on Exide batteries I could find anywhere. The free fitment is a huge bonus. I won't go anywhere else for batteries again.",
-    avatarUrl: '/images/avatars/avatar-6.jpg',
-    branch: 'Alberton'
-  },
+interface NewTestimonial {
+  id: number;
+  name: string;
+  role: string;
+  avatarText: string;
+  quote: string;
+  rating: number;
+}
+
+const newMockTestimonials: NewTestimonial[] = [
+    { id: 1, name: 'Thabo M.', role: 'BMW X5 Owner, Meyersdal', avatarText: 'TM', rating: 5, quote: "My X5's battery died and I was worried about the complex coding. Global Alberton had the right AGM battery and coded it for free. Exceptional service." },
+    { id: 2, name: 'Annelize V.', role: 'Ford Ranger Driver, Brackenhurst', avatarText: 'AV', rating: 5, quote: "Stuck at home before a big meeting. Their call-out service jump-started me in 20 minutes, and I was at their shop for a new Willard 652 straight after. Lifesavers!" },
+    { id: 3, name: 'Ben P.', role: 'Small Business Owner, Alrode', avatarText: 'BP', rating: 5, quote: "I rely on them for everything from my bakkie to the gate motor batteries for my workshop. Their free testing saves me money and their advice is always spot-on." },
+    { id: 4, name: 'David N.', role: 'Logistics Manager, Alrode South', avatarText: 'DN', rating: 5, quote: "Our fleet of trucks runs on batteries from Global. The durability is excellent and their bulk pricing is fair. They understand the demands of commercial vehicles." },
+    { id: 5, name: 'Susan R.', role: 'Homeowner, Randhart', avatarText: 'SR', rating: 5, quote: "Got a new generator battery just before the last big storm. The peace of mind is priceless. The staff were knowledgeable and helped me choose the right one." },
+    { id: 6, name: 'Johan C.', role: 'Classic Car Enthusiast, New Redruth', avatarText: 'JC', rating: 5, quote: "The lead terminal on my '72 Capri's battery was a mess. They rebuilt it perfectly. It's rare to find that kind of old-school skill these days. True craftsmen." },
+    { id: 7, name: 'Mike K.', role: 'Motorcyclist, Brackendowns', avatarText: 'MK', rating: 5, quote: "Needed a new Enertec battery for my bike before a weekend trip. They had the exact model, fitted it while I waited, and I was on the road in 15 minutes." },
+    { id: 8, name: 'Lerato F.', role: 'Student, Verwoerdpark', avatarText: 'LF', rating: 5, quote: "My car was struggling to start. They tested the alternator and battery for free, showed me the results, and explained my options clearly. Got a great deal on a Novax." },
+    { id: 9, name: 'Gary S.', role: 'Security Co. Owner, Raceview', avatarText: 'GS', rating: 5, quote: "We buy all our gate and alarm batteries from Global Alberton. Reliability is non-negotiable in our business, and their products have never let us down." },
+    { id: 10, name: 'Nisha P.', role: 'Online Shopper, Bedfordview', avatarText: 'NP', rating: 5, quote: "Ordered a specific battery on their Shopify store. The process was simple, and it was dispatched from the Alberton branch the same day. Great e-commerce experience." },
 ];
 
-const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="relative w-[380px] h-[260px] flex-shrink-0 p-8 bg-white border border-gray-200 rounded-2xl shadow-lg flex flex-col justify-between">
-    <Icon path="M10.3,13.1A2,2,0,0,0,8,15v1H6V15a4,4,0,0,1,4-4h.5a1,1,0,0,0,1-1V8.5a1,1,0,0,0-1-1H9V6h1.5a3,3,0,0,1,3,3V10a3,3,0,0,1-3,3.1Zm8,0A2,2,0,0,0,16,15v1H14V15a4,4,0,0,1,4-4h.5a1,1,0,0,0,1-1V8.5a1,1,0,0,0-1-1H17V6h1.5a3,3,0,0,1,3,3V10a3,3,0,0,1-3,3.1Z" className="absolute top-6 right-6 w-12 h-12 text-gray-100" />
-    <p className="text-gray-700 leading-relaxed z-10">"{testimonial.quote}"</p>
-    <div className="mt-4 flex items-center gap-4 z-10">
-      <div className="w-12 h-12 rounded-full bg-navy-800 flex items-center justify-center font-bold text-white text-xl">
-          {testimonial.name.charAt(0)}
-      </div>
-      <div>
-        <p className="font-bold text-navy-900">{testimonial.name}</p>
-        <p className="text-sm text-gray-500">{testimonial.location} Resident</p>
-      </div>
+const TestimonialCard = ({ testimonial }: { testimonial: NewTestimonial }) => (
+    <div className="bg-navy-850 p-8 rounded-lg border border-slate-700/50 shadow-lg w-96 flex-shrink-0 flex flex-col">
+        <div className="flex items-center mb-5">
+            <Image 
+                src={`https://placehold.co/56x56/FFFFFF/0A192F?text=${testimonial.avatarText}`} 
+                alt={`Avatar for ${testimonial.name}`} 
+                width={56}
+                height={56}
+                className="w-14 h-14 rounded-full mr-4 border-2 border-sky-400"
+            />
+            <div>
+                <p className="font-semibold text-white text-lg">{testimonial.name}</p>
+                <p className="text-sm text-slate-400">{testimonial.role}</p>
+            </div>
+        </div>
+        <div className="flex items-center mb-4 text-yellow-400">
+            {[...Array(testimonial.rating)].map((_, i) => (
+                <Icon key={i} path="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-.61L12,2,9.19,8.63,2,9.24l5.46,4.73L5.82,21Z" className="w-5 h-5" />
+            ))}
+        </div>
+        <p className="text-slate-300 leading-relaxed flex-grow">
+            "{testimonial.quote}"
+        </p>
     </div>
-  </div>
 );
 
 const Testimonials = () => {
-  const duplicatedTestimonials = [...mockTestimonials, ...mockTestimonials];
+    const scrollerRef = useRef<HTMLDivElement>(null);
 
-  return (
-    <div className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4">
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-        >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900">Trusted by Alberton Drivers</h2>
-          <p className="mt-4 text-lg text-gray-600">
-            We're proud of our 5-star reputation. Here's what your neighbors are saying about our service.
-          </p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Global+Batteries+Alberton" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block bg-white border-2 border-gray-200 rounded-lg p-4 transition-all duration-300 hover:shadow-lg hover:border-blue-500 hover:-translate-y-1">
-            <div className="flex items-center justify-center gap-4">
-                <Image src="/images/google-logo.svg" alt="Google Logo" width={28} height={28} />
-                <div>
-                    <p className="font-bold text-gray-800 text-left">Google Rating</p>
-                    <div className="flex items-center gap-2">
-                        <span className="text-xl font-bold text-navy-900">4.9</span>
-                        <div className="flex text-yellow-400">
-                          {[...Array(5)].map((_, i) => <Icon key={i} path="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-.61L12,2,9.19,8.63,2,9.24l5.46,4.73L5.82,21Z" className="w-5 h-5" />)}
-                        </div>
-                        <span className="ml-2 text-sm text-gray-500">(200+ Reviews)</span>
-                    </div>
+    useEffect(() => {
+        const scroller = scrollerRef.current;
+        if (scroller && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            scroller.setAttribute("data-animated", "true");
+            
+            const scrollerInner = scroller.querySelector(".scroller__inner");
+            if (scrollerInner && scrollerInner.children.length === newMockTestimonials.length) {
+                const scrollerContent = Array.from(scrollerInner.children);
+                scrollerContent.forEach(item => {
+                    const duplicatedItem = item.cloneNode(true) as HTMLElement;
+                    duplicatedItem.setAttribute("aria-hidden", "true");
+                    scrollerInner.appendChild(duplicatedItem);
+                });
+            }
+        }
+    }, []);
+
+    return (
+        <section className="w-full mx-auto py-16 md:py-24 bg-navy-950">
+            <div className="text-center mb-16 max-w-7xl mx-auto px-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                    Trusted Car Battery Specialists in Alberton
+                </h2>
+                <p className="text-slate-400 mt-4 text-lg max-w-3xl mx-auto">
+                    Hear directly from drivers about our fast <strong>car battery replacement</strong>, <strong>free battery testing</strong>, and expert service on leading brands like <strong>Willard</strong> and <strong>Novax</strong>.
+                </p>
+            </div>
+            <div className="scroller" ref={scrollerRef}>
+                <div className="scroller__inner">
+                    {newMockTestimonials.map(testimonial => (
+                        <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+                    ))}
                 </div>
             </div>
-          </a>
-        </motion.div>
-      </div>
-
-      <div className="mt-16 w-full overflow-hidden relative group">
-        {/* Fading Edges */}
-        <div className="absolute top-0 bottom-0 left-0 w-24 md:w-64 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-24 md:w-64 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
-        
-        <motion.div
-          className="flex gap-8 w-max pr-8"
-          animate={{ x: '-50%' }}
-          transition={{ duration: 40, ease: 'linear', repeat: Infinity, repeatType: 'loop' }}
-        >
-          {duplicatedTestimonials.map((testimonial, index) => (
-            <motion.div 
-              key={index}
-              className="transition-transform duration-300 group-hover:[animation-play-state:paused]"
-              whileHover={{ scale: 1.05, y: -10 }}
-            >
-              <TestimonialCard testimonial={testimonial} />
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </div>
-  );
+        </section>
+    );
 };
 
 export default Testimonials;
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\TheGlobalBatteriesAdvantage.tsx
-SIZE: 3285 bytes
+SIZE: 3667 bytes
 --------------------------------------------------------------------------------
-// FILE: src/components/home/TheGlobalBatteriesAdvantage.tsx (CREATE NEW FILE)
+// FILE: src/components/home/TheGlobalBatteriesAdvantage.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
 import Icon from '@/components/ui/Icon';
 import Link from 'next/link';
@@ -1875,8 +2451,11 @@ const advantages = [
 
 const TheGlobalBatteriesAdvantage = () => {
   return (
-    <div className="bg-navy-900 text-white py-16 sm:py-24">
-      <div className="container mx-auto px-4">
+    <div className="relative bg-navy-900 text-white py-16 sm:py-24">
+      {/* Background Texture */}
+      <div className="absolute inset-0 bg-[url('/images/dashboard-bg.jpg')] bg-cover bg-center opacity-10 animate-background-pan [animation-duration:20s]"></div>
+      
+      <div className="relative container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl font-extrabold sm:text-4xl">The Global Batteries Advantage</h2>
           <p className="mt-4 text-lg text-gray-300">
@@ -1885,8 +2464,11 @@ const TheGlobalBatteriesAdvantage = () => {
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
           {advantages.map((advantage, index) => (
-            <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 150}ms`, opacity: 0 }}>
-              <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-navy-800 border-2 border-blue-900/50 text-blue-400">
+            <div 
+              key={index} 
+              className="group text-center p-6 transition-all duration-300 hover:-translate-y-2"
+            >
+              <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-navy-800 border-2 border-blue-900/50 text-blue-400 transition-all duration-300 group-hover:animate-pulse-glow group-hover:scale-110">
                 <Icon path={advantage.iconPath} className="w-10 h-10" />
               </div>
               <h3 className="mt-6 text-xl font-bold">{advantage.title}</h3>
@@ -1897,7 +2479,10 @@ const TheGlobalBatteriesAdvantage = () => {
           ))}
         </div>
         <div className="text-center mt-16">
-            <Link href="/services/free-battery-testing" className="bg-blue-600 text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-blue-500 transition-transform hover:scale-105 inline-block">
+            <Link 
+              href="/services/free-battery-testing" 
+              className="bg-brand-yellow text-navy-900 font-bold py-4 px-10 rounded-lg text-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 inline-block shadow-lg hover:shadow-yellow-400/30"
+            >
                 Explore Our Services
             </Link>
         </div>
@@ -1910,13 +2495,12 @@ export default TheGlobalBatteriesAdvantage;
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\TrustAndValue.tsx
-SIZE: 2481 bytes
+SIZE: 2351 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/home/TrustAndValue.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
 import Icon from '@/components/ui/Icon';
 
-// This data is pulled directly from your company's core strengths.
 const values = [
   {
     iconPath: "M9,21.5a1,1,0,0,1-.6-.2l-5-3.5a1,1,0,0,1,0-1.6l5-3.5a1,1,0,0,1,1.2.4,1,1,0,0,1-.4,1.2L5.8,16l3.4,2.4a1,1,0,0,1-.4,1.2A1,1,0,0,1,8,20Zm13-9.4-5-3.5a1,1,0,0,1-.2-1.6,1,1,0,0,1,1.6-.2l5,3.5a1,1,0,0,1,0,1.6l-5,3.5a1,1,0,0,1-.8.2,1,1,0,0,1-.6-1.4L20.2,16Z",
@@ -1937,17 +2521,19 @@ const values = [
 
 const TrustAndValue = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-navy-800 text-white">
       <div className="container mx-auto px-4 py-16 sm:py-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           {values.map((value, index) => (
-            <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 150}ms`, opacity: 0 }}>
-              <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600">
+            <div 
+              key={index} 
+              className="p-4 transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-navy-900/70 text-blue-400 border border-blue-900/50">
                 <Icon path={value.iconPath} className="w-8 h-8" />
               </div>
-              <h3 className="mt-6 text-xl font-bold text-navy-900">{value.title}</h3>
-              {/* ACCESSIBILITY FIX: Using a darker gray for better contrast */}
-              <p className="mt-2 text-base text-gray-700">
+              <h3 className="mt-6 text-xl font-bold text-white">{value.title}</h3>
+              <p className="mt-2 text-base text-gray-300">
                 {value.description}
               </p>
             </div>
@@ -1961,138 +2547,362 @@ const TrustAndValue = () => {
 export default TrustAndValue;
 
 ================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\TrustBanner.tsx
+SIZE: 1883 bytes
+--------------------------------------------------------------------------------
+// FILE: src/components/home/TrustBanner.tsx (CREATE NEW FILE)
+"use client";
+
+import React from 'react';
+// FIX: Import Variants type from framer-motion
+import { motion, Variants } from 'framer-motion';
+
+const trustPoints = [
+  { title: "Free Testing", subtitle: "Battery & Alternator" },
+  { title: "BMW Coding", subtitle: "Specialized Service" },
+  { title: "3 Locations", subtitle: "Across Gauteng" },
+  { title: "Same-Day Delivery", subtitle: "In Alberton Area" }
+];
+
+const TrustBanner = () => {
+  // FIX: Explicitly type the variants object with the Variants type
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  // FIX: Explicitly type the variants object with the Variants type
+  const itemVariants: Variants = {
+    hidden: { y: -15, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  };
+
+  return (
+    <div className="bg-navy-800 border-y border-blue-900/50">
+      <motion.div
+        className="container mx-auto px-4 py-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={containerVariants}
+      >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+          {trustPoints.map((point) => (
+            <motion.div key={point.title} variants={itemVariants}>
+              <p className="font-bold text-base md:text-lg">{point.title}</p>
+              <p className="text-sm text-gray-300">{point.subtitle}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default TrustBanner;
+
+
+================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\VisitOurBranches.tsx
-SIZE: 6901 bytes
+SIZE: 7286 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/home/VisitOurBranches.tsx (REPLACE ENTIRE FILE)
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
 import Icon from '@/components/ui/Icon';
 
+// --- Data for the branches, updated from your new HTML ---
 const branches = [
   {
-    name: 'Alberton (Main Branch)',
-    address: '6 Voortrekker St, New Redruth, Alberton, 1449',
+    name: 'Alberton',
+    province: 'Gauteng',
     blurb: 'Our flagship store, offering specialized BMW coding & local call-out services.',
+    address: '6 Voortrekker St, New Redruth, Alberton, 1449',
     phone: '011 869 2427',
     whatsapp: '079 320 3014',
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Global+Batteries+Alberton',
-    image: '/images/technician-smiling.webp',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Global+Batteries+Alberton+6+Voortrekker+Street',
+    hours: {
+      weekday: { open: 7.5, close: 17.5, string: 'Mon-Fri: 7:30 - 17:30' },
+      saturday: { open: 8, close: 13, string: 'Sat & PH: 8:00 - 13:00' }
+    }
   },
   {
     name: 'Vanderbijlpark',
-    address: 'Shop 3, Ganda Ganda City, Cnr Golden Highway & Rautenbach Rd, Flora Gardens',
+    province: 'Gauteng',
     blurb: 'Serving the Vaal Triangle with the same expert service and premium brands.',
+    address: 'Shop 3, Ganda Ganda City, Cnr Golden Highway & Rautenbach Rd',
     phone: '016 023 0161',
     whatsapp: '071 139 4043',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Global+Batteries+Vanderbijlpark',
-    image: '/images/technician-testing.webp',
+    hours: {
+      weekday: { open: 7.5, close: 17, string: 'Mon-Fri: 7:30 - 17:00' },
+      saturday: { open: 8, close: 13, string: 'Sat & PH: 8:00 - 13:00' }
+    }
   },
   {
     name: 'Sasolburg',
-    address: '1 Melt Brink St, Sasolburg, 1947',
+    province: 'Free State',
     blurb: 'Your trusted battery specialists for industrial and residential needs.',
+    address: '1 Melt Brink St, Sasolburg, 1947',
     phone: '016 976 2076',
     whatsapp: null,
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Global+Batteries+Sasolburg',
-    image: '/images/branch-sasolburg.webp',
+    hours: {
+      weekday: { open: 8, close: 17, string: 'Mon-Fri: 8:00 - 17:00' },
+      saturday: { open: 8, close: 13, string: 'Sat & PH: 8:00 - 13:00' }
+    }
   },
 ];
 
-const VisitOurBranches = () => {
-  return (
-    <section className="py-20 md:py-28 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-navy-900">
-            Visit Your Local Battery Experts
-          </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Get professional advice, free testing, and immediate fitment at any of our three convenient locations across Gauteng.
-          </p>
-        </motion.div>
+// --- Custom Hook for Store Status Logic ---
+const useStoreStatus = (hours: typeof branches[0]['hours']) => {
+    const [status, setStatus] = useState({ text: 'Checking...', className: '' });
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {branches.map((branch, index) => {
-            const isAlberton = branch.name.includes('Alberton');
-            return (
-              <motion.div
-                key={branch.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`
-                  bg-white rounded-2xl border border-gray-200 overflow-hidden flex flex-col group
-                  transition-all duration-300 hover:border-blue-500/50 hover:shadow-2xl
-                  ${isAlberton ? 'lg:col-span-2' : 'lg:col-span-1'}
-                `}
-              >
-                <div className="relative h-56">
-                  <Image
-                    src={branch.image}
-                    alt={`Global Batteries branch in ${branch.name}`}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    className="group-hover:scale-105 transition-transform duration-500 ease-out"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    placeholder="blur"
-                    blurDataURL="/images/placeholder.webp"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  {isAlberton && (
-                    <div className="absolute top-4 left-4 bg-yellow-400 text-navy-900 text-sm font-bold px-4 py-1.5 rounded-full shadow-md">
-                      Main Branch
-                    </div>
-                  )}
+    useEffect(() => {
+        const now = new Date();
+        const utcHours = now.getUTCHours();
+        const sastHours = (utcHours + 2); // SAST is UTC+2
+        const minutes = now.getUTCMinutes();
+        const currentTime = sastHours + (minutes / 60);
+        const day = now.getUTCDay(); // Sunday = 0, Saturday = 6
+
+        let currentHours;
+        if (day >= 1 && day <= 5) { // Monday to Friday
+            currentHours = hours.weekday;
+        } else if (day === 6) { // Saturday
+            currentHours = hours.saturday;
+        } else { // Sunday
+            currentHours = null;
+        }
+
+        if (currentHours && currentTime >= currentHours.open && currentTime < currentHours.close) {
+            setStatus({ text: 'Open Now', className: 'status-open' });
+        } else {
+            setStatus({ text: 'Closed', className: 'status-closed' });
+        }
+    }, [hours]);
+
+    return status;
+};
+
+// --- Branch Card Sub-Component ---
+const BranchCard = ({ branch }: { branch: typeof branches[0] }) => {
+    const status = useStoreStatus(branch.hours);
+
+    return (
+        <div className="bg-navy-850 rounded-lg border border-slate-700/50 flex flex-col p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-navy-950/50">
+            <div className="flex-grow flex flex-col">
+                <div className="flex items-center mb-2">
+                    <h3 className="font-bold text-2xl text-white">{branch.name}</h3>
+                    <span className={`status-indicator ${status.className}`}>{status.text}</span>
                 </div>
-                
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold text-navy-900 tracking-tight">{branch.name}</h3>
-                  <p className="mt-2 text-sm text-gray-500 italic">"{branch.blurb}"</p>
-                  <p className="text-gray-700 mt-4 text-sm flex-grow">{branch.address}</p>
-
-                  <div className="mt-6 space-y-4">
-                    <a href={`tel:${branch.phone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors group/link">
-                      <Icon path="M6.62,10.79a15.25,15.25,0,0,0,6.59,6.59l2.2-2.2a1,1,0,0,1,1-.24,11.36,11.36,0,0,0,3.57.57,1,1,0,0,1,1,1V20a1,1,0,0,1-1,1A17,17,0,0,1,3,4,1,1,0,0,1,4,3H7.5a1,1,0,0,1,1,1,11.36,11.36,0,0,0,.57,3.57,1,1,0,0,1-.24,1Z" className="w-5 h-5 text-blue-500" />
-                      <span className="font-semibold group-hover/link:underline">{branch.phone}</span>
+                <p className="text-slate-400 italic mb-6 min-h-[60px]">{branch.blurb}</p>
+                <div className="space-y-4 text-slate-300 mb-auto">
+                    <div className="flex items-start min-h-[56px]"><Icon path="M12,2a8,8,0,0,0-8,8c0,5.4,7,11.5,7.35,11.8a1,1,0,0,0,1.3,0C13,21.5,20,15.4,20,10A8,8,0,0,0,12,2Zm0,11.5A3.5,3.5,0,1,1,15.5,10,3.5,3.5,0,0,1,12,13.5Z" className="w-6 text-center mr-2 mt-1 text-slate-500 flex-shrink-0" /><span>{branch.address}</span></div>
+                    <div className="flex items-start min-h-[56px]"><Icon path="M6.62,10.79a15.25,15.25,0,0,0,6.59,6.59l2.2-2.2a1,1,0,0,1,1-.24,11.36,11.36,0,0,0,3.57.57,1,1,0,0,1,1,1V20a1,1,0,0,1-1,1A17,17,0,0,1,3,4,1,1,0,0,1,4,3H7.5a1,1,0,0,1,1,1,11.36,11.36,0,0,0,.57,3.57,1,1,0,0,1-.24,1Z" className="w-6 text-center mr-2 mt-1 text-slate-500 flex-shrink-0" /><a href={`tel:${branch.phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">{branch.phone}</a></div>
+                    <div className="flex items-start min-h-[56px]"><Icon path="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM16.24,16.24,11,13V7h2v5.18l4.24,2.54Z" className="w-6 text-center mr-2 mt-1 text-slate-500 flex-shrink-0" /><span>{branch.hours.weekday.string}<br />{branch.hours.saturday.string}</span></div>
+                </div>
+                {branch.whatsapp ? (
+                    <a href={`https://wa.me/27${branch.whatsapp.substring(1).replace(/\s/g, '')}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-green-600 text-white rounded-md px-4 py-3 font-semibold my-8 hover:bg-green-700 transition-colors">
+                        <Icon path="M12,2A10,10,0,0,0,2,12a9.89,9.89,0,0,0,1.53,5.29L2,22l4.83-1.26A10,10,0,1,0,12,2Zm4.23,12.82a1.48,1.48,0,0,1-1.24,1,3,3,0,0,1-1.75-.58,10.37,10.37,0,0,1-3.43-2.17,10.37,10.37,0,0,1-2.17-3.43,3,3,0,0,1-.58-1.75,1.48,1.48,0,0,1,1-1.24,1.18,1.18,0,0,1,.81.12l.24.12a1,1,0,0,1,.48.86,5.33,5.33,0,0,1,.2,1.23,1,1,0,0,1-.27.83l-.42.42a1,1,0,0,0-.2,1.18,7.9,7.9,0,0,0,2.17,2.17,1,1,0,0,0,1.18-.2l.42-.42a1,1,0,0,1,.83-.27,5.33,5.33,0,0,1,1.23.2,1,1,0,0,1,.86.48l.12.24A1.18,1.18,0,0,1,16.23,12.82Z" className="w-5 h-5 mr-3" />
+                        WhatsApp {branch.name}
                     </a>
-                    {branch.whatsapp && (
-                      <a href={`https://wa.me/27${branch.whatsapp.substring(1).replace(/\s/g, '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors group/link">
-                        <Icon path="M12,2A10,10,0,0,0,2,12a9.89,9.89,0,0,0,1.53,5.29L2,22l4.83-1.26A10,10,0,1,0,12,2Zm4.23,12.82a1.48,1.48,0,0,1-1.24,1,3,3,0,0,1-1.75-.58,10.37,10.37,0,0,1-3.43-2.17,10.37,10.37,0,0,1-2.17-3.43,3,3,0,0,1-.58-1.75,1.48,1.48,0,0,1,1-1.24,1.18,1.18,0,0,1,.81.12l.24.12a1,1,0,0,1,.48.86,5.33,5.33,0,0,1,.2,1.23,1,1,0,0,1-.27.83l-.42.42a1,1,0,0,0-.2,1.18,7.9,7.9,0,0,0,2.17,2.17,1,1,0,0,0,1.18-.2l.42-.42a1,1,0,0,1,.83-.27,5.33,5.33,0,0,1,1.23.2,1,1,0,0,1,.86.48l.12.24A1.18,1.18,0,0,1,16.23,12.82Z" className="w-5 h-5 text-green-500" />
-                        <span className="font-semibold group-hover/link:underline">{branch.whatsapp}</span>
-                      </a>
-                    )}
-                  </div>
-                  
-                  <div className="mt-auto pt-6">
-                     <a href={branch.mapUrl} target="_blank" rel="noopener noreferrer" className="w-full inline-flex items-center justify-center bg-blue-600 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 transform hover:scale-105 group/cta">
-                          Get Directions
-                          <Icon path="M9.71,17.29a1,1,0,0,1,0-1.42L13.59,12,9.71,8.12a1,1,0,0,1,1.42-1.42l4.58,4.58a1,1,0,0,1,0,1.42l-4.58,4.58A1,1,0,0,1,9.71,17.29Z" className="w-5 h-5 ml-2 group-hover/cta:translate-x-1 transition-transform" />
-                     </a>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+                ) : (
+                    <div className="my-8 min-h-[52px]"></div>
+                )}
+            </div>
+            <a href={branch.mapUrl} target="_blank" rel="noopener noreferrer" className="border border-white text-white font-semibold py-3 px-6 rounded-md w-full text-center transition-colors hover:bg-white hover:text-navy-950 mt-auto">
+                Get Directions
+            </a>
+        </div>
+    );
+};
+
+
+// --- Main Component ---
+export default function VisitOurBranches() {
+  return (
+    <section className="w-full bg-navy-950">
+        <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+            <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Expert Battery Fitment & Testing</h2>
+                <p className="text-slate-400 mt-4 text-lg max-w-3xl mx-auto">Find our Alberton and Vanderbijlpark branches in <strong>Gauteng</strong>, or visit our Sasolburg branch in the <strong>Free State</strong> for professional advice and immediate service.</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {branches.map((branch) => (
+                    <BranchCard key={branch.name} branch={branch} />
+                ))}
+            </div>
+        </div>
+    </section>
+  );
+};
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\WhyGlobalBatteries.module.css
+SIZE: 1769 bytes
+--------------------------------------------------------------------------------
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #0F172A;
+  color: #fff;
+}
+
+.heading {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  background: #172A46;
+  border-radius: 12px;
+  padding: 40px 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(90deg, #1E3A8A, #60A5FA, #FFD300, #1E3A8A);
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.card:hover::before {
+  opacity: 1;
+  animation: borderFlow 3s linear infinite;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card img {
+  margin-bottom: 20px;
+  width: 64px;
+  height: 64px;
+  z-index: 1;
+  position: relative;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.card p {
+  color: rgba(255,255,255,0.7);
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+
+================================================================================
+PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\home\WhyGlobalBatteries.tsx
+SIZE: 1775 bytes
+--------------------------------------------------------------------------------
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import styles from "./WhyGlobalBatteries.module.css";
+
+const WhyGlobalBatteries = () => {
+  return (
+    <section className={styles.section}>
+      <h2 className={styles.heading}>Why Choose Global Batteries?</h2>
+      <p className={styles.subtitle}>
+        More than just a store — we are Alberton’s trusted specialists in powering your drive.
+      </p>
+
+      <div className={styles.grid}>
+        <div className={styles.card}>
+          <Image src="/images/technician.png" alt="Expert Technicians" width={64} height={64} />
+          <h3>Expert Technicians</h3>
+          <p>Our team provides professional service, from free battery testing to precise BMW coding.</p>
+        </div>
+
+        <div className={styles.card}>
+          <Image src="/images/selection.png" alt="Biggest Selection" width={64} height={64} />
+          <h3>Biggest Selection</h3>
+          <p>Stocking Willard, Exide, Novax, Global, and more — batteries for cars, trucks, motorcycles, and solar.</p>
+        </div>
+
+        <div className={styles.card}>
+          <Image src="/images/testing.png" alt="Free Testing & Fitment" width={64} height={64} />
+          <h3>Free Testing & Fitment</h3>
+          <p>Peace of mind with free alternator, battery, and starter testing — plus expert fitment.</p>
+        </div>
+
+        <div className={styles.card}>
+          <Image src="/images/delivery.png" alt="Fast Delivery" width={64} height={64} />
+          <h3>Fast Delivery</h3>
+          <p>Same-day delivery available across Alberton and surrounds. Power, right when you need it.</p>
         </div>
       </div>
     </section>
   );
 };
 
-export default VisitOurBranches;
+export default WhyGlobalBatteries;
+
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\tools\BatteryHealthCalculator.tsx
-SIZE: 6372 bytes
+SIZE: 6261 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/tools/BatteryHealthCalculator.tsx (REPLACE ENTIRE FILE)
 "use client";
@@ -2209,7 +3019,7 @@ export default BatteryHealthCalculator;
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\ui\CategoryMegaMenu.tsx
-SIZE: 5402 bytes
+SIZE: 5319 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/ui/CategoryMegaMenu.tsx (REPLACE ENTIRE FILE)
 import React from 'react';
@@ -2298,7 +3108,7 @@ export default function CategoryMegaMenu({ isOpen, onClose }: MegaMenuProps) {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\ui\Icon.tsx
-SIZE: 342 bytes
+SIZE: 333 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/ui/Icon.tsx
 import React from 'react';
@@ -2313,7 +3123,7 @@ export default Icon;
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\ui\LiveChatWidget.tsx
-SIZE: 1705 bytes
+SIZE: 1653 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/ui/LiveChatWidget.tsx (CREATE OR REPLACE)
 "use client";
@@ -2371,7 +3181,7 @@ export default LiveChatWidget;
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\components\utils\LazyLoad.tsx
-SIZE: 1176 bytes
+SIZE: 1130 bytes
 --------------------------------------------------------------------------------
 // FILE: src/components/utils/LazyLoad.tsx (CREATE NEW FILE)
 "use client";
@@ -2423,7 +3233,7 @@ export default LazyLoad;
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\lib\sanity.ts
-SIZE: 648 bytes
+SIZE: 627 bytes
 --------------------------------------------------------------------------------
 import { createClient } from '@sanity/client';
 import { cache } from 'react';
@@ -2450,7 +3260,7 @@ export const getPostBySlug = cache(async (slug: string) => {
 
 ================================================================================
 PATH: C:\Users\shop\Desktop\global-batteries-alberton\src\lib\shopify.ts
-SIZE: 5471 bytes
+SIZE: 5327 bytes
 --------------------------------------------------------------------------------
 // FILE: src/lib/shopify.ts (REPLACE ENTIRE FILE)
 import { cache } from 'react';

@@ -11,16 +11,21 @@ const config: Config = {
     extend: {
       colors: {
         'navy': {
-          '950': '#0A192F', // New: For the darkest backgrounds
+          '950': '#0A192F',
           '900': '#0F172A', 
-          '850': '#172A46', // New: For cards and slightly lighter elements
+          '850': '#172A46',
           '800': '#1E3A8A', 
           '700': '#1D4ED8', 
           '400': '#60A5FA', 
         },
         'brand': {
-          'yellow': '#FFD300', 
+          // UPDATED: A darker, more accessible blue for primary actions. Contrast ratio of 6.53:1 with white text.
+          'blue': '#1D4ED8', 
+          // UPDATED: A slightly darker shade for the hover state.
+          'blue-hover': '#1E40AF',
+          'accent': '#FFD300', 
         },
+        // Legacy colors kept for compatibility
         primary: '#1E3A8A', 
         secondary: '#1D4ED8', 
         accent: '#FFD300', 

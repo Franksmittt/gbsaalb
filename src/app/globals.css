@@ -213,3 +213,15 @@ input::placeholder {
   color: #9ca3af;
   opacity: 1;
 }
+
+/* Add this new class to the end of the file */
+.status-checking {
+    background-color: #334155; /* slate-700 */
+    color: #E2E8F0; /* slate-200 */
+}
+
+/* Add this new class to the end of the file */
+.status-checking {
+    background-color: #334155; /* slate-700 */
+    color: #E2E8F0; /* slate-200 */
+}

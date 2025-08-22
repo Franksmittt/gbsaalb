@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ClockIcon } from '@/components/icons/ClockIcon';
 import { EnvelopeIcon } from '@/components/icons/EnvelopeIcon';
-import { PhoneIcon } from '@/components/icons/PhoneIcon';
+import { PhoneIcon } from '@/components/icons/PhoneIcon'; // Corrected import
 import { LocationPinIcon } from '@/components/icons/LocationPinIcon';
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ const contactDetails = [
     href: 'https://www.google.com/maps/search/?api=1&query=-26.2669,28.1245',
   },
   {
-    icon: PhoneIcon,
+    icon: PhoneIcon, // Corrected usage
     title: 'Call Us',
     content: 'Alberton: 011 869 2427',
     href: 'tel:0118692427',
@@ -39,6 +39,7 @@ const contactDetails = [
   },
 ];
 
+// ... rest of the contact page component remains the same ...
 export default function ContactPage() {
   return (
     <>
@@ -53,11 +54,9 @@ export default function ContactPage() {
             </p>
           </div>
         </section>
-
         <section className="pb-16 md:pb-24 -mt-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-navy-900 rounded-lg shadow-2xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-              
               <div className="space-y-8">
                 {contactDetails.map((item) => {
                   const IconComponent = item.icon;
@@ -79,7 +78,6 @@ export default function ContactPage() {
                   );
                 })}
               </div>
-
               <div>
                 <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
                 <form action="#" method="POST" className="space-y-6">

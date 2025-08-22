@@ -2,7 +2,12 @@
 import type { Metadata } from 'next';
 import { Figtree } from 'next/font/google';
 import './globals.css';
-import LiveChatWidget from '@/components/ui/LiveChatWidget';
+import dynamic from 'next/dynamic';
+
+// Dynamically import the LiveChatWidget with SSR turned off
+const LiveChatWidget = dynamic(() => import('@/components/ui/LiveChatWidget'), {
+  ssr: false,
+});
 
 const figtree = Figtree({ 
   subsets: ['latin'],
@@ -27,7 +32,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${figtree.variable} font-sans`}>
       <head>
-        {/* The problematic preload link has been removed from here */}
         <link rel="preconnect" href="https://cdn.shopify.com" />
         <script type="application/ld+json">
           {`

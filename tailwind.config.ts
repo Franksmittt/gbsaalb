@@ -19,13 +19,10 @@ const config: Config = {
           '400': '#60A5FA', 
         },
         'brand': {
-          // UPDATED: A darker, more accessible blue for primary actions. Contrast ratio of 6.53:1 with white text.
-          'blue': '#1D4ED8', 
-          // UPDATED: A slightly darker shade for the hover state.
+          'blue': '#1D4ED8',
           'blue-hover': '#1E40AF',
           'accent': '#FFD300', 
         },
-        // Legacy colors kept for compatibility
         primary: '#1E3A8A', 
         secondary: '#1D4ED8', 
         accent: '#FFD300', 

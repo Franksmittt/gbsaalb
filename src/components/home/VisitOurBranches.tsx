@@ -2,7 +2,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Icon from '@/components/ui/Icon';
+import { LocationPinIcon } from '@/components/icons/LocationPinIcon';
+import { PhoneIcon } from '@/components/icons/PhoneIcon';
+import { ClockIcon } from '@/components/icons/ClockIcon';
+import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
 
 const branches = [
   {
@@ -47,30 +50,35 @@ const branches = [
 ];
 
 const useStoreStatus = (hours: typeof branches[0]['hours']) => {
-    const [status, setStatus] = useState({ text: 'Checking...', className: '' });
+    const [status, setStatus] = useState({ text: 'Checking...', className: 'status-checking' });
 
     useEffect(() => {
-        const now = new Date();
-        const utcHours = now.getUTCHours();
-        const sastHours = (utcHours + 2);
-        const minutes = now.getUTCMinutes();
-        const currentTime = sastHours + (minutes / 60);
-        const day = now.getUTCDay();
+        const checkStatus = () => {
+            const now = new Date();
+            const sastHours = now.getUTCHours() + 2;
+            const minutes = now.getUTCMinutes();
+            const currentTime = sastHours + (minutes / 60);
+            const day = now.getUTCDay();
 
-        let currentHours;
-        if (day >= 1 && day <= 5) {
-            currentHours = hours.weekday;
-        } else if (day === 6) {
-            currentHours = hours.saturday;
-        } else {
-            currentHours = null;
-        }
+            let currentHours;
+            if (day >= 1 && day <= 5) { // Monday to Friday
+                currentHours = hours.weekday;
+            } else if (day === 6) { // Saturday
+                currentHours = hours.saturday;
+            } else { // Sunday
+                currentHours = null;
+            }
 
-        if (currentHours && currentTime >= currentHours.open && currentTime < currentHours.close) {
-            setStatus({ text: 'Open Now', className: 'status-open' });
-        } else {
-            setStatus({ text: 'Closed', className: 'status-closed' });
-        }
+            if (currentHours && currentTime >= currentHours.open && currentTime < currentHours.close) {
+                setStatus({ text: 'Open Now', className: 'status-open' });
+            } else {
+                setStatus({ text: 'Closed', className: 'status-closed' });
+            }
+        };
+        
+        checkStatus();
+        const interval = setInterval(checkStatus, 60000);
+        return () => clearInterval(interval);
     }, [hours]);
 
     return status;
@@ -88,14 +96,22 @@ const BranchCard = ({ branch }: { branch: typeof branches[0] }) => {
                 </div>
                 <p className="text-slate-400 italic mb-6 min-h-[60px]">{branch.blurb}</p>
                 <div className="space-y-4 text-slate-300 mb-auto">
-                    <div className="flex items-start min-h-[56px]"><Icon path="M12,2a8,8,0,0,0-8,8c0,5.4,7,11.5,7.35,11.8a1,1,0,0,0,1.3,0C13,21.5,20,15.4,20,10A8,8,0,0,0,12,2Zm0,11.5A3.5,3.5,0,1,1,15.5,10,3.5,3.5,0,0,1,12,13.5Z" className="w-6 text-center mr-2 mt-1 text-slate-500 flex-shrink-0" /><span>{branch.address}</span></div>
-                    <div className="flex items-start min-h-[56px]"><Icon path="M6.62,10.79a15.25,15.25,0,0,0,6.59,6.59l2.2-2.2a1,1,0,0,1,1-.24,11.36,11.36,0,0,0,3.57.57,1,1,0,0,1,1,1V20a1,1,0,0,1-1,1A17,17,0,0,1,3,4,1,1,0,0,1,4,3H7.5a1,1,0,0,1,1,1,11.36,11.36,0,0,0,.57,3.57,1,1,0,0,1-.24,1Z" className="w-6 text-center mr-2 mt-1 text-slate-500 flex-shrink-0" /><a href={`tel:${branch.phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">{branch.phone}</a></div>
-                    <div className="flex items-start min-h-[56px]"><Icon path="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20ZM16.24,16.24,11,13V7h2v5.18l4.24,2.54Z" className="w-6 text-center mr-2 mt-1 text-slate-500 flex-shrink-0" /><span>{branch.hours.weekday.string}<br />{branch.hours.saturday.string}</span></div>
+                    <div className="flex items-start min-h-[56px]">
+                        <LocationPinIcon className="w-6 text-center mr-2 mt-1 text-slate-500 flex-shrink-0" />
+                        <span>{branch.address}</span>
+                    </div>
+                    <div className="flex items-start min-h-[56px]">
+                        <PhoneIcon className="w-6 text-center mr-2 mt-1 text-slate-500 flex-shrink-0" />
+                        <a href={`tel:${branch.phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">{branch.phone}</a>
+                    </div>
+                    <div className="flex items-start min-h-[56px]">
+                        <ClockIcon className="w-6 text-center mr-2 mt-1 text-slate-500 flex-shrink-0" />
+                        <span>{branch.hours.weekday.string}<br />{branch.hours.saturday.string}</span>
+                    </div>
                 </div>
                 {branch.whatsapp ? (
-                    // FIX: Changed text-white to text-navy-900 for high contrast
                     <a href={`https://wa.me/27${branch.whatsapp.substring(1).replace(/\s/g, '')}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-green-600 text-navy-900 rounded-md px-4 py-3 font-semibold my-8 hover:bg-green-500 transition-colors">
-                        <Icon path="M12,2A10,10,0,0,0,2,12a9.89,9.89,0,0,0,1.53,5.29L2,22l4.83-1.26A10,10,0,1,0,12,2Zm4.23,12.82a1.48,1.48,0,0,1-1.24,1,3,3,0,0,1-1.75-.58,10.37,10.37,0,0,1-3.43-2.17,10.37,10.37,0,0,1-2.17-3.43,3,3,0,0,1-.58-1.75,1.48,1.48,0,0,1,1-1.24,1.18,1.18,0,0,1,.81.12l.24.12a1,1,0,0,1,.48.86,5.33,5.33,0,0,1,.2,1.23,1,1,0,0,1-.27.83l-.42.42a1,1,0,0,0-.2,1.18,7.9,7.9,0,0,0,2.17,2.17,1,1,0,0,0,1.18-.2l.42-.42a1,1,0,0,1,.83-.27,5.33,5.33,0,0,1,1.23.2,1,1,0,0,1,.86.48l.12.24A1.18,1.18,0,0,1,16.23,12.82Z" className="w-5 h-5 mr-3" />
+                        <WhatsAppIcon className="w-5 h-5 mr-3" />
                         WhatsApp {branch.name}
                     </a>
                 ) : (
@@ -115,7 +131,6 @@ export default function VisitOurBranches() {
         <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
             <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Expert Battery Fitment & Testing</h2>
-                {/* FIX: Increased contrast from slate-400 to slate-300 */}
                 <p className="text-slate-300 mt-4 text-lg max-w-3xl mx-auto">Find our Alberton and Vanderbijlpark branches in <strong>Gauteng</strong>, or visit our Sasolburg branch in the <strong>Free State</strong> for professional advice and immediate service.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
